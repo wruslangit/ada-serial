@@ -1,0 +1,77 @@
+LOGIN: https://github.com/login
+
+URL: https://github.com/wruslangit/
+USERNAME: wruslangit
+PWD: XXxxxx.git
+
+EMAIL: wruslangit@gmail.com
+PWD: XXxxxx.git
+
+===========================================================
+(1) URL: https://github.com/wruslangit/ada-ppdev
+
+(2) URL: https://github.com/wruslangit/ada-serial
+
+===========================================================
+HOW TO USE GITK TO CONNECT TO github.com
+===========================================================
+gitk - The Git repository browser
+
+/usr/bin/git
+/usr/bin/git-cola
+/usr/bin/git-cvsserver
+/usr/bin/git-dag
+/usr/bin/git-deborig
+/usr/bin/git-receive-pack
+/usr/bin/git-shell
+/usr/bin/git-upload-archive
+/usr/bin/git-upload-pack
+/usr/bin/gitk
+/usr/bin/gitlab-api-v4
+/usr/lib/cgi-bin/gitweb.cgi
+/usr/share/git-cola/bin/git-xbase
+
+===========================================================
+https://linuxhint.com/best_git_gui_clients_ubuntu/
+===========================================================
+
+4. GitKraken AT https://www.gitkraken.com/download
+
+GitKraken is another graphical Git client which is powerful and reliable, which supports both Git and GitHub to work with. GitKraken ships-in with very modern looking user interface which is eye-catching and easy to navigate. I’ll recommend GitKraken to the developers who daily engage in tedious development workflow because it offers some really useful features that make this task quite easier and hassle free.
+
+Some of the notable features in GitKraken are built-in code editor, split view, syntax highlighting and file minimap. It also offers seamless integration with popular Git hosting services such as GitHub, GitLab and BitBucket. If you opt for GitKraken Pro then you can connect GitHub Enterprise, GitLab Self-Hosted, BitBucket Server and Azure DevOps.
+
+As compared to other Git clients, GitKraken has really fast and reliable workflow. Well that is what I have noticed during all the Git clients listed here in this article.
+
+===========================================================
+-rw-rw-r--  1 wruslan wruslan 80346530 Dec 13 15:20 gitkraken-amd64.deb
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads$ sudo dpkg -i gitkraken-amd64.deb 
+[sudo] password for wruslan: 
+Selecting previously unselected package gitkraken.
+(Reading database ... 913069 files and directories currently installed.)
+Preparing to unpack gitkraken-amd64.deb ...
+Unpacking gitkraken (7.4.1) ...
+Setting up gitkraken (7.4.1) ...
+Processing triggers for bamfdaemon (0.5.3+18.04.20180207.2-0ubuntu2) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for desktop-file-utils (0.24-1ubuntu3) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu1) ...
+Processing triggers for mime-support (3.64ubuntu1) ...
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads$ 
+
+===========================================================
+Menu -> Applications -> Programming -> GitKraken 
+===========================================================
+
+Success!
+
+Congratulations, your connection was successful!
+
+GitHub and GitKraken are good to go! 
+
+https://support.gitkraken.com/#gitkraken-git-client-tutorial
+
+===========================================================
+
+

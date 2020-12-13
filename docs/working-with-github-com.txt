@@ -1,0 +1,151 @@
+
+SUMMARY
+===========================================================
+Follow these steps to send project to Github from scratch.
+Do this inside the root of the project directory. 
+
+(1) git init
+(2) git add .
+(3) git commit -m "Add all my files"
+(4) git remote add origin https://github.com/yourusername/your-repo-name.git
+Must already have an account github.com 
+(5) git pull origin master/main    // for downloading
+(6) git push origin master/main    // for uploading
+If you have problems uploading!
+(7) git push --force origin master/main
+
+===========================================================
+LOGIN: https://github.com/login
+
+URL: https://github.com/wruslangit/
+USERNAME: wruslangit
+PWD: XXxxxx.git
+
+EMAIL: wruslangit@gmail.com
+PWD: XXxxxx.git
+
+REMOTE PROJECT URL FOR ADA-PPDEV
+https://github.com/wruslangit/ada-ppdev/
+
+LOCAL FOLDER CREATE GIT REPOSITORY
+===========================================================
+Change into the directory where your source code is located in the command prompt.
+Create a new repository in this directory 
+
+===> $ git init 
+
+This will say "Initialized empty git repository in ....git" (... is the path).
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ ls -al
+total 36
+drwxrwxr-x 7 wruslan wruslan 4096 Dec 13 16:43 .
+drwxrwxr-x 3 wruslan wruslan 4096 Dec 13 16:40 ..
+-rw-rw-r-- 1 wruslan wruslan 4084 Dec 12 13:43 ada_ppdev.gpr
+drwxrwxr-x 4 wruslan wruslan 4096 Dec 13 14:09 docs
+drwxrwxr-x 2 wruslan wruslan 4096 Dec 13 14:38 exec
+drwxrwxr-x 7 wruslan wruslan 4096 Dec 13 16:49 .git
+drwxrwxr-x 2 wruslan wruslan 4096 Dec 13 14:40 obj
+-rw-r--r-- 1 wruslan wruslan   80 Dec 13 16:40 README.md
+drwxrwxr-x 6 wruslan wruslan 4096 Dec 13 01:46 src
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ 
+
+LOCALLY ADD EVERYTHING INTO THIS .git REPO
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ git add *
+
+SEE THE TIME AT 16:55 LOCALLY
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ ls -al .git
+total 48
+drwxrwxr-x  7 wruslan wruslan 4096 Dec 13 16:55 .
+drwxrwxr-x  7 wruslan wruslan 4096 Dec 13 16:43 ..
+-rw-rw-r--  1 wruslan wruslan  264 Dec 13 16:40 config
+-rw-rw-r--  1 wruslan wruslan   73 Dec 13 16:40 description
+-rw-rw-r--  1 wruslan wruslan  103 Dec 13 16:49 FETCH_HEAD
+-rw-rw-r--  1 wruslan wruslan   21 Dec 13 16:40 HEAD
+drwxrwxr-x  2 wruslan wruslan 4096 Dec 13 16:40 hooks
+-rw-rw-r--  1 wruslan wruslan 2648 Dec 13 16:55 index     <===
+drwxrwxr-x  2 wruslan wruslan 4096 Dec 13 16:40 info
+drwxrwxr-x  3 wruslan wruslan 4096 Dec 13 16:40 logs
+drwxrwxr-x 23 wruslan wruslan 4096 Dec 13 16:55 objects   <===
+drwxrwxr-x  5 wruslan wruslan 4096 Dec 13 16:40 refs
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$
+
+===========================================================
+AFTER ADD ALL FILES, COMMIT WITH MESSAGE
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ git commit -m "adding files first time"
+[main 06a2419] adding files first time
+ 25 files changed, 10081 insertions(+)
+ create mode 100644 ada_ppdev.gpr
+ create mode 100644 docs/all-ada-ppdev-functions-ver-0.5.txt
+ create mode 100644 docs/all-parport-headers-and-codes/lp.c
+ create mode 100644 docs/all-parport-headers-and-codes/lp.h
+ create mode 100644 docs/all-parport-headers-and-codes/parport.h
+ create mode 100644 docs/all-parport-headers-and-codes/parport_pc.c
+ create mode 100644 docs/all-parport-headers-and-codes/parport_pc.h
+ create mode 100644 docs/all-parport-headers-and-codes/ppdev.c
+ create mode 100644 docs/all-parport-headers-and-codes/ppdev.h
+ create mode 100644 docs/all-parport-headers-only/fcntl.h
+ create mode 100644 docs/all-parport-headers-only/lp.h
+ create mode 100644 docs/all-parport-headers-only/parport.h
+ create mode 100644 docs/all-parport-headers-only/parport_pc.h
+ create mode 100644 docs/all-parport-headers-only/ppdev.h
+ create mode 100644 docs/list-of-files-ver-0.5.txt
+ create mode 100644 docs/session-success-ada-ppdev-ver-0.5.txt
+ create mode 100644 exec/files-in-exec.txt
+ create mode 100644 obj/files-in-obj.txt
+ create mode 100644 src/c-ada-ppdev/ada_ppdev.c
+ create mode 100644 src/c-ada-ppdev/ada_ppdev.h
+ create mode 100644 src/c-headers/ppdev.h
+ create mode 100644 src/main_ada_ppdev.adb
+ create mode 100644 src/pkg-ada-dtstamp/pkg_ada_dtstamp.adb
+ create mode 100644 src/pkg-ada-dtstamp/pkg_ada_dtstamp.ads
+ create mode 100644 src/pkg-ada-ppdev/pkg_ada_ppdev.ads
+
+UPLOAD TO GITHUB.COM
+===========================================================
+Now you want to push the changes to your git repository hosted with github. 
+To you this by telling git to add a remote location, and you do that with this command:
+
+===> $ git remote add origin https://github.com/wruslangit/ada-ppdev.git
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ git remote add origin https://github.com/wruslangit/ada-ppdev.git
+fatal: remote origin already exists.
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ 
+
+===========================================================
+Once you have done that, git now knows about your remote repository. 
+You can then tell it to push (which is "upload") your commited files:
+
+===> $ git push -u origin master
+
+PUSH FROM LOCAL TO REMOTE (NAMED master)
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ git push -u origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/wruslangit/ada-ppdev.git'
+
+===> $ git push -u origin main
+
+PUSH FROM LOCAL TO REMOTE (CHANGE NAME TO main)
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ git push -u origin main
+Username for 'https://github.com': wruslangit
+Password for 'https://wruslangit@github.com': KLwry1.git
+Enumerating objects: 33, done.
+Counting objects: 100% (33/33), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (28/28), done.
+Writing objects: 100% (32/32), 69.24 KiB | 3.30 MiB/s, done.
+Total 32 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), done.
+To https://github.com/wruslangit/ada-ppdev.git
+   947d0e4..06a2419  main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-ppdev$ 
+
+============================================================
+ALHAMDULILLAH 3 TIMES WRY.
+============================================================
+
