@@ -1,0 +1,67 @@
+
+COMPILATION
+===========================================================
+gprbuild -d -P/home/wruslan/github/ada-serial/gpr_ada_serial.gpr -s -k
+Compile
+   [Ada]          main_ada_serial_port.adb
+   [Ada]          pkg_ada_dtstamp.adb
+Bind
+   [gprbind]      main_ada_serial_port.bexch
+   [Ada]          main_ada_serial_port.ali
+Link
+   [link]         main_ada_serial_port.adb
+[2020-12-21 23:49:35] process terminated successfully, elapsed time: 01.24s
+
+EXECUTION USING 2 TERMINALS.
+===========================================================
+RUN IN TERMINAL 1
+=======================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ sudo socat -d -d pty,raw,echo=0,link=/dev/ttyS0 pty,raw,echo=0,link=/dev/ttyS4
+[sudo] password for wruslan: 
+2020/12/21 23:56:33 socat[19021] N PTY is /dev/pts/2
+2020/12/21 23:56:33 socat[19021] N PTY is /dev/pts/3
+2020/12/21 23:56:33 socat[19021] N starting data transfer loop with FDs [5,5] and [7,7]
+^C  <==== STOP
+2020/12/22 00:11:30 socat[19021] N socat_signal(): handling signal 2
+2020/12/22 00:11:30 socat[19021] N exiting on signal 2
+2020/12/22 00:11:30 socat[19021] N socat_signal(): finishing signal 2
+2020/12/22 00:11:30 socat[19021] N exit(130)
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+RUN IN TERMINAL 2
+=======================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-serial/exec$ sudo ./main_ada_serial_port.xxx
+2020-12-21 16:10:04.15525840560 Bismillah 3 times WRY
+2020-12-21 16:10:04.15525976892 Begin loop 
+   0 2020-12-21 16:10:04.15526086974 Inside the loop
+   1 2020-12-21 16:10:04.15526106274 Inside the loop
+   2 2020-12-21 16:10:04.15526141751 Inside the loop
+   3 2020-12-21 16:10:04.15526163570 Inside the loop
+   4 2020-12-21 16:10:04.15526185323 Inside the loop
+   5 2020-12-21 16:10:04.15526204586 Inside the loop
+   6 2020-12-21 16:10:04.15526224872 Inside the loop
+   7 2020-12-21 16:10:04.15526245711 Inside the loop
+2020-12-21 16:10:04.15526260198 End loop.
+2020-12-21 16:10:04.15526281855 Alhamdulillah 3 times WRY
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-serial/exec$ 
+
+REPEAT
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-serial/exec$ sudo ./main_ada_serial_port.xxx
+2020-12-21 16:10:35.77140156142 Bismillah 3 times WRY
+2020-12-21 16:10:35.77140232460 Begin loop 
+   0 2020-12-21 16:10:35.77140287569 Inside the loop
+   1 2020-12-21 16:10:35.77140313393 Inside the loop
+   2 2020-12-21 16:10:35.77140331021 Inside the loop
+   3 2020-12-21 16:10:35.77140350994 Inside the loop
+   4 2020-12-21 16:10:35.77140365868 Inside the loop
+   5 2020-12-21 16:10:35.77140381862 Inside the loop
+   6 2020-12-21 16:10:35.77140397940 Inside the loop
+   7 2020-12-21 16:10:35.77140415073 Inside the loop
+2020-12-21 16:10:35.77140426901 End loop.
+2020-12-21 16:10:35.77140446892 Alhamdulillah 3 times WRY
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-serial/exec$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================

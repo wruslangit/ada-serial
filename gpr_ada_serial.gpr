@@ -1,0 +1,99 @@
+-- File	: gpr_ada_serial.gpr
+-- Date	: Sat 12 Dec 2020 01:32:03 PM +08
+-- Env	: Linux HPEliteBook8470p-Ub2004-rt38 5.4.66-rt38 
+-- #1 SMP PREEMPT_RT Sat Sep 26 16:51:59 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+-- Author: WRY
+-- ========================================================
+-- GNAT Studio Community 2020 (20200427) hosted on x86_64-pc-linux-gnu
+-- GNAT 9.3.1 targetting x86_64-linux-gnu
+-- SPARK Community 2020 (20200818)
+
+project gpr_ada_serial is
+   -- for Languages   use ("Ada", "C", "C++");
+   for Languages   use ("Ada");
+   for Source_Dirs use ("src/**");  -- Covers every subdirectory in src
+   for Object_Dir  use "obj";       -- NOTE: No parantheses
+   for Exec_Dir    use "exec";      -- NOTE: No parantheses
+   for Main        use ("main_ada_serial_port.adb");
+
+   -- ======== File naming ================================
+   package Naming is
+		for Spec_Suffix ("Ada") use ".ads";  
+		for Body_Suffix ("Ada") use ".adb";
+		-- for Spec_Suffix ("C")   use ".h";    
+		-- for Body_Suffix ("C")   use ".c";  
+		--for Spec_Suffix ("C++") use ".hpp";  
+		--for Body_Suffix ("C++") use ".cpp";
+   end Naming;
+
+   -- ======== for gprbuild ===============================
+   package Builder is
+      for Executable ("main_ada_serial_port.adb") use "main_ada_serial_port.xxx";
+   end Builder;
+
+   -- ======== for the compiler ===========================
+   package Compiler is
+		for Default_Switches ("Ada") use ("-v", "-O2", "-o");
+		-- for Default_Switches ("C")   use ("-O2", "-o");
+		-- for Default_Switches ("C++") use ("-O2", "-o");
+   
+   		for Switches ("Ada")         use ("-c", "-gnat2012");
+   		-- for Switches ("C")           use ("-c", "--std=c99", "--std=c11");
+   		--for Switches ("C++")         use ("-c", "--std=c++11");
+   		
+	--	Note: Commented Ada to get NO duplicate main
+	    for Driver ("Ada")           use "/usr/bin/gcc";  -- WORKS NO PROBLEM 
+        -- for Driver ("C")             use "/usr/bin/gcc";  -- NOTE: No parentheses
+        -- for Driver ("C++")           use "/usr/bin/g++";  -- NOTE: No parentheses
+
+   end Compiler;
+
+   -- ======== for the binder =============================
+   -- RUN: gnatbind --help
+   package Binder is
+        for Default_Switches ("Ada") use ("-b", "-v");
+        for Switches ("Ada") use ("-v");  -- VERBOSE IT WORKS
+        -- for Switches ("C")   use ("-v");  -- VERBOSE IT WORKS
+        -- for Switches ("C++") use ("-v");  -- VERBOSE IT WORKS
+        
+   end Binder;
+
+   -- ======== for the linker =============================
+   -- RUN: gnatlink --help
+   package Linker is
+        for Default_Switches ("Ada") use ("-O2");
+        -- for Switches ("Ada") use ("-v");       -- VERBOSE LINKING
+        
+        -- VERBOSE IT WORKS   
+		-- for Switches ("C")   use ("-v", "-liconv", "-lpthread", "-lm", "-lrt");  
+		-- for Switches ("C++") use ("-v", "-liconv", "-lpthread", "-lm", "-lrt");  
+        
+        -- NOT VERBOSE ALSO WORKS  
+        -- for Switches ("C")   use ("-liconv", "-lpthread", "-lm", "-lrt");
+        -- for Switches ("C++") use ("--LINK=g++", "-lstdc++", "-liconv", "-lpthread", "-lm", "-lrt");  
+        
+   end Linker;
+
+   -- ======== for the IDE ================================
+   package IDE is
+		-- NOTE: No parentheses
+        for Compiler_Command ("Ada") use "/usr/bin/gnatmake";  -- WORKS NO PROBLEM
+        for Driver ("Ada")           use "/usr/bin/gcc";       -- WORKS NO PROBLEM
+        
+        -- for Compiler_Command ("C")   use "/usr/bin/gcc";   -- WORKS NO PROBLEM
+        --for Driver ("C")             use "/usr/bin/gcc";   -- WORKS NO PROBLEM
+       
+        -- for Compiler_Command ("C++") use "/usr/bin/g++";   -- WORKS NO PROBLEM
+        -- for Driver ("C++")           use "/usr/bin/gcc";   -- WORKS NO PROBLEM
+        
+		-- PROBLEMO the attribute "debugger_command" cannot be an associative array
+		-- PROBLEMO the attribute "gnatlist" cannot be an associative array
+        -- for Debugger_Command ("Ada") use "/usr/bin/gdb";       
+        -- for Gnatlist ("Ada")         use "/usr/bin/gnatls"; 
+           
+   end IDE;
+
+end gpr_ada_serial;
+-- ========================================================
+
+

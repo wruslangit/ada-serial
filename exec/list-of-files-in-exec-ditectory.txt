@@ -1,0 +1,7 @@
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-serial/exec$ ls -al
+total 76
+drwxrwxr-x 2 wruslan wruslan  4096 Dec 22 00:09 .
+drwxrwxr-x 8 wruslan wruslan  4096 Dec 21 23:46 ..
+-rwxrwxr-x 1 wruslan wruslan 67192 Dec 22 00:09 main_ada_serial_port.xxx
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-serial/exec$ 
+

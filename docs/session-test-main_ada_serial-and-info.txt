@@ -1,0 +1,107 @@
+File: session-test-main_ada_serial-and-info.txt
+Date: Mon 21 Dec 2020 11:36:27 PM +08
+Author: WRY wruslandr@gmail.com
+
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ uname -a
+Linux HPEliteBook8470p-Ub2004-rt38 5.4.66-rt38 
+#1 SMP PREEMPT_RT Sat Sep 26 16:51:59 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ lsb_release -a
+LSB Version:	core-11.1.0ubuntu2-noarch:security-11.1.0ubuntu2-noarch
+Distributor ID:	Ubuntu
+Description:	Ubuntu 20.04.1 LTS
+Release:	20.04
+Codename:	focal
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ 
+
+===========================================================
+   -- REF: https://linux.die.net/man/1/socat
+   -- REF: https://www.redhat.com/sysadmin/getting-started-socat
+   -- socat - Multipurpose relay (SOcket CAT)
+   -- socat is a command line based utility that establishes two bidirectional
+   -- byte streams and transfers data between them (from one location to another).
+   
+   -- If you need an advanced sysadmin tool for your toolbox, this is the one.
+   -- $ sudo apt-get install socat
+   -- $ sudo updatedb
+   -- $ locate bin/socat
+   -- /usr/bin/socat
+   -- $
+===========================================================
+-- with GNAT.Serial_Communications;
+
+-- GNAT.Serial_Communications.Open(SP, "/dev/ttyUSB0");
+
+--   GNAT.Serial_Communications.Set (
+--      Port      => SP,
+--      Rate      => GNAT.Serial_Communications.B115200,
+--      Bits      => GNAT.Serial_Communications.CS8,
+--      Stop_Bits => GNAT.Serial_Communications.One,
+--      Parity    => GNAT.Serial_Communications.None
+--      );
+
+-- ========================================================
+-- SERIAL PORT HARDWARE USING dmesg COMMAND
+-- ========================================================
+
+-- HARDWARE SERIAL PORTS (MBOARD BUILT-IN DOCKING STATION)
+-- ========================================================
+-- wruslan@HPEliteBook8470p-Ub2004-rt38:~/wks-gnat/serial-port/exec$ dmesg | grep tty
+-- [    0.135400] printk: console [tty0] enabled
+-- [    1.293486] 00:04: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A
+-- [    1.316429] 0000:00:16.3: ttyS4 at I/O 0x4090 (irq = 17, base_baud = 115200) is a 16550A
+-- wruslan@HPEliteBook8470p-Ub2004-rt38:~/wks-gnat/serial-port/exec$
+
+-- HARDWARE SERIAL PORTS - USB-TO-SERIAL CABLES
+-- =======================================================
+-- [52047.787383] usb 3-4:   pl2303 converter now attached to ttyUSB0
+-- [52111.188549] usb 1-1.2: pl2303 converter now attached to ttyUSB1
+
+-- Open a pair of serial ports.
+   package GSC  renames GNAT.Serial_Communications;
+
+   -- GSC.Open (Port_1, "/dev/ttyS0");  -- SUCCESS MOTHERBOARD SERIAL PORT
+   -- GSC.Open (Port_2, "/dev/ttyS4");  -- SUCCESS MOTHERBOARD SERIAL PORT
+
+   GSC.Open (Port_1, "/dev/ttyUSB0");  -- SUCCESS USB-to-Serial cable
+   GSC.Open (Port_2, "/dev/ttyUSB1");  -- SUCCESS USB-to-Serial cable
+
+-- ========================================================
+-- EXECUTION EMULATION SUCCESS
+-- The program can be tested by emulating two serial ports 
+-- using socat for /dev/ttyS0 and /dev/ttyS4.
+
+-- IN TERMONAL NO.1 RUN SOCAT
+===========================================================
+-- $ sudo socat -d -d pty,raw,echo=0,link=/dev/ttyS0 pty,raw,echo=0,link=/dev/ttyS4
+-- 2020/12/14 18:40:11 socat[23595] N PTY is /dev/pts/2
+-- 2020/12/14 18:40:11 socat[23595] N PTY is /dev/pts/3
+-- 2020/12/14 18:40:11 socat[23595] N starting data transfer loop with FDs [5,5] and [7,7]
+
+-- IN TERMINAL NO.2 RUN THE COMPILED ADA PROGRAM
+-- ========================================================
+-- $ sudo ./main_ada_serial_port.xxx
+-- [sudo] password for xxxx:
+-- Bismillah 3 times WRY
+-- Begin loop
+--  Inside loop
+--    0 Inside loop
+--    1 Inside loop
+--    2 Inside loop
+--    3 Inside loop
+--    4 Inside loop
+-- End loop
+-- Alhamdulillah 3 times WRY
+-- $
+
+-- ========================================================
+-- $ ps -ef
+-- ========================================================
+-- wruslan    21718   18846  0 18:22 pts/1    00:00:00 bash
+-- root       23594   21718  0 18:40 pts/1    00:00:00 sudo socat -d -d pty,raw,echo=0,link=/dev/ttyS0 pty,raw,echo=0,link=/dev/ttyS4
+-- root       23595   23594  0 18:40 pts/1    00:00:00 socat -d -d pty,raw,echo=0,link=/dev/ttyS0 pty,raw,echo=0,link=/dev/ttyS4
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================

@@ -1,0 +1,23 @@
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-serial/obj$ ls -al
+total 172
+drwxrwxr-x 2 wruslan wruslan  4096 Dec 22 00:09 .
+drwxrwxr-x 8 wruslan wruslan  4096 Dec 21 23:46 ..
+-rw-rw-r-- 1 wruslan wruslan 12070 Dec 22 00:09 b__main_ada_serial_port.adb
+-rw-rw-r-- 1 wruslan wruslan 30923 Dec 22 00:09 b__main_ada_serial_port.ads
+-rw-rw-r-- 1 wruslan wruslan 14243 Dec 22 00:09 b__main_ada_serial_port.ali
+-rw-rw-r-- 1 wruslan wruslan 24856 Dec 22 00:09 b__main_ada_serial_port.o
+-rw-rw-r-- 1 wruslan wruslan  3838 Dec 21 23:11 gpsauto.cgpr
+-rw-rw-r-- 1 wruslan wruslan     0 Dec 22 00:09 main_ada_serial_port.adb.stderr
+-rw-rw-r-- 1 wruslan wruslan     0 Dec 22 00:09 main_ada_serial_port.adb.stdout
+-rw-rw-r-- 1 wruslan wruslan  5454 Dec 22 00:09 main_ada_serial_port.ali
+-rw-rw-r-- 1 wruslan wruslan   644 Dec 22 00:09 main_ada_serial_port.bexch
+-rw-rw-r-- 1 wruslan wruslan    45 Dec 22 00:09 main_ada_serial_port.cswi
+-rw-rw-r-- 1 wruslan wruslan  4384 Dec 22 00:09 main_ada_serial_port.o
+-rw-rw-r-- 1 wruslan wruslan     0 Dec 21 23:49 pkg_ada_dtstamp.adb.stderr
+-rw-rw-r-- 1 wruslan wruslan     0 Dec 21 23:49 pkg_ada_dtstamp.adb.stdout
+-rw-rw-r-- 1 wruslan wruslan 10904 Dec 21 23:49 pkg_ada_dtstamp.ali
+-rw-rw-r-- 1 wruslan wruslan    45 Dec 21 23:49 pkg_ada_dtstamp.cswi
+-rw-rw-r-- 1 wruslan wruslan 31888 Dec 21 23:49 pkg_ada_dtstamp.o
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-serial/obj$ 
+
+
