@@ -1,0 +1,38 @@
+File: 01-session-run-good.txt
+Date: Fri Dec 25, 2020 03:02:55 MYT(UTC+08) 
+Author: WRY wruslandr@gmail.com
+
+EXECUTION
+=========================================================== 
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/wks-gnat/ada-serial/exec$ sudo ./main_ada_rs232.xxx 
+2020-12-24 19:02:55.46090394806 Bismillah 3 times WRY
+2020-12-24 19:02:55.46090449198 Current directory: /home/wruslan/wks-gnat/ada-serial/exec
+2020-12-24 19:02:55.46090516234 Fri Dec 25, 2020 03:02:55 MYT(UTC+08) 
+2020-12-24 19:02:55.46090600225 Started main_ada_rs232.adb program.
+
+SUCCESS: open_device_01: Valid Serial Device Number. serialdev_num = 0 
+SUCCESS: open_device_02: Valid setting for baudrate = 9600 
+SUCCESS: open_device_03: Valid string length for mode setting "8N1"
+SUCCESS: open_device_04: Number for bits per character = '8'
+SUCCESS: open_device_05: Setting for parity, = 'N'
+SUCCESS: open_device_06: Valid setting for number of stop bits = '1'
+SUCCESS: open_device_07: Able to open serial device 
+SUCCESS: open_device_08: No process have locked the serial device 
+SUCCESS: open_device_09: Able to read serial device settings 
+SUCCESS: open_device_10: Setting for flowctrl = 0 
+SUCCESS: open_device_11: Able to adjust serial device settings 
+SUCCESS: open_device_12: Able to get serial device status 
+SUCCESS: open_device_13: Able to set serial device status 
+2020-12-24 19:02:55.46090975408 ret_open_device =  0 for serialdev_num =  0, baudrate =  9600, flowctrl =  0
+SUCCESS: close_device_01: Able to get serial device status 
+SUCCESS: close_device_02: Able to set serial device status 
+SUCCESS: close_device_03: Unlock (freed) the serial device for others to use. 
+
+2020-12-24 19:02:55.46091098350 Ended main_ada_rs232.adb program.
+2020-12-24 19:02:55.46091110097 Alhamdulillah 3 times WRY
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/wks-gnat/ada-serial/exec$ 
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+
+

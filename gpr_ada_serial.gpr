@@ -10,41 +10,46 @@
 
 project gpr_ada_serial is
    -- for Languages   use ("Ada", "C", "C++");
-   for Languages   use ("Ada");
+   for Languages      use ("Ada", "C");
+   -- for Languages   use ("Ada");
+   
    for Source_Dirs use ("src/**");  -- Covers every subdirectory in src
    for Object_Dir  use "obj";       -- NOTE: No parantheses
    for Exec_Dir    use "exec";      -- NOTE: No parantheses
-   for Main        use ("main_ada_serial_port.adb");
+   
+   -- for Main     use ("main_ada_serial_port.adb");
+   for Main        use ("main_ada_rs232.adb");
 
    -- ======== File naming ================================
    package Naming is
 		for Spec_Suffix ("Ada") use ".ads";  
 		for Body_Suffix ("Ada") use ".adb";
-		-- for Spec_Suffix ("C")   use ".h";    
-		-- for Body_Suffix ("C")   use ".c";  
+		for Spec_Suffix ("C")   use ".h";    
+		for Body_Suffix ("C")   use ".c";  
 		--for Spec_Suffix ("C++") use ".hpp";  
 		--for Body_Suffix ("C++") use ".cpp";
    end Naming;
 
    -- ======== for gprbuild ===============================
    package Builder is
-      for Executable ("main_ada_serial_port.adb") use "main_ada_serial_port.xxx";
+      -- for Executable ("main_ada_serial_port.adb") use "main_ada_serial_port.xxx";
+      for Executable ("main_ada_rs232.adb") use "main_ada_rs232.xxx";
    end Builder;
 
    -- ======== for the compiler ===========================
    package Compiler is
 		for Default_Switches ("Ada") use ("-v", "-O2", "-o");
-		-- for Default_Switches ("C")   use ("-O2", "-o");
+		for Default_Switches ("C")   use ("-O2", "-o");
 		-- for Default_Switches ("C++") use ("-O2", "-o");
    
    		for Switches ("Ada")         use ("-c", "-gnat2012");
-   		-- for Switches ("C")           use ("-c", "--std=c99", "--std=c11");
-   		--for Switches ("C++")         use ("-c", "--std=c++11");
+   		for Switches ("C")           use ("-c", "--std=c99", "--std=c11");
+   		-- for Switches ("C++")      use ("-c", "--std=c++11");
    		
 	--	Note: Commented Ada to get NO duplicate main
 	    for Driver ("Ada")           use "/usr/bin/gcc";  -- WORKS NO PROBLEM 
-        -- for Driver ("C")             use "/usr/bin/gcc";  -- NOTE: No parentheses
-        -- for Driver ("C++")           use "/usr/bin/g++";  -- NOTE: No parentheses
+        for Driver ("C")             use "/usr/bin/gcc";  -- NOTE: No parentheses
+        -- for Driver ("C++")        use "/usr/bin/g++";  -- NOTE: No parentheses
 
    end Compiler;
 
@@ -53,7 +58,7 @@ project gpr_ada_serial is
    package Binder is
         for Default_Switches ("Ada") use ("-b", "-v");
         for Switches ("Ada") use ("-v");  -- VERBOSE IT WORKS
-        -- for Switches ("C")   use ("-v");  -- VERBOSE IT WORKS
+        for Switches ("C")   use ("-v");  -- VERBOSE IT WORKS
         -- for Switches ("C++") use ("-v");  -- VERBOSE IT WORKS
         
    end Binder;
@@ -65,7 +70,7 @@ project gpr_ada_serial is
         -- for Switches ("Ada") use ("-v");       -- VERBOSE LINKING
         
         -- VERBOSE IT WORKS   
-		-- for Switches ("C")   use ("-v", "-liconv", "-lpthread", "-lm", "-lrt");  
+		for Switches ("C")   use ("-v", "-liconv", "-lpthread", "-lm", "-lrt");  
 		-- for Switches ("C++") use ("-v", "-liconv", "-lpthread", "-lm", "-lrt");  
         
         -- NOT VERBOSE ALSO WORKS  
@@ -80,8 +85,8 @@ project gpr_ada_serial is
         for Compiler_Command ("Ada") use "/usr/bin/gnatmake";  -- WORKS NO PROBLEM
         for Driver ("Ada")           use "/usr/bin/gcc";       -- WORKS NO PROBLEM
         
-        -- for Compiler_Command ("C")   use "/usr/bin/gcc";   -- WORKS NO PROBLEM
-        --for Driver ("C")             use "/usr/bin/gcc";   -- WORKS NO PROBLEM
+        for Compiler_Command ("C")   use "/usr/bin/gcc";   -- WORKS NO PROBLEM
+        for Driver ("C")             use "/usr/bin/gcc";   -- WORKS NO PROBLEM
        
         -- for Compiler_Command ("C++") use "/usr/bin/g++";   -- WORKS NO PROBLEM
         -- for Driver ("C++")           use "/usr/bin/gcc";   -- WORKS NO PROBLEM

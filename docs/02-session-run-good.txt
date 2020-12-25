@@ -1,0 +1,89 @@
+File: 01-session-run-good.txt
+Date: Fri Dec 25, 2020 13:11:15 MYT(UTC+08)
+Author: WRY wruslandr@gmail.com
+
+COMPILATION
+===========================================================
+gprbuild -d -P/home/wruslan/wks-gnat/ada-serial/gpr_ada_serial.gpr -s -k
+Compile
+   [Ada]          main_ada_rs232.adb
+   [C]            Cada_rs232.c
+   [Ada]          pkg_ada_dtstamp.adb
+   [Ada]          pkg_ada_rs232.ads
+Bind
+   [gprbind]      main_ada_rs232.bexch
+   [Ada]          main_ada_rs232.ali
+Link
+   [archive]      libgpr_ada_serial.a
+   [index]        libgpr_ada_serial.a
+   [link]         main_ada_rs232.adb
+[2020-12-25 13:10:14] process terminated successfully, elapsed time: 01.56s
+
+EXECUTION /dev/ttyS0
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/wks-gnat/ada-serial/exec$ sudo ./main_ada_rs232.xxx 
+2020-12-25 05:11:15.00556418741 Bismillah 3 times WRY
+2020-12-25 05:11:15.00556462429 Current directory: /home/wruslan/wks-gnat/ada-serial/exec
+2020-12-25 05:11:15.00556495386 Fri Dec 25, 2020 13:11:15 MYT(UTC+08) 
+2020-12-25 05:11:15.00556557207 Started main_ada_rs232.adb program.
+
+2020-12-25 05:11:15.00556582724 SUCCESS: Acquired serialdev_num =  0
+SUCCESS: open_device_01: Valid Serial Device Number. serialdev_num = 0 
+SUCCESS: open_device_02: Valid setting for baudrate = 115200 
+SUCCESS: open_device_03: Valid string length for mode setting "8N1"
+SUCCESS: open_device_04: Number for bits per character = '8'
+SUCCESS: open_device_05: Setting for parity, = 'N'
+SUCCESS: open_device_06: Valid setting for number of stop bits = '1'
+SUCCESS: open_device_07: Able to open serial device 
+SUCCESS: open_device_08: No process have locked the serial device 
+SUCCESS: open_device_09: Able to read serial device settings 
+SUCCESS: open_device_10: Setting for flowctrl = 0 
+SUCCESS: open_device_11: Able to adjust serial device settings 
+SUCCESS: open_device_12: Able to get serial device status 
+SUCCESS: open_device_13: Able to set serial device status 
+2020-12-25 05:11:15.00556960725 SUCCESS: ret_open_device =  0 for dev_string = /dev/ttyS0, serialdev_num =  0, baudrate =  115200, mode = 8N1, flowctrl =  0
+
+SUCCESS: close_device_01: Able to get serial device status 
+SUCCESS: close_device_02: Able to set serial device status 
+SUCCESS: close_device_03: Unlock (freed) the serial device for others to use. 
+
+2020-12-25 05:11:15.00557142243 Ended main_ada_rs232.adb program.
+2020-12-25 05:11:15.00557156800 Alhamdulillah 3 times WRY
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/wks-gnat/ada-serial/exec$ 
+
+EXECUTION /dev/ttyS4
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/wks-gnat/ada-serial/exec$ sudo ./main_ada_rs232.xxx 
+2020-12-25 05:13:51.72277454619 Bismillah 3 times WRY
+2020-12-25 05:13:51.72277472657 Current directory: /home/wruslan/wks-gnat/ada-serial/exec
+2020-12-25 05:13:51.72277507521 Fri Dec 25, 2020 13:13:51 MYT(UTC+08) 
+2020-12-25 05:13:51.72277586528 Started main_ada_rs232.adb program.
+
+2020-12-25 05:13:51.72277610146 SUCCESS: Acquired serialdev_num =  4
+SUCCESS: open_device_01: Valid Serial Device Number. serialdev_num = 4 
+SUCCESS: open_device_02: Valid setting for baudrate = 115200 
+SUCCESS: open_device_03: Valid string length for mode setting "8N1"
+SUCCESS: open_device_04: Number for bits per character = '8'
+SUCCESS: open_device_05: Setting for parity, = 'N'
+SUCCESS: open_device_06: Valid setting for number of stop bits = '1'
+SUCCESS: open_device_07: Able to open serial device 
+SUCCESS: open_device_08: No process have locked the serial device 
+SUCCESS: open_device_09: Able to read serial device settings 
+SUCCESS: open_device_10: Setting for flowctrl = 0 
+SUCCESS: open_device_11: Able to adjust serial device settings 
+SUCCESS: open_device_12: Able to get serial device status 
+SUCCESS: open_device_13: Able to set serial device status 
+2020-12-25 05:13:51.72278024997 SUCCESS: ret_open_device =  0 for dev_string = /dev/ttyS4, serialdev_num =  4, baudrate =  115200, mode = 8N1, flowctrl =  0
+
+SUCCESS: close_device_01: Able to get serial device status 
+SUCCESS: close_device_02: Able to set serial device status 
+SUCCESS: close_device_03: Unlock (freed) the serial device for others to use. 
+
+2020-12-25 05:13:51.72278151610 Ended main_ada_rs232.adb program.
+2020-12-25 05:13:51.72278161521 Alhamdulillah 3 times WRY
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/wks-gnat/ada-serial/exec$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+
