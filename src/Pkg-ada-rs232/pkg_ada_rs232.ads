@@ -39,11 +39,6 @@ package pkg_ada_rs232 is
      with Import => True, Convention => C,
      External_Name => "display_date_only";    
  
- -- void crs232_chars_put(int serialdev_num, const char *the_chars);
- procedure ExeC_adars232_chars_put(dev_num : in IFaceC.int; the_chars : IFaceC.char_array) 
-     with Import => True, Convention => C,
-     External_Name => "crs232_chars_put";    
-   
  -- void crs232_enable_DTR(int serialdev_num);
  procedure ExeC_adars232_enable_DTR(dev_num : in IFaceC.int) 
      with Import => True, Convention => C,
@@ -78,7 +73,12 @@ procedure ExeC_adars232_flush_TX(dev_num : in IFaceC.int)
 procedure ExeC_adars232_flush_RXTX(dev_num : in IFaceC.int) 
      with Import => True, Convention => C,
      External_Name => "crs232_flush_RXTX";    
-   
+ 
+-- void crs232_chars_put(int serialdev_num, const char *the_chars);
+procedure ExeC_adars232_chars_put(dev_num : in IFaceC.int; the_chars : IFaceC.char_array) 
+     with Import => True, Convention => C,
+     External_Name => "crs232_chars_put";    
+     
 -- void crs232_close_device(int serialdev_num);   
 procedure ExeC_adars232_close_device(dev_num : in IFaceC.int) 
      with Import => True, Convention => C,
@@ -93,10 +93,10 @@ function GetC_adars232_open_device(dev_num, baudrate : in IFaceC.int; mode : in 
      with Import => True, Convention => C, 
      External_Name => "crs232_open_device";   
 
--- int crs232_poll_device(int serialdev_num, unsigned char *buffer, int size);
-function GetC_adars232_poll_device(dev_num : in IFaceC.int; buffer : in IfaceC.char_array; size : in IFaceC.int) return IFaceC.int    
+-- int crs232_read_buffer(int serialdev_num, unsigned char *buffer, int size);
+function GetC_adars232_read_buffer(dev_num : in IFaceC.int; buffer : in IfaceC.char_array; size : in IFaceC.int) return IFaceC.int    
      with Import => True, Convention => C, 
-     External_Name => "crs232_poll_device";   
+     External_Name => "crs232_read_buffer";   
    
 -- int crs232_send_byte(int serialdev_num, unsigned char byte);
 function GetC_adars232_send_byte(dev_num : in IFaceC.int; byte : in IfaceC.unsigned_char) return IFaceC.int    

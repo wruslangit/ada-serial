@@ -19,7 +19,8 @@ project gpr_ada_serial is
    
    -- for Main     use ("main_ada_serial_port.adb");
    for Main        use ("main_ada_rs232.adb");
-
+   -- for Main        use ("main_ada_rs232_test1.adb");
+   
    -- ======== File naming ================================
    package Naming is
 		for Spec_Suffix ("Ada") use ".ads";  
@@ -34,6 +35,8 @@ project gpr_ada_serial is
    package Builder is
       -- for Executable ("main_ada_serial_port.adb") use "main_ada_serial_port.xxx";
       for Executable ("main_ada_rs232.adb") use "main_ada_rs232.xxx";
+      -- for Executable ("main_ada_rs232_test1.adb") use "main_ada_rs232_test1.xxx";
+      
    end Builder;
 
    -- ======== for the compiler ===========================
@@ -46,10 +49,10 @@ project gpr_ada_serial is
    		for Switches ("C")           use ("-c", "--std=c99", "--std=c11");
    		-- for Switches ("C++")      use ("-c", "--std=c++11");
    		
-	--	Note: Commented Ada to get NO duplicate main
-	    for Driver ("Ada")           use "/usr/bin/gcc";  -- WORKS NO PROBLEM 
-        for Driver ("C")             use "/usr/bin/gcc";  -- NOTE: No parentheses
-        -- for Driver ("C++")        use "/usr/bin/g++";  -- NOTE: No parentheses
+       --	Note: Commented Ada to get NO duplicate mai
+       for Driver ("Ada")           use "/usr/bin/gcc";  -- WORKS NO PROBLEM 
+       for Driver ("C")             use "/usr/bin/gcc";  -- NOTE: No parentheses
+       -- for Driver ("C++")        use "/usr/bin/g++";  -- NOTE: No parentheses
 
    end Compiler;
 

@@ -66,7 +66,6 @@ const char *serial_devices[SERIALDEV_NBR] = {
 // ========================================================
 // LIST OF C-PROCEDURES
 // ========================================================
-void crs232_chars_put(int serialdev_num, const char *the_chars);
 void crs232_enable_DTR(int serialdev_num);
 void crs232_disable_DTR(int serialdev_num);
 void crs232_enable_RTS(int serialdev_num);
@@ -74,20 +73,21 @@ void crs232_disable_RTS(int serialdev_num);
 void crs232_flush_RX(int serialdev_num);
 void crs232_flush_TX(int serialdev_num);
 void crs232_flush_RXTX(int serialdev_num);
+void crs232_chars_put(int serialdev_num, const char *the_chars);
 void crs232_close_device(int serialdev_num);
 
 // ========================================================
 // LIST OF C-FUNCTIONS
 // ========================================================
+int crs232_Get_Device_Number(const char *dev_string);
 int crs232_open_device(int serialdev_num, int baudrate, const char *mode, int flowctrl);
-int crs232_poll_device(int serialdev_num, unsigned char *buffer, int size);
+int crs232_read_buffer(int serialdev_num, unsigned char *buffer, int size);
 int crs232_send_byte(int serialdev_num, unsigned char byte);
 int crs232_send_buffer(int serialdev_num, unsigned char *buffer, int size);
 int crs232_isDCD_enabled(int serialdev_num);
 int crs232_isRING_enabled(int serialdev_num);
 int crs232_isCTS_enabled(int serialdev_num);
 int crs232_isDSR_enabled(int serialdev_num);
-int crs232_Get_Device_Number(const char *dev_string);
 
 // ========================================================
 // ALHAMDULILLAH 3 TIMES WRY.
