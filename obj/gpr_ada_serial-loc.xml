@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<Locations>
+  <Project>
+    <vfs_file>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_file>
+    <file_marker column=" 52" line=" 36" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 414" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 84" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.h</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 165" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 69" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 210" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 30" line=" 209" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 84" line=" 206" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 81" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 82" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 68" line=" 205" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 81" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 76" line=" 205" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 208" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 79" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 34" line=" 83" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 70" line=" 469" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 474" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 584" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 608" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 631" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 654" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 20" line=" 668" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 20" line=" 675" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 20" line=" 682" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/Cada-rs232/Cada_rs232.c</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 189" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 4" line=" 175" >
+      <vfs_project>/home/wruslan/github/ada-serial/gpr_ada_serial.gpr</vfs_project>
+      <vfs_file>/home/wruslan/github/ada-serial/src/main_ada_rs232.adb</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

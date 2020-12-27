@@ -1,0 +1,92 @@
+V "GNAT Lib v9"
+A -gnatA
+A -gnat2012
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U pkg_ada_rs232%s	pkg_ada_rs232.ads	a3f2ee4b NE OO PK IL
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.extensions%s  i-cexten.ads	i-cexten.ali
+
+D ada.ads		20200312110721 76789da1 ada%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200312110721 5ab55268 interfaces%s
+D i-c.ads		20200312110721 5421119b interfaces.c%s
+D i-cexten.ads		20200312110721 38d7e116 interfaces.c.extensions%s
+D pkg_ada_rs232.ads	20201226041411 cf041ec6 pkg_ada_rs232%s
+D system.ads		20200312110721 4635ec04 system%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+X 3 interfac.ads
+38K9*Interfaces 184e15 6|12r6 13r6 21r28 22r28
+X 4 i-c.ads
+18K20*C 230e17 6|12w17 13r17 21r39 22r39
+35I9*int<integer> 6|43r57 48r57 53r56 58r57 63r54 68r54 73r56 78r55 83r58
+. 92r66 92r121 92r140 97r56 97r109 97r128 102r54 102r105 107r56 107r109 107r128
+. 112r58 112r77 117r59 117r78 122r58 122r77 127r58 127r77 132r91
+47M9*unsigned_char 6|102r76
+72E9*char<character>
+79A9*char_array(72E9)<60M9> 6|78r79 92r88 97r80 107r80 132r65
+X 5 i-cexten.ads
+37K22*Extensions 476e28 6|13w19 22r41
+X 6 pkg_ada_rs232.ads
+19K9*pkg_ada_rs232 138l5 138e18
+21K12*IFaceC=21:39 43r50 48r50 53r49 58r50 63r47 68r47 73r49 78r48 78r72
+. 83r51 92r59 92r81 92r114 92r133 97r49 97r73 97r102 97r121 102r47 102r69
+. 102r98 107r49 107r73 107r102 107r121 112r51 112r70 117r52 117r71 122r51
+. 122r70 127r51 127r70 132r58 132r84
+22K12*IFaceCE=22:41
+33U12*ExeC_ada_current_working_directory
+38U12*ExeC_ada_display_date_only
+43U12*ExeC_adars232_enable_DTR 43>37
+43i37 dev_num{4|35I9}
+48U11*ExeC_adars232_disable_DTR 48>37
+48i37 dev_num{4|35I9}
+53U11*ExeC_adars232_enable_RTS 53>36
+53i36 dev_num{4|35I9}
+58U11*ExeC_adars232_disable_RTS 58>37
+58i37 dev_num{4|35I9}
+63U11*ExeC_adars232_flush_RX 63>34
+63i34 dev_num{4|35I9}
+68U11*ExeC_adars232_flush_TX 68>34
+68i34 dev_num{4|35I9}
+73U11*ExeC_adars232_flush_RXTX 73>36
+73i36 dev_num{4|35I9}
+78U11*ExeC_adars232_chars_put 78>35 78>60
+78i35 dev_num{4|35I9}
+78a60 the_chars{4|79A9}
+83U11*ExeC_adars232_close_device 83>38
+83i38 dev_num{4|35I9}
+92V10*GetC_adars232_open_device{4|35I9} 92>36 92>45 92>71 92>100
+92i36 dev_num{4|35I9}
+92i45 baudrate{4|35I9}
+92a71 mode{4|79A9}
+92i100 flowctrl{4|35I9}
+97V10*GetC_adars232_read_buffer{4|35I9} 97>36 97>61 97>92
+97i36 dev_num{4|35I9}
+97a61 buffer{4|79A9}
+97i92 size{4|35I9}
+102V10*GetC_adars232_send_byte{4|35I9} 102>34 102>59
+102i34 dev_num{4|35I9}
+102m59 byte{4|47M9}
+107V10*GetC_adars232_send_buffer{4|35I9} 107>36 107>61 107>92
+107i36 dev_num{4|35I9}
+107a61 buffer{4|79A9}
+107i92 size{4|35I9}
+112V10*GetC_adars232_isDCD_enabled{4|35I9} 112>38
+112i38 dev_num{4|35I9}
+117V10*GetC_adars232_isRING_enabled{4|35I9} 117>39
+117i39 dev_num{4|35I9}
+122V10*GetC_adars232_isCTS_enabled{4|35I9} 122>38
+122i38 dev_num{4|35I9}
+127V10*GetC_adars232_isDSR_enabled{4|35I9} 127>38
+127i38 dev_num{4|35I9}
+132V10*GetC_adars232_Get_Device_Number{4|35I9} 132>42
+132a42 dev_string{4|79A9}
+

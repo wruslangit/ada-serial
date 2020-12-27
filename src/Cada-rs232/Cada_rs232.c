@@ -138,7 +138,7 @@ return(serdev_num);
 void crs232_chars_put(int serialdev_num, const char *the_chars) {
 // ========================================================
 
-  printf("Stream to write to serial device = %s \n", the_chars);
+  printf("EXECUTE: Write stream (the_chars) = %s \n", the_chars);
 
 }
 
@@ -154,13 +154,15 @@ int crs232_open_device(int serialdev_num, int baudrate,  const char *the_mode, i
   int  ipar  = IGNPAR;  // Ignore parity
   int  bstop = 0;       // Stop bit value (1 or 2)
 
+  printf("EXECUTE: Open serial device sequence \n");
+
   // CHECK SERIAL DEVICE FOR VALID INPUT PORT
   // Serial Device Number is listed in the header file, Cada_rs232.h
   if((serialdev_num >= SERIALDEV_NBR)||(serialdev_num < 0))   {
       printf("ERROR: open_device_01: Invalid Serial Device Number, serialdev_num = %d \n", serialdev_num);
   return(1);
   }
-  printf("SUCCESS: open_device_01: Valid Serial Device Number. serialdev_num = %d \n", serialdev_num);
+  printf("open_device_01: Valid Serial Device Number. serialdev_num = %d \n", serialdev_num);
 
   // SET SERIAL DEVICE BAUD RATE
   switch(baudrate) {
@@ -228,7 +230,7 @@ int crs232_open_device(int serialdev_num, int baudrate,  const char *the_mode, i
                    return(1);
                    break;
   }
-  printf("SUCCESS: open_device_02: Valid setting for baudrate = %d \n", baudrate);
+  printf("open_device_02: Valid setting for baudrate = %d \n", baudrate);
 
   // CONVERT const char *the_mode INTO char mode[length]
   int the_mode_length = strlen(the_mode);
@@ -246,8 +248,9 @@ int crs232_open_device(int serialdev_num, int baudrate,  const char *the_mode, i
   if((the_mode_length) != 3) {
       printf("ERROR: open_device_03: Invalid string length for mode setting \"%s\"\n", the_mode);
       return(1);
-  } else {
-      printf("SUCCESS: open_device_03: Valid string length for mode setting \"%s\"\n", the_mode);
+  }
+  else {
+      printf("open_device_03: Valid string length for mode setting \"%s\" = %d\n", the_mode, the_mode_length);
   }
 
   // SET VALUE FOR BITS PER CHARACTER
@@ -260,11 +263,11 @@ int crs232_open_device(int serialdev_num, int baudrate,  const char *the_mode, i
               break;
     case '5': cbits = CS5;
               break;
-    default : printf("ERROR: open_device_04: Invalid input number for bits per character = '%c'\n", mode[0]);
+    default : printf("ERROR: open_device_04: Invalid number for bits per character = '%c'\n", mode[0]);
               return(1);
               break;
   }
-  printf("SUCCESS: open_device_04: Number for bits per character = '%c'\n", mode[0]);
+  printf("open_device_04: Valid number for bits per character = '%c'\n", mode[0]);
 
   // SET VALUE FOR CHARACTER PARITY (COUNTING BIT 1)
   // Parity even (the total number of 1s is even)
@@ -286,7 +289,7 @@ int crs232_open_device(int serialdev_num, int baudrate,  const char *the_mode, i
               return(1);
               break;
   }
-  printf("SUCCESS: open_device_05: Setting for parity, = '%c'\n", mode[1]);
+  printf("open_device_05: Valid setting for parity, = '%c'\n", mode[1]);
 
   // SET VALUE FOR NUMBER OF STOP BITS
   switch(mode[2]) {
@@ -298,7 +301,7 @@ int crs232_open_device(int serialdev_num, int baudrate,  const char *the_mode, i
               return(1);
               break;
   }
-  printf("SUCCESS: open_device_06: Valid setting for number of stop bits = '%c'\n", mode[2]);
+  printf("open_device_06: Valid setting for number of stop bits = '%c'\n", mode[2]);
 
 /*
 http://pubs.opengroup.org/onlinepubs/7908799/xsh/termios.h.html
@@ -308,83 +311,91 @@ http://man7.org/linux/man-pages/man3/termios.3.html
 
   serial_device[serialdev_num] = open(serial_devices[serialdev_num], O_RDWR | O_NOCTTY | O_NDELAY);
   if(serial_device[serialdev_num] == -1) {
-    perror("ERROR: open_device_07: Unable to open serial device \n");
+    perror("ERROR: open_device_07: Unable to set serial device attributes \n");
     return(1);
-  } else {
-    printf("SUCCESS: open_device_07: Able to open serial device \n");
   }
-
+  else {
+  printf("open_device_07: Able to set serial device attributes\n");
+  }
 
   /* lock access so that another process can't also use the port */
   if(flock(serial_device[serialdev_num], LOCK_EX | LOCK_NB) != 0) {
     close(serial_device[serialdev_num]);
     perror("ERROR: open_device_08: Another process have locked the serial device \n");
     return(1);
-  } else {
-    printf("SUCCESS: open_device_08: No process have locked the serial device \n");
+  }
+  else {
+    printf("open_device_08: No process have locked the serial device \n");
   }
 
   error = tcgetattr(serial_device[serialdev_num], old_port_settings + serialdev_num);
   if(error == -1) {
     close(serial_device[serialdev_num]);
     flock(serial_device[serialdev_num], LOCK_UN);  // free the port so that others can use it.
-    perror("ERROR: open_device_09: Unable to read serial device settings \n");
+    perror("ERROR: open_device_09: Unable to read previous serial device settings \n");
     // return(1);
-  } else {
-    printf("SUCCESS: open_device_09: Able to read serial device settings \n");
+  }
+  else {
+     printf("open_device_09: Able to read previous serial device settings \n");
   }
 
   memset(&new_port_settings, 0, sizeof(new_port_settings));  // clear the new struct
 
   new_port_settings.c_cflag = cbits | cpar | bstop | CLOCAL | CREAD;
-  if(flowctrl == 1)
-  {
+  if(flowctrl == 1) {
       //new_port_settings.c_cflag |= CRTSCTS;
       new_port_settings.c_cflag = cbits | cpar | bstop | CLOCAL | CREAD;
   }
-  printf("SUCCESS: open_device_10: Setting for flowctrl = %d \n", flowctrl);
+  printf("open_device_10: Setting for flowctrl = %d \n", flowctrl);
 
   new_port_settings.c_iflag = ipar;
   new_port_settings.c_oflag = 0;
   new_port_settings.c_lflag = 0;
-  new_port_settings.c_cc[VMIN] = 0;      /* block untill n bytes are received */
-  new_port_settings.c_cc[VTIME] = 0;     /* block untill a timer expires (n * 100 mSec.) */
+  new_port_settings.c_cc[VMIN] = 0;      // block untill n bytes are received
+  new_port_settings.c_cc[VTIME] = 0;     // block untill a timer expires (n * 100 mSec.)
 
-  cfsetispeed(&new_port_settings, baudr);
-  cfsetospeed(&new_port_settings, baudr);
+  cfsetispeed(&new_port_settings, baudr);  // input baudrate
+  cfsetospeed(&new_port_settings, baudr);  // output baudrate
 
   error = tcsetattr(serial_device[serialdev_num], TCSANOW, &new_port_settings);
   if(error == -1) {
     tcsetattr(serial_device[serialdev_num], TCSANOW, old_port_settings + serialdev_num);
     close(serial_device[serialdev_num]);
-    flock(serial_device[serialdev_num], LOCK_UN);  /* free the port so that others can use it. */
-    perror("ERROR: open_device_11: Unable to adjust serial device settings \n");
+    flock(serial_device[serialdev_num], LOCK_UN);  // free the port so that others can use it.
+    perror("ERROR: open_device_11: Unable to apply new serial device settings \n");
     // return(1);
-  } else {
-    printf("SUCCESS: open_device_11: Able to adjust serial device settings \n");
+  }
+  else {
+    printf("open_device_11: Able to apply new serial device settings \n");
   }
 
-/* http://man7.org/linux/man-pages/man4/tty_ioctl.4.html */
+  /* http://man7.org/linux/man-pages/man4/tty_ioctl.4.html */
+
+  status = ioctl(serial_device[serialdev_num], TIOCMGET, &status);
 
   if(ioctl(serial_device[serialdev_num], TIOCMGET, &status) == -1)   {
     tcsetattr(serial_device[serialdev_num], TCSANOW, old_port_settings + serialdev_num);
     flock(serial_device[serialdev_num], LOCK_UN);  /* free the port so that others can use it. */
     perror("ERROR: open_device_12: Unable to get serial device status \n");
     // return(1);
-  } else {
-    printf("SUCCESS: open_device_12: Able to get serial device status \n");
+  }
+  else {
+    printf("open_device_12: Able to get serial device status. status = %d \n", status);
   }
 
-  status |= TIOCM_DTR;    // turn on DTR
-  status |= TIOCM_RTS;    // turn on RTS
+  status |= TIOCM_DTR;    // turn on DTR (Data Terminal Ready)
+  // printf("EXECUTE: DTR ON (Data Terminal Ready turned ON) \n");
+  status |= TIOCM_RTS;    // turn on RTS (Request to Send)
+  // printf("EXECUTE: RTS ON (Request To Send turned ON) \n");
 
   if(ioctl(serial_device[serialdev_num], TIOCMSET, &status) == -1) {
     tcsetattr(serial_device[serialdev_num], TCSANOW, old_port_settings + serialdev_num);
     flock(serial_device[serialdev_num], LOCK_UN);  /* free the port so that others can use it. */
-    perror("ERROR: open_device_13: Unable to set serial device status \n");
+    printf("ERROR: open_device_13: Unable to set serial device status. status = %d \n", status);
     // return(1);
-  } else {
-    printf("SUCCESS: open_device_13: Able to set serial device status \n");
+  }
+  else {
+    printf("open_device_13: Able to set serial device status. status = %d \n", status);
   }
 
   return(0);
@@ -456,35 +467,38 @@ int crs232_send_buffer(int serialdev_num, unsigned char *buffer, int size) {
 // ========================================================
 void crs232_close_device(int serialdev_num) {
 // ========================================================
-  int status;
+  int status = ioctl(serial_device[serialdev_num], TIOCMGET, &status);
+
+  printf("EXECUTE: Close serial device sequence \n");
 
   if(ioctl(serial_device[serialdev_num], TIOCMGET, &status) == -1)  {
     perror("ERROR: close_device_01: Unable to get serial device. ");
     printf("status = %d \n", status);
   } else {
-    printf("SUCCESS: close_device_01: Able to get serial device. status = %d \n", status);
+
+    printf("close_device_01: Get serial device[%d]. status = %d \n", serialdev_num, status);
   }
 
   status &= ~TIOCM_DTR;    // turn off DTR
-  printf("EXECUTE: disable_DTR (Data Terminal Ready turned OFF) \n");
+  // printf("EXECUTE: disable_DTR (Data Terminal Ready turned OFF) \n");
 
   status &= ~TIOCM_RTS;    // turn off RTS
-  printf("EXECUTE: disable_RTS (Request To Send turned OFF) \n");
+  // printf("EXECUTE: disable_RTS (Request To Send turned OFF) \n");
 
   if(ioctl(serial_device[serialdev_num], TIOCMSET, &status) == -1) {
-    perror("ERROR: Unable to set serial device status. ");
+    perror("ERROR: close_device_02: Unable to set serial device status. ");
     printf("status = %d \n", status);
   } else {
-    printf("SUCCESS: close_device_02: Able to set serial device. status = %d \n", status);
+    printf("close_device_02: Set serial device[%d]. status = %d \n", serialdev_num, status);
   }
 
   tcsetattr(serial_device[serialdev_num], TCSANOW, old_port_settings + serialdev_num);
 
   close(serial_device[serialdev_num]);
-  printf("SUCCESS: close_device_03: Close the serial_device[%d]. \n", serialdev_num);
+  printf("close_device_03: Close serial_device[%d]. status = %d \n", serialdev_num, status);
 
   flock(serial_device[serialdev_num], LOCK_UN);  // free the port so others can use it. */
-  printf("SUCCESS: close_device_04: Finally unlock (free) the serial_device[%d]. \n", serialdev_num);
+  printf("close_device_04: Finally unlock (free) serial_device[%d]. status = %d \n", serialdev_num, status);
 
 }
 
@@ -511,11 +525,11 @@ int crs232_isDCD_enabled(int serialdev_num) {
   int status = ioctl(serial_device[serialdev_num], TIOCMGET, &status);
 
   if(status&TIOCM_CAR) {
-    perror("ERROR: isDCD_enabled_01: (Data Carrier Detect) is not enabled. ");
+    perror("CHECKED: NO isDCD_enabled: (Data Carrier Detect) is not enabled. ");
     printf("status = %d \n", status);
     return(1);
   } else {
-    printf("SUCCESS: isDCD_enabled_01: (Data Carrier Detect) is enabled. status = %d \n", status);
+    printf("CHECKED: YES isDCD_enabled: (Data Carrier Detect) is enabled. status = %d \n", status);
     return(0);
   }
 }
@@ -527,12 +541,12 @@ int crs232_isRING_enabled(int serialdev_num) {
 
   if(status&TIOCM_RNG) {
     // printf("value = %d \n", status&TIOCM_RNG);
-    perror("ERROR: isRING_enabled_01: (Ring) is not enabled. ");
+    perror("CHECKED: NO isRING_enabled_01: (Ring) is not enabled. ");
     printf("status = %d \n", status);
     return(1);
   } else {
     // printf("value = %d \n", status&TIOCM_RNG);
-    printf("SUCCESS: isRING_enabled_01: (Ring) is enabled. status = %d \n", status);
+    printf("CHECKED: YES isRING_enabled_01: (Ring) is enabled. status = %d \n", status);
     return(0);
   }
 }
@@ -543,11 +557,11 @@ int crs232_isCTS_enabled(int serialdev_num) {
   int status =  ioctl(serial_device[serialdev_num], TIOCMGET, &status);
 
   if(status&TIOCM_CTS) {
-    perror("ERROR: isCTS_enabled_01: (Clear To Send) is not enabled. ");
+    perror("CHECKED: NO isCTS_enabled_01: (Clear To Send) is not enabled. ");
     printf("status = %d \n", status);
     return(1);
   } else {
-    printf("SUCCESS: isCTS_enabled_01: (Clear To Send) is enabled. status = %d \n", status);
+    printf("CHECKED: YES isCTS_enabled_01: (Clear To Send) is enabled. status = %d \n", status);
     return(0);
   }
 }
@@ -558,11 +572,11 @@ int crs232_isDSR_enabled(int serialdev_num) {
   int status = ioctl(serial_device[serialdev_num], TIOCMGET, &status);
 
   if(status&TIOCM_DSR) {
-    perror("ERROR: isDSR_enabled_01: (Data Set Ready) is not enabled. ");
+    perror("CHECKED: NO isDSR_enabled_01: (Data Set Ready) is not enabled. ");
     printf("status = %d \n", status);
     return(1);
   } else {
-    printf("SUCCESS: isDSR_enabled_01: (Data Set Ready) is enabled. status = %d \n", status);
+    printf("CHECKED: YES isDSR_enabled_01: (Data Set Ready) is enabled. status = %d \n", status);
     return(0);
   }
 
@@ -576,19 +590,21 @@ void crs232_enable_DTR(int serialdev_num) {
   if(ioctl(serial_device[serialdev_num], TIOCMGET, &status) == -1) {
       perror("ERROR: enable_DTR_01: (Data Terminal Ready) Unable to get serial_device. ");
       printf("status = %d \n", status);
-  } else {
-      printf("SUCCESS: enable_DTR_01: (Data Terminal Ready) Able to get serial_device. status = %d \n", status);
   }
+  // else {
+  //    printf("SUCCESS: enable_DTR_01: (Data Terminal Ready) Able to get serial_device. status = %d \n", status);
+  // }
 
   status |= TIOCM_DTR;    // turn on DTR
-  printf("EXECUTE: enable_DTR (Data Terminal Ready turned ON) \n");
+  printf("EXECUTE: DTR ON (enable_DTR) (Data Terminal Ready turned ON) \n");
 
   if(ioctl(serial_device[serialdev_num], TIOCMSET, &status) == -1)   {
     perror("ERROR: enable_DTR_02: (Data Terminal Ready) Unable to set serial_device. ");
     printf("status = %d \n", status);
-  } else {
-    printf("SUCCESS: enable_DTR_02: (Data Terminal Ready) Able to set serial_device. status = %d \n", status);
   }
+  // else {
+  //  printf("SUCCESS: enable_DTR_02: (Data Terminal Ready) Able to set serial_device. status = %d \n", status);
+  //}
 
 }
 
@@ -600,19 +616,21 @@ void crs232_disable_DTR(int serialdev_num) {
   if(ioctl(serial_device[serialdev_num], TIOCMGET, &status) == -1) {
      perror("ERROR: disable_DTR_01: (Data Terminal Ready) Unable to get serial_device. ");
      printf("status = %d \n", status);
-  } else {
-     printf("SUCCESS: disable_DTR_01: (Data Terminal Ready) Able to get serial_device. status = %d \n", status);
   }
+  // else {
+  //   printf("SUCCESS: disable_DTR_01: (Data Terminal Ready) Able to get serial_device. status = %d \n", status);
+  // }
 
   status &= ~TIOCM_DTR;    // turn off DTR
-  printf("EXECUTE: disable_DTR (Data Terminal Ready turned OFF) \n");
+  printf("EXECUTE: DTR OFF (disable_DTR) (Data Terminal Ready turned OFF) \n");
 
   if(ioctl(serial_device[serialdev_num], TIOCMSET, &status) == -1)  {
       perror("ERROR: disable_DTR_02: (Data Terminal Ready) Unable to set serial device. ");
       printf("status = %d \n", status);
-  } else {
-     printf("SUCCESS: disable_DTR_02: (Data Terminal Ready) Able to set serial_device. status = %d \n", status);
   }
+  // else {
+  //   printf("SUCCESS: disable_DTR_02: (Data Terminal Ready) Able to set serial_device. status = %d \n", status);
+  // }
 
 }
 // ========================================================
@@ -623,19 +641,21 @@ void crs232_enable_RTS(int serialdev_num) {
   if(ioctl(serial_device[serialdev_num], TIOCMGET, &status) == -1) {
     perror("ERROR: enable_RTS_01: (Request To Send) Unable to get serial device. ");
     printf("status = %d \n", status);
-  } else {
-     printf("SUCCESS: enable_RTS_01: (Request To Send) Able to get serial_device. status = %d \n", status);
   }
+  // else {
+  //   printf("SUCCESS: enable_RTS_01: (Request To Send) Able to get serial_device. status = %d \n", status);
+  // }
 
   status |= TIOCM_RTS;    // turn on RTS
-  printf("EXECUTE: enable_RTS (Request To Send turned ON) \n");
+  printf("EXECUTE: RTS ON (enable_RTS) (Request To Send turned ON) \n");
 
   if(ioctl(serial_device[serialdev_num], TIOCMSET, &status) == -1) {
      perror("ERROR: enable_RTS_02: (Request To Send) Unable to set serial device. ");
      printf("status = %d \n", status);
-  } else {
-     printf("SUCCESS: enable_RTS_02: (Request To Send) Able to set serial_device. status = %d \n", status);
   }
+  // else {
+  //   printf("SUCCESS: enable_RTS_02: (Request To Send) Able to set serial_device. status = %d \n", status);
+  // }
 
 }
 // ========================================================
@@ -646,19 +666,21 @@ void crs232_disable_RTS(int serialdev_num) {
   if(ioctl(serial_device[serialdev_num], TIOCMGET, &status) == -1) {
      perror("ERROR: disable_RTS_01: (Request To Send) Unable to get derial device. ");
      printf("status = %d \n", status);
-  } else {
-     printf("SUCCESS: disable_RTS_01: (Request To Send) Able to get serial_device. status = %d \n", status);
   }
+  // else {
+  //   printf("SUCCESS: disable_RTS_01: (Request To Send) Able to get serial_device. status = %d \n", status);
+  // }
 
   status &= ~TIOCM_RTS;    // turn off RTS
-  printf("EXECUTE: disable_RTS (Request To Send turned OFF) \n");
+  printf("EXECUTE: RTS OFF (disable_RTS) (Request To Send turned OFF) \n");
 
   if(ioctl(serial_device[serialdev_num], TIOCMSET, &status) == -1) {
      perror("ERROR: disable_RTS_02: (Request To Send) Unable to set serial device. ");
      printf("status = %d \n", status);
-  } else {
-     printf("SUCCESS: disable_RTS_02: (Request To Send) Able to set serial_device. status = %d \n", status);
   }
+  // else {
+  //   printf("SUCCESS: disable_RTS_02: (Request To Send) Able to set serial_device. status = %d \n", status);
+  // }
 
 }
 // ========================================================

@@ -1,0 +1,28 @@
+[GENERATED OBJECT FILE]
+b__main_ada_rs232_test1.o
+[PROJECT FILES]
+/home/wruslan/github/ada-serial/gpr_ada_serial.gpr
+20201227030654
+[BOUND OBJECT FILES]
+/home/wruslan/github/ada-serial/obj/pkg_ada_dtstamp.o
+/home/wruslan/github/ada-serial/obj/pkg_ada_rs232.o
+/home/wruslan/github/ada-serial/obj/pkg_aada_rs232.o
+/home/wruslan/github/ada-serial/obj/main_ada_rs232_test1.o
+[GENERATED SOURCE FILES]
+b__main_ada_rs232_test1.ads
+b__main_ada_rs232_test1.adb
+b__main_ada_rs232_test1.ali
+[RESULTING OPTIONS]
+-L/home/wruslan/github/ada-serial/obj/
+-L/home/wruslan/github/ada-serial/obj/
+-L/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
+-shared
+-shared-libgcc
+-lgnarl-9
+-lgnat-9
+-lpthread
+-lrt
+-ldl
+[RUN PATH OPTION]
+/usr/lib/gcc/x86_64-linux-gnu/9/adalib/
+/usr/lib

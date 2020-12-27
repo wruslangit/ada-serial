@@ -18,8 +18,8 @@ project gpr_ada_serial is
    for Exec_Dir    use "exec";      -- NOTE: No parantheses
    
    -- for Main     use ("main_ada_serial_port.adb");
-   for Main        use ("main_ada_rs232.adb");
-   -- for Main        use ("main_ada_rs232_test1.adb");
+   -- for Main     use ("main_ada_rs232.adb");
+   for Main     use ("main_ada_rs232_test1.adb");
    
    -- ======== File naming ================================
    package Naming is
@@ -34,8 +34,8 @@ project gpr_ada_serial is
    -- ======== for gprbuild ===============================
    package Builder is
       -- for Executable ("main_ada_serial_port.adb") use "main_ada_serial_port.xxx";
-      for Executable ("main_ada_rs232.adb") use "main_ada_rs232.xxx";
-      -- for Executable ("main_ada_rs232_test1.adb") use "main_ada_rs232_test1.xxx";
+      -- for Executable ("main_ada_rs232.adb") use "main_ada_rs232.xxx";
+      for Executable ("main_ada_rs232_test1.adb") use "main_ada_rs232_test1.xxx";
       
    end Builder;
 

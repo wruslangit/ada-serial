@@ -1,4 +1,4 @@
--- File   : main_ada_rs232.adb
+-- File   : main_ada_rs232_test1.adb
 -- Date   : Thu 24 Dec 2020 12:04:15 PM +08
 -- Env	   : Linux HPEliteBook8470p-Ub2004-rt38 5.4.66-rt38
 -- #1 SMP PREEMPT_RT Sat Sep 26 16:51:59 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
@@ -8,6 +8,24 @@
 -- GNAT 9.3.1 targetting x86_64-linux-gnu
 -- SPARK Community 2020 (20200818)
 --
+-- http://man7.org/linux/man-pages/man4/tty_ioctl.4.html
+-- Constant  Description
+-- TIOCM_LE        DSR (data set ready/line enable)
+-- TIOCM_DTR       DTR (data terminal ready)
+-- TIOCM_RTS       RTS (request to send)
+-- TIOCM_ST        Secondary TXD (transmit)
+-- TIOCM_SR        Secondary RXD (receive)
+-- TIOCM_CTS       CTS (clear to send)
+-- TIOCM_CAR       DCD (data carrier detect)
+-- TIOCM_CD        see TIOCM_CAR
+-- TIOCM_RNG       RNG (ring)
+-- TIOCM_RI        see TIOCM_RNG
+-- TIOCM_DSR       DSR (data set ready)
+
+-- https://www.bb-elec.com/Learning-Center/All-White-Papers/Serial/FAQ-RS-232-Connections-That-Work.aspx
+
+-- Ring Indicator (RI) is a signal sent from the DCE to the DTE device. It indicates to the terminal device that the phone line is ringing.
+
 -- ==========================================================
 -- ADA STANDARD PACKAGES
 with Ada.Text_IO;
@@ -21,7 +39,7 @@ with pkg_ada_rs232;
 with pkg_aada_rs232;
 
 -- ========================================================
-procedure main_ada_rs232 is
+procedure main_ada_rs232_test1 is
 -- ========================================================
    package ATIO    renames Ada.Text_IO;
    package IFaceC  renames Interfaces.C; 
@@ -40,12 +58,7 @@ procedure main_ada_rs232 is
 
    -- dev_string    : IFaceC.char_array    := "/dev/ttyS0";
    dev_string    : IFaceC.char_array := "/dev/ttyS4";
-   -- dev_string    : IFaceC.char_array := "/dev/ttyUSB0"; -- FAILED NO HARDWARE
-   -- dev_string    : IFaceC.char_array := "/dev/ttyWRY0"; -- FAILED NO HARDWARE
-   
-   -- The list of serial devices in Cada_rs232.h maps dev_string (string) to
-   -- serialdev_number (integer) for each different serial device.
-   -- Using (dev_string), we acquire (serialdev_num) from list of serial devices
+  
    serialdev_num   : IFaceC.int := 999; 
    baudrate        : IFaceC.int := 999;
    the_mode        : IFaceC.char_array := "XXX";  
@@ -69,8 +82,7 @@ procedure main_ada_rs232 is
    ret_read_buffer : IFaceC.int := 999;  -- return value no of bytes read
    ret_send_buffer : IFaceC.int := 999;  -- return value no of bytes read
    ret_send_byte   : IFaceC.int := 999;  -- return value no of bytes sent
-   
-   
+      
    the_byte : IFaceC.unsigned_char := 119;  -- ASCII Equivalent = w
    buffer : IFaceC.char_array := "01234567890123456789ABCDEFGH";  
    buffer_size : IFaceC.int  := 25;
@@ -80,7 +92,7 @@ begin
    PADTS.dtstamp; ATIO.Put_Line ("Bismillah 3 times WRY");
    PADTS.dtstamp; PARS232.ExeC_ada_current_working_directory;
    PADTS.dtstamp; PARS232.ExeC_ada_display_date_only;
-   PADTS.dtstamp; ATIO.Put_Line ("Started main_ada_rs232.adb program.");
+   PADTS.dtstamp; ATIO.Put_Line ("Started main_ada_rs232_test1.adb program.");
    ATIO.New_Line;
    
    -- ===================================================== 
@@ -113,7 +125,7 @@ begin
             -- C values = {1, 2} number of stop bits
    
    -- EXECUTE OPEN SERIAL DEVICE      
-   ret_open_device := PARS232.GetC_adars232_open_device(serialdev_num, baudrate, the_mode, flowctrl);
+   PADTS.dtstamp; ret_open_device := PARS232.GetC_adars232_open_device(serialdev_num, baudrate, the_mode, flowctrl);
    if (ret_open_device = 0) then 
       PADTS.dtstamp; ATIO.Put("SUCCESS: ");
    else 
@@ -128,81 +140,60 @@ begin
    ATIO.New_Line;
   
    -- =====================================================
-   -- TEST NO. 3 ENABLE/DISABLE DRT (Data Terminal Ready)
+   -- TEST NO. 3 
    -- =====================================================
    PADTS.dtstamp; PARS232.ExeC_adars232_enable_DTR(serialdev_num);
    PADTS.dtstamp; PARS232.ExeC_adars232_disable_DTR(serialdev_num);
-      
-   -- =====================================================
-   -- TEST NO. 4 ENABLE/DISABLE RTS (Request To Send)
-   -- =====================================================
    PADTS.dtstamp; PARS232.ExeC_adars232_enable_RTS(serialdev_num);
-   PADTS.dtstamp;  PARS232.ExeC_adars232_disable_RTS(serialdev_num);
-      
+   PADTS.dtstamp; PARS232.ExeC_adars232_disable_RTS(serialdev_num);
+   ATIO.New_Line;   
+   
    -- =====================================================
-   -- TEST NO. 5 FLUSH RX/TX/RXTX RECEIVE/TRANSMIT/BOTH BUFFERS
+   -- TEST NO. 4 
    -- =====================================================   
    PADTS.dtstamp; PARS232.ExeC_adars232_flush_RX(serialdev_num);
-   PADTS.dtstamp;  PARS232.ExeC_adars232_flush_TX(serialdev_num);
+   PADTS.dtstamp; PARS232.ExeC_adars232_flush_TX(serialdev_num);
    PADTS.dtstamp; PARS232.ExeC_adars232_flush_RXTX(serialdev_num);
    ATIO.New_Line;   
+
+   -- =====================================================   
+   -- TEST NO. 5
+   -- =====================================================
+   PADTS.dtstamp; ret_isDCD_enabled := PARS232.GetC_adars232_isDCD_enabled(serialdev_num);
+   PADTS.dtstamp; ATIO.Put_Line("Data Carrier Detect ret_isDCD_enabled = " & IFaceC.int'Image(ret_isDCD_enabled));
+   PADTS.dtstamp; ret_isRING_enabled := PARS232.GetC_adars232_isRING_enabled(serialdev_num);
+   PADTS.dtstamp; ATIO.Put_Line("Ringing Indicator ret_isRING_enabled = " & IFaceC.int'Image(ret_isRING_enabled));
+   PADTS.dtstamp; ret_isCTS_enabled := PARS232.GetC_adars232_isCTS_enabled(serialdev_num);
+   PADTS.dtstamp; ATIO.Put_Line("Clear To Send ret_isCTS_enabled = " & IFaceC.int'Image(ret_isCTS_enabled));
+   PADTS.dtstamp; ret_isDSR_enabled := PARS232.GetC_adars232_isDSR_enabled(serialdev_num);
+   PADTS.dtstamp; ATIO.Put_Line("Data Set Ready ret_isDSR_enabled = " & IFaceC.int'Image(ret_isDSR_enabled));
+   ATIO.New_Line;
+      
+   -- =====================================================   
+   -- TEST NO. 8
+   -- =====================================================
+   PADTS.dtstamp; ret_send_buffer := PARS232.GetC_adars232_send_buffer(serialdev_num, buffer, buffer_size);
+   PADTS.dtstamp; ATIO.Put_Line("ret_send_buffer = " & IFaceC.int'Image(ret_send_buffer));
+    
+   PADTS.dtstamp; ret_read_buffer := PARS232.GetC_adars232_read_buffer(serialdev_num, buffer, buffer_size);
+   PADTS.dtstamp; ATIO.Put_Line("ret_read_buffer = " & IFaceC.int'Image(ret_read_buffer));
+   PADTS.dtstamp; ret_send_buffer := PARS232.GetC_adars232_send_buffer(serialdev_num, buffer, buffer_size);
+   PADTS.dtstamp; ATIO.Put_Line("ret_send_buffer = " & IFaceC.int'Image(ret_send_buffer));
+   PADTS.dtstamp; ret_send_byte := PARS232.GetC_adars232_send_byte(serialdev_num, the_byte);
+   PADTS.dtstamp; ATIO.Put_Line("ret_send_byte = " & IFaceC.int'Image(ret_send_byte));
+   PADTS.dtstamp; ret_read_buffer := PARS232.GetC_adars232_read_buffer(serialdev_num, buffer, buffer_size);
+   PADTS.dtstamp; ATIO.Put_Line("ret_read_buffer = " & IFaceC.int'Image(ret_read_buffer));
+   ATIO.New_Line;
    
    -- =====================================================
    -- TEST NO. 6 WRITE A STRING OF CHARACTERS
    -- =====================================================
-   PARS232.ExeC_adars232_chars_put(serialdev_num, the_chars); 
+   PADTS.dtstamp; PARS232.ExeC_adars232_chars_put(serialdev_num, the_chars); 
    ATIO.New_Line;
-   
-   -- =====================================================   
-   -- TEST NO. 7 
-   -- =====================================================
-   -- Data Carrier Detect
-   ret_isDCD_enabled := PARS232.GetC_adars232_isDCD_enabled(serialdev_num);
-   PADTS.dtstamp; ATIO.Put_Line("ret_isDCD_enabled = " & IFaceC.int'Image(ret_isDCD_enabled));
-   ATIO.New_Line;
-   
-   ret_isRING_enabled := PARS232.GetC_adars232_isRING_enabled(serialdev_num);
-   PADTS.dtstamp; ATIO.Put_Line("ret_isRING_enabled = " & IFaceC.int'Image(ret_isRING_enabled));
-   ATIO.New_Line;
-   
-   -- Cleared To Send
-   ret_isCTS_enabled := PARS232.GetC_adars232_isCTS_enabled(serialdev_num);
-   PADTS.dtstamp; ATIO.Put_Line("ret_isCTS_enabled = " & IFaceC.int'Image(ret_isCTS_enabled));
-   ATIO.New_Line;
-   
-   -- Data Set Ready
-   ret_isDSR_enabled := PARS232.GetC_adars232_isDSR_enabled(serialdev_num);
-   PADTS.dtstamp; ATIO.Put_Line("ret_isDSR_enabled = " & IFaceC.int'Image(ret_isDSR_enabled));
-   ATIO.New_Line;
-   
-      
-    -- =====================================================   
-   -- TEST NO. 8
-   -- =====================================================
-   ret_send_buffer := PARS232.GetC_adars232_send_buffer(serialdev_num, buffer, buffer_size);
-   PADTS.dtstamp; ATIO.Put_Line("ret_send_buffer = " & IFaceC.int'Image(ret_send_buffer));
-   ATIO.New_Line;
-   
-   ret_read_buffer := PARS232.GetC_adars232_read_buffer(serialdev_num, buffer, buffer_size);
-   PADTS.dtstamp; ATIO.Put_Line("ret_read_buffer = " & IFaceC.int'Image(ret_read_buffer));
-   ATIO.New_Line;
-   
-   ret_send_buffer := PARS232.GetC_adars232_send_buffer(serialdev_num, buffer, buffer_size);
-   PADTS.dtstamp; ATIO.Put_Line("ret_send_buffer = " & IFaceC.int'Image(ret_send_buffer));
-   ATIO.New_Line;
-   
-   ret_send_byte := PARS232.GetC_adars232_send_byte(serialdev_num, the_byte);
-   PADTS.dtstamp; ATIO.Put_Line("ret_send_byte = " & IFaceC.int'Image(ret_send_byte));
-   ATIO.New_Line;
-   
-   ret_read_buffer := PARS232.GetC_adars232_read_buffer(serialdev_num, buffer, buffer_size);
-   PADTS.dtstamp; ATIO.Put_Line("ret_read_buffer = " & IFaceC.int'Image(ret_read_buffer));
-   ATIO.New_Line;
-   
    
    -- CLOSE SERIAL DEVICE 
    -- =====================================================
-   PARS232.ExeC_adars232_close_device(serialdev_num); -- WORKS
+   PADTS.dtstamp; PARS232.ExeC_adars232_close_device(serialdev_num); -- WORKS
       
    -- =====================================================   
    ATIO.New_Line;
@@ -210,6 +201,6 @@ begin
    PADTS.dtstamp; ATIO.Put_Line ("Alhamdulillah 3 times WRY");
 
 -- ========================================================
-end main_ada_rs232;
+end main_ada_rs232_test1;
 -- ========================================================
 

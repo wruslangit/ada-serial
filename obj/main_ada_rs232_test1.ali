@@ -1,0 +1,202 @@
+V "GNAT Lib v9"
+M P W=b
+A -gnatA
+A -gnat2012
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_NESTED_FINALIZATION
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U main_ada_rs232_test1%b  main_ada_rs232_test1.adb  e17ca0cb NE OO SU IL
+W ada%s			ada.ads			ada.ali
+Z ada.exceptions%s	a-except.adb		a-except.ali
+W ada.strings%s		a-string.ads		a-string.ali
+W ada.strings.unbounded%s  a-strunb.adb		a-strunb.ali
+Z ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W interfaces%s		interfac.ads		interfac.ali
+W interfaces.c%s	i-c.adb			i-c.ali
+W interfaces.c.extensions%s  i-cexten.ads	i-cexten.ali
+W pkg_aada_rs232%s	pkg_aada_rs232.adb	pkg_aada_rs232.ali
+W pkg_ada_dtstamp%s	pkg_ada_dtstamp.adb	pkg_ada_dtstamp.ali
+W pkg_ada_rs232%s	pkg_ada_rs232.ads	pkg_ada_rs232.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20200312110721 76789da1 ada%s
+D a-charac.ads		20200312110721 2d3ec45b ada.characters%s
+D a-chlat1.ads		20200312110721 66457d31 ada.characters.latin_1%s
+D a-except.ads		20200312110721 291912d5 ada.exceptions%s
+D a-finali.ads		20200312110721 bf4f806b ada.finalization%s
+D a-ioexce.ads		20200312110721 e4a01f64 ada.io_exceptions%s
+D a-reatim.ads		20200312110721 0240fc73 ada.real_time%s
+D a-stream.ads		20200312110721 119b8fb3 ada.streams%s
+D a-string.ads		20200312110721 90ac6797 ada.strings%s
+D a-strmap.ads		20200312110721 e8bb714a ada.strings.maps%s
+D a-strunb.ads		20200312110721 8098c91f ada.strings.unbounded%s
+D a-tags.ads		20200312110721 491b781d ada.tags%s
+D a-textio.ads		20200312110721 881db35a ada.text_io%s
+D a-unccon.ads		20200312110721 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200312110721 5ab55268 interfaces%s
+D i-c.ads		20200312110721 5421119b interfaces.c%s
+D i-cexten.ads		20200312110721 38d7e116 interfaces.c.extensions%s
+D i-cstrea.ads		20200312110721 e53d8b8e interfaces.c_streams%s
+D main_ada_rs232_test1.adb  20201227052525 19d5f3fd main_ada_rs232_test1%b
+D pkg_aada_rs232.ads	20201225074232 f4657c4a pkg_aada_rs232%s
+D pkg_ada_dtstamp.ads	20201220024245 a7bbbb72 pkg_ada_dtstamp%s
+D pkg_ada_rs232.ads	20201226041411 cf041ec6 pkg_ada_rs232%s
+D system.ads		20200312110721 4635ec04 system%s
+D s-atacco.ads		20200312110721 4c36d12f system.address_to_access_conversions%s
+D s-atocou.ads		20200312110721 b45c2d8d system.atomic_counters%s
+D s-conca2.ads		20200312110721 02a0d7d0 system.concat_2%s
+D s-crtl.ads		20200312110721 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200312110721 54135002 system.exception_table%s
+D s-ficobl.ads		20200312110721 078245e4 system.file_control_block%s
+D s-finmas.ads		20200312110721 7811a767 system.finalization_masters%s
+D s-finroo.ads		20200312110721 4ff27390 system.finalization_root%s
+D s-imgint.ads		20200312110721 02dbe0c2 system.img_int%s
+D s-linux.ads		20200312110721 ed0b8aee system.linux%s
+D s-memory.ads		20200312110721 597d6634 system.memory%s
+D s-multip.ads		20200312110721 38ac9f73 system.multiprocessors%s
+D s-oscons.ads		20200808120453 0b994636 system.os_constants%s
+D s-osinte.ads		20200312110721 710cf8c6 system.os_interface%s
+D s-parame.ads		20200312110721 48ec542b system.parameters%s
+D s-secsta.ads		20200312110721 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20200312110721 a7318a92 system.soft_links%s
+D s-stache.ads		20200312110721 a37c21ec system.stack_checking%s
+D s-stausa.ads		20200312110721 017a0a05 system.stack_usage%s
+D s-stalib.ads		20200312110721 09bd3940 system.standard_library%s
+D s-stalib.adb		20200312110721 f2fe2716 system.standard_library%b
+D s-stoele.ads		20200312110721 2dc34a04 system.storage_elements%s
+D s-stopoo.ads		20200312110721 b16154c2 system.storage_pools%s
+D s-stposu.ads		20200312110721 97a6219c system.storage_pools.subpools%s
+D s-stratt.ads		20200312110721 aedef97e system.stream_attributes%s
+D s-tasinf.ads		20200312110721 2b3f8252 system.task_info%s
+D s-taspri.ads		20200312110721 f40ac08d system.task_primitives%s
+D s-taprop.ads		20200312110721 1dd2e1b6 system.task_primitives.operations%s
+D s-taskin.ads		20200312110721 b9d612e2 system.tasking%s
+D s-traent.ads		20200312110721 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200312110721 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20200312110721 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 19|31r6 34r6 44r28 47r28
+X 9 a-string.ads
+16K13*Strings 35e16 19|34r10 47r32
+X 11 a-strunb.ads
+76K21*Unbounded 491e26 19|34w18 47r40
+79R9*Unbounded_String<5|43R9> 474e14 19|72r24 73r24
+94V13*To_Unbounded_String{79R9} 19|116s24 117s24
+100V13*To_String{string} 19|135s40 138s41
+X 13 a-textio.ads
+49K13*Text_IO 471e16 19|31w10 44r32
+166U14*New_Line 19|96s9 140s9 149s9 157s9 170s9 186s9 192s9 199s9
+242U14*Put 19|104s27 106s27 130s27 132s27 134s9 135s9 136s9 137s9 138s9
+263U14*Put_Line 19|92s24 95s24 108s9 139s9 163s24 165s24 167s24 169s24 176s24
+. 179s24 181s24 183s24 185s24 200s24 201s24
+X 15 interfac.ads
+38K9*Interfaces 184e15 19|32r6 32r24 33r6 33r35 45r28 46r28
+X 16 i-c.ads
+18K20*C 230e17 19|32w17 32r35 33r17 33r46 45r39 46r39
+35I9*int<integer> 19|62r29 63r29 65r29 66r29 77r32 78r32 79r32 80r32 82r29
+. 83r29 84r29 88r25 108r56 134r43 136r43 137r43 139r43 163r85 165r84 167r79
+. 169r80 176r63 179r63 181r63 183r61 185r63
+47M9*unsigned_char 19|86r22
+72E9*char<character>
+79A9*char_array(72E9)<60M9> 19|60r27 64r29 75r23 87r20
+X 17 i-cexten.ads
+37K22*Extensions 476e28 19|33w19 33r48 46r41
+X 19 main_ada_rs232_test1.adb
+42U11*main_ada_rs232_test1 42b11 204l5 204t25
+44K12 ATIO=44:32 92r19 95r19 96r4 104r22 106r22 108r4 130r22 132r22 134r4
+. 135r4 136r4 137r4 138r4 139r4 140r4 149r4 157r4 163r19 165r19 167r19 169r19
+. 170r4 176r19 179r19 181r19 183r19 185r19 186r4 192r4 199r4 200r19 201r19
+45K12 IFaceC=45:39 60r20 62r22 63r22 64r22 65r22 66r22 75r16 77r25 78r25
+. 79r25 80r25 82r22 83r22 84r22 86r15 87r13 88r18 108r49 134r36 136r36 137r36
+. 139r36 163r78 165r77 167r72 169r73 176r56 179r56 181r56 183r54 185r56
+46K12 IFaceCE=46:41
+47K12 ASU=47:40 72r20 73r20 116r20 117r20 135r36 138r37
+49K12 PADTS=49:30 92r4 93r4 94r4 95r4 104r7 106r7 128r4 130r7 132r7 145r4
+. 146r4 147r4 148r4 154r4 155r4 156r4 162r4 163r4 164r4 165r4 166r4 167r4
+. 168r4 169r4 175r4 176r4 178r4 179r4 180r4 181r4 182r4 183r4 184r4 185r4
+. 191r4 196r4 200r4 201r4
+50K12 PARS232=50:30 93r19 94r19 102r21 128r38 145r19 146r19 147r19 148r19
+. 154r19 155r19 156r19 162r40 164r41 166r40 168r40 175r38 178r38 180r38 182r36
+. 184r38 191r19 196r19
+51K12 PAARS232=51:30
+60a4 dev_string{16|79A9} 102r61
+62i4 serialdev_num{16|35I9} 102m4 103r8 108r66 128r72 136r53 145r52 146r53
+. 147r52 148r53 154r50 155r50 156r52 162r76 164r78 166r76 168r76 175r72 178r72
+. 180r72 182r68 184r72 191r51 196r54
+63i4 baudrate{16|35I9} 120m4 128r87 137r53
+64a4 the_mode{16|79A9} 122m4 128r97
+65i4 flowctrl{16|35I9} 121m4 128r107 139r53
+66i4 ret_open_device{16|35I9} 128m19 129r8 134r53
+72r4 UBdev_string{11|79R9} 116m4 135r50
+73r4 UBthe_mode{11|79R9} 117m4 138r51
+75a4 the_chars{16|79A9} 191r66
+77i4 ret_isDCD_enabled{16|35I9} 162m19 163r95
+78i4 ret_isRING_enabled{16|35I9} 164m19 165r94
+79i4 ret_isCTS_enabled{16|35I9} 166m19 167r89
+80i4 ret_isDSR_enabled{16|35I9} 168m19 169r90
+82i4 ret_read_buffer{16|35I9} 178m19 179r73 184m19 185r73
+83i4 ret_send_buffer{16|35I9} 175m19 176r73 180m19 181r73
+84i4 ret_send_byte{16|35I9} 182m19 183r71
+86m4 the_byte{16|47M9} 182r83
+87a4 buffer{16|79A9} 175r87 178r87 180r87 184r87
+88i4 buffer_size{16|35I9} 175r95 178r95 180r95 184r95
+X 20 pkg_aada_rs232.ads
+7K9*pkg_aada_rs232 19|39w6 51r30 20|33e19
+X 21 pkg_ada_dtstamp.ads
+9K9*pkg_ada_dtstamp 19|37w6 49r30 21|28e20
+14U14*dtstamp 19|92s10 93s10 94s10 95s10 104s13 106s13 128s10 130s13 132s13
+. 145s10 146s10 147s10 148s10 154s10 155s10 156s10 162s10 163s10 164s10 165s10
+. 166s10 167s10 168s10 169s10 175s10 176s10 178s10 179s10 180s10 181s10 182s10
+. 183s10 184s10 185s10 191s10 196s10 200s10 201s10
+X 22 pkg_ada_rs232.ads
+19K9*pkg_ada_rs232 19|38w6 50r30 22|138e18
+33U12*ExeC_ada_current_working_directory 19|93s27
+38U12*ExeC_ada_display_date_only 19|94s27
+43U12*ExeC_adars232_enable_DTR 19|145s27
+48U11*ExeC_adars232_disable_DTR 19|146s27
+53U11*ExeC_adars232_enable_RTS 19|147s27
+58U11*ExeC_adars232_disable_RTS 19|148s27
+63U11*ExeC_adars232_flush_RX 19|154s27
+68U11*ExeC_adars232_flush_TX 19|155s27
+73U11*ExeC_adars232_flush_RXTX 19|156s27
+78U11*ExeC_adars232_chars_put 19|191s27
+83U11*ExeC_adars232_close_device 19|196s27
+92V10*GetC_adars232_open_device{16|35I9} 19|128s46
+97V10*GetC_adars232_read_buffer{16|35I9} 19|178s46 184s46
+102V10*GetC_adars232_send_byte{16|35I9} 19|182s44
+107V10*GetC_adars232_send_buffer{16|35I9} 19|175s46 180s46
+112V10*GetC_adars232_isDCD_enabled{16|35I9} 19|162s48
+117V10*GetC_adars232_isRING_enabled{16|35I9} 19|164s49
+122V10*GetC_adars232_isCTS_enabled{16|35I9} 19|166s48
+127V10*GetC_adars232_isDSR_enabled{16|35I9} 19|168s48
+132V10*GetC_adars232_Get_Device_Number{16|35I9} 19|102s29
+X 23 system.ads
+67M9*Address
+X 34 s-memory.ads
+53V13*Alloc{23|67M9} 103i<c,__gnat_malloc>22
+68U14*Free 104i<c,__gnat_free>22
+76V13*Realloc{23|67M9} 105i<c,__gnat_realloc>22
+X 42 s-stausa.ads
+203U14*Initialize 204i<c,__gnat_stack_usage_initialize>22
+268U14*Output_Results 272i<c,__gnat_stack_usage_output_results>22
+X 44 s-stalib.adb
+93U14 Break_Start 94i<c,__gnat_break_start>22
+
