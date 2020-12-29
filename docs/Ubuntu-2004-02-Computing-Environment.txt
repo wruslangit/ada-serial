@@ -1,0 +1,341 @@
+===========================================================
+SYSTEM COMPUTING ENVIRONMENT
+===========================================================
+Ub2004-rt38:~$ date
+Tue 29 Dec 2020 04:01:57 PM +08
+
+Ub2004-rt38:~$ uname -a
+Linux HPEliteBook8470p-Ub2004-rt38 5.4.66-rt38 
+#1 SMP PREEMPT_RT Sat Sep 26 16:51:59 +08 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+Ub2004-rt38:~$ lsb_release -a
+LSB Version:    core-11.1.0ubuntu2-noarch:security-11.1.0ubuntu2-noarch
+Distributor ID: Ubuntu
+Description:    Ubuntu 20.04.1 LTS
+Release:        20.04
+Codename:       focal
+Ub2004-rt38:~$ 
+
+=====================================================
+(9) USER PROFILE SETTINGS IN FILE ~/.bashrc 
+=====================================================
+....
+....
+## SETTINGS FOR JAVA
+## ==================================================
+export JAVA_HOME=/usr/lib/jvm/jdk-13.0.2
+export PATH=/usr/lib/jvm/jdk-13.0.2/bin:$PATH
+
+## SETTINGS FOR  BOOST C++ LIBRARY 
+## ==================================================
+export LD_LIBRARY_PATH=/home/wruslan/opt/boost_1_74_0/stage/lib
+export CPLUS_INCLUDE_PATH=/home/wruslan/opt/boost_1_74_0 
+
+## HARD COPIED BOOST FILES TO HIGH LEVEL SYSTEM SEARCH PATH
+## THEN CHECK WITH COMMANDS BELOW 
+## LIBRARY PATH ===> ls -al /usr/lib   | grep libboost
+## INCLUDE PATH ===> ls -al /usr/include/boost  
+
+## SETTINGS FOR GNAT ADA
+## ==================================================
+export PATH=/home/wruslan/opt/GNAT/2020/bin:$PATH
+export PATH=/home/wruslan/opt/GNAT/2020/libexec/gcc/x86_64-pc-linux-gnu/9.3.1:$PATH
+export PATH=/home/wruslan/opt/GNAT/2020/libexec/spark/libexec/gcc/x86_64-pc-linux-gnu/9.3.1:$PATH
+
+export LD_LIBRARY_PATH=/home/wruslan/opt/GNAT/2020/libexec/gcc/x86_64-pc-linux-gnu/9.3.1:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+
+## SETTINGS FOR PYTHON
+## ===================================================
+export PYTHONPATH=/usr/local/lib/python3/dist-packages:$PYTHONPATH
+export PYTHONPATH=/usr/local/lib/python2.7/dist-packages:$PYTHONPATH
+
+export QT_INSTALL_LIBS=/usr/lib/x86_64-linux-gnu
+
+## BASHRC FILE ADDED FOR PLPLOT NOV 22 2020
+## =======================================================
+export PATH=/usr/bin:$PATH
+
+export CC="gcc -O2"
+export CXX="g++ -O2"
+export FC="gfortran -O2"
+
+## ADDED FOR GEDA  (NOV 29 2020)
+## =======================================================
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/wruslan/opt/geda/lib
+export PATH=$PATH:/home/wruslan/opt/geda/bin
+
+===========================================================
+(10) JAVA COMPILER AND ENVIRONMENT
+=========================================================== 
+Ub2004-rt38:~$ which java
+/usr/bin/java
+Ub2004-rt38:~$ java -version
+java version "13.0.2" 2020-01-14
+Java(TM) SE Runtime Environment (build 13.0.2+8)
+Java HotSpot(TM) 64-Bit Server VM (build 13.0.2+8, mixed mode, sharing)
+
+Ub2004-rt38:~$ which javac
+/usr/bin/javac
+Ub2004-rt38:~$ javac -version
+javac 13.0.2
+
+Ub2004-rt38:~$ which javap
+/usr/bin/javap
+Ub2004-rt38:~$ javap -version
+13.0.2
+
+Ub2004-rt38:~$ which javadoc
+/usr/bin/javadoc
+Ub2004-rt38:~$ javadoc --version
+javadoc 13.0.2
+
+===========================================================
+(11) PYTHON2 
+=========================================================== 
+Ub2004-rt38:~$ python
+Python 2.7.18 (default, Aug  4 2020, 11:16:42) 
+[GCC 9.3.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import os
+>>> import sys
+>>> import time
+>>> import dateutil
+>>> 
+>>> import numpy
+>>> import scipy
+>>> import matplotlib
+>>> 
+>>> import thread
+>>> import multiprocessing
+>>> 
+Ub2004-rt38:~$ 
+
+===========================================================
+(12) PYTHON3
+=========================================================== 
+Ub2004-rt38:~$ python3
+Python 3.8.5 (default, Jul 28 2020, 12:59:40) 
+[GCC 9.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import os
+>>> import sys
+>>> import time
+>>> import dateutil
+>>> 
+>>> import numpy
+>>> import scipy
+>>> import matplotlib
+>>> 
+>>> import threading
+>>> import multiprocessing
+>>> 
+Ub2004-rt38:~$ 
+
+===========================================================
+(13) PERL
+=========================================================== 
+Ub2004-rt38:~$ perl -v
+
+This is perl 5, version 30, subversion 0 (v5.30.0) built for x86_64-linux-gnu-thread-multi
+(with 46 registered patches, see perl -V for more detail)
+
+Copyright 1987-2019, Larry Wall
+
+===========================================================
+(14) PHP
+=========================================================== 
+Ub2004-rt38:~$ php -v
+PHP 7.4.3 (cli) (built: Oct  6 2020 15:47:56) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+    with Zend OPcache v7.4.3, Copyright (c), by Zend Technologies
+
+===========================================================
+(15) JULIA ON TERMINAL
+=========================================================== 
+Ub2004-rt38:~$ which julia
+/usr/local/bin/julia
+Ub2004-rt38:~$ julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.5.1 (2020-08-25)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> 
+Ub2004-rt38:~$ 
+
+===========================================================
+(16) ATOM WITH JULIA (Atom ver 1.36.0 x86)
+=========================================================== 
+Press Enter to start Julia. 
+ Activating environment at `~/.julia/environments/JuliaPro_v1.5.1-1/Project.toml`
+Starting Julia...
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.5.1 (2020-08-25)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> 
+
+Julia has exited.
+Press Enter to start a new session.
+
+===========================================================
+(17) SCILAB, OCTAVE, GNUPLOT, DOTEDITOR
+===========================================================
+
+SCILAB 6.1.0 WITH XCOS
+=======================================
+## MUST RUN AS MENU SHORTCUTS
+SCILAB 6.1.0 EXECUTABLE OK: /home/wruslan/opt/scilab-6.1.0/bin/scilab
+
+OCTAVE 5.2.0 FROM FLATPAK
+=======================================
+/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=/app/bin/octave \
+--file-forwarding org.octave.Octave --gui @@ %f @@
+
+GNUPLOT 5.2 patch 8
+=======================================
+Ub2004-rt38:~$ which gnuplot
+/usr/bin/gnuplot
+Ub2004-rt38:~$ gnuplot
+
+	G N U P L O T
+	Version 5.2 patchlevel 8    last modified 2019-12-01 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2019
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'qt'
+gnuplot> 
+gnuplot> plot (sin(x)/x)
+gnuplot>
+Ub2004-rt38:~$ 
+
+DIA
+=======================================
+Ub2004-rt38:~$ which dia
+/usr/bin/dia
+Ub2004-rt38:~$ dia --version
+Gtk-Message: 12:42:43.346: Failed to load module "pk-gtk-module"
+Dia version 0.97+git, compiled 01:04:47 Feb 14 2020
+
+Ub2004-rt38:~$ dia
+Gtk-Message: 12:42:57.107: Failed to load module "pk-gtk-module"
+Canvas size change...
+Canvas size change...
+Canvas size change...
+Canvas size change...
+Ub2004-rt38:~$ 
+
+XDOT
+======================================= 
+Ub2004-rt38:~$ which xdot
+/usr/bin/xdot
+
+Ub2004-rt38:~$ xdot -h
+usage: xdot [-h] [-f FILTER] [-n] [-g GEOMETRY] [file]
+
+xdot.py is an interactive viewer for graphs written in Graphviz's dot language.
+
+positional arguments:
+  file                  input file to be viewed
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -f FILTER, --filter FILTER
+                        graphviz filter: dot, neato, twopi, circo, or fdp [default: dot]
+  -n, --no-filter       assume input is already filtered into xdot format (use e.g. dot -Txdot)
+  -g GEOMETRY, --geometry GEOMETRY
+                        default window size in form WxH
+
+Shortcuts:
+  Up, Down, Left, Right     scroll
+  PageUp, +, =              zoom in
+  PageDown, -               zoom out
+  R                         reload dot file
+  F                         find
+  Q                         quit
+  P                         print
+  Escape                    halt animation
+  Ctrl-drag                 zoom in/out
+  Shift-drag                zooms an area
+Ub2004-rt38:~$ 
+
+DOTEDITOR (CAN CREATE MENU ICON)
+=======================================
+Ub2004-rt38:~$ sudo ln -sf /home/wruslan/opt/DotEditor/doteditor.sh /usr/local/bin/doteditor
+Ub2004-rt38:~$ 
+Ub2004-rt38:~$ sudo apt-get install python-ply python-wxtools
+Ub2004-rt38:~$ sudo updatedb
+Ub2004-rt38:~$ doteditor
+... <GUI opens> ...
+(DotEditor.py:13039): Gtk-CRITICAL **: 12:59:03.529: gtk_widget_get_realized: assertion 'GTK_IS_WIDGET (widget)' failed
+Ub2004-rt38:~$ 
+
+DIA2CODE
+======================================= 
+Ub2004-rt38:~$ which dia2code
+/usr/local/bin/dia2code
+Ub2004-rt38:~$ dia2code --help
+dia2code version 0.8.4, Copyright (C) 2000-2001 Javier O'Hara
+Dia2Code comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it
+under certain conditions; read the COPYING file for details.
+
+Usage: dia2code [-h|--help] [-d <dir>] [-nc] [-cl <classlist>]
+       [-t (ada|c|cpp|csharp|idl|java|php|php5|python|ruby|shp|sql)] [-v]
+       [-l <license file>] [-ini <initialization file>]<diagramfile>
+
+    -h --help            Print this help and exit
+    -t <target>          Selects the output language. <target> can be
+                         one of: ada,c,cpp,idl,java,php,php5,python,ruby,shp,sql or csharp. 
+                         Default is C++
+    -d <dir>             Output generated files to <dir>, default is "." 
+    --buildtree          Convert package names to a directory tree. off by default 
+    -l <license>         License file to prepend to generated files.
+    -nc                  Do not overwrite files that already exist
+    -cl <classlist>      Generate code only for the classes specified in
+                         the comma-separated <classlist>. 
+                         E.g: Base,Derived.
+    -v                   Invert the class list selection.  When used 
+                         without -cl prevents any file from being created
+    -ext <extension>     Use <extension> as the file extension.
+                         Here are the defaults:
+                         ada:"ads", c:"h", cpp:"h", idl:"idl",
+                         java:"java", php:"php", python:"py", csharp:"cs".
+                         Not applicable to shp, sql.
+    -bext <extension>    Use <extension> as the body (implementation) file
+                         extension. Currently only applies only to ada.
+                         Here are the defaults:
+                         ada:"adb"
+    -sqlx <optionlist>   Use the following comma-separated <optionlist> to control
+                         special options in the creation of the SQL schema. Currently the 
+                         only option is "fkidx" which creates an index for each FK defined.
+                         The default is no options.
+    -ini <file>          Can be used instead of command-line parameters
+    --debug <level>     Show debugging messages of this level
+    <diagramfile>        The Dia file that holds the diagram to be read
+
+    Note: parameters can be specified in any order.
+Ub2004-rt38:~$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+
