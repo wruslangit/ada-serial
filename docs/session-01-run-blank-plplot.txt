@@ -1,0 +1,129 @@
+
+COMPILATION
+===========================================================
+gprbuild -d -P/home/wruslan/github/ada-plplot/gpr_ada_plplot.gpr -s -k
+Compile
+   [Ada]          main_ada_plplot.adb
+   [Ada]          pkg_ada_dtstamp.adb
+   [Ada]          pkg_plplot_auxiliary.adb
+   [Ada]          pkg_plplot_standard.adb
+   [Ada]          pkg_plplot_thin.adb
+   [Ada]          pkg_plplot_traditional.adb
+Bind
+   [gprbind]      main_ada_plplot.bexch
+   [Ada]          main_ada_plplot.ali
+Link
+   [link]         main_ada_plplot.adb
+[2020-12-30 13:57:59] process terminated successfully, elapsed time: 03.77s
+
+EXECUTION
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-plplot/exec$ ./main_ada_plplot.xxx 
+2020-12-30 05:58:56.07700367516 Bismillah 3 times WRY
+2020-12-30 05:58:56.07700738090 Started main_ada_plplot.adb program.
+
+
+2020-12-30 05:58:56.07700811268 Ended main_ada_plplot.adb program.
+2020-12-30 05:58:56.07700867704 Alhamdulillah 3 times WRY
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-plplot/exec$ 
+
+FILES AND DIRECTORIES
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-plplot$ tree ./
+./
+├── docs
+│   ├── compile-and-run-session-commandline.txt
+│   ├── installation-plplot-ver-5.15.0-ubuntu-2004.txt
+│   ├── session-01-run-blank-plplot.txt
+│   ├── Ubuntu-2004-01-Native-Compiler-Toolchain.txt
+│   └── Ubuntu-2004-02-Computing-Environment.txt
+├── exec
+│   └── main_ada_plplot.xxx
+├── figures
+│   ├── plplot-sourceforge-net-examples-php-01.jpg
+│   └── plplot-sourceforge-net-examples-php-02.jpg
+├── gpr_ada_plplot.gpr
+├── obj
+│   ├── b__main_ada_plplot.adb
+│   ├── b__main_ada_plplot.ads
+│   ├── b__main_ada_plplot.ali
+│   ├── b__main_ada_plplot.o
+│   ├── b__main_ada_rs232_test1.adb
+│   ├── b__main_ada_rs232_test1.ads
+│   ├── b__main_ada_rs232_test1.ali
+│   ├── b__main_ada_rs232_test1.o
+│   ├── Cada_rs232.c.stderr
+│   ├── Cada_rs232.c.stdout
+│   ├── Cada_rs232.cswi
+│   ├── Cada_rs232.d
+│   ├── Cada_rs232.o
+│   ├── clang_ref_cache.db
+│   ├── gpr_ada_plplot-loc.xml
+│   ├── gpr_ada_serial-loc.xml
+│   ├── gpsauto.cgpr
+│   ├── libgpr_ada_serial.a
+│   ├── libgpr_ada_serial.deps
+│   ├── list-of-files-in-obj-directory.txt
+│   ├── main_ada_plplot.adb.stderr
+│   ├── main_ada_plplot.adb.stdout
+│   ├── main_ada_plplot.ali
+│   ├── main_ada_plplot.bexch
+│   ├── main_ada_plplot.cswi
+│   ├── main_ada_plplot.o
+│   ├── main_ada_rs232_test1.adb.stderr
+│   ├── main_ada_rs232_test1.adb.stdout
+│   ├── main_ada_rs232_test1.ali
+│   ├── main_ada_rs232_test1.bexch
+│   ├── main_ada_rs232_test1.cswi
+│   ├── main_ada_rs232_test1.o
+│   ├── pkg_ada_dtstamp.adb.stderr
+│   ├── pkg_ada_dtstamp.adb.stdout
+│   ├── pkg_ada_dtstamp.ali
+│   ├── pkg_ada_dtstamp.cswi
+│   ├── pkg_ada_dtstamp.o
+│   ├── pkg_plplot_auxiliary.adb.stderr
+│   ├── pkg_plplot_auxiliary.adb.stdout
+│   ├── pkg_plplot_auxiliary.ali
+│   ├── pkg_plplot_auxiliary.cswi
+│   ├── pkg_plplot_auxiliary.o
+│   ├── pkg_plplot_standard.adb.stderr
+│   ├── pkg_plplot_standard.adb.stdout
+│   ├── pkg_plplot_standard.ali
+│   ├── pkg_plplot_standard.cswi
+│   ├── pkg_plplot_standard.o
+│   ├── pkg_plplot_thin.adb.stderr
+│   ├── pkg_plplot_thin.adb.stdout
+│   ├── pkg_plplot_thin.ali
+│   ├── pkg_plplot_thin.cswi
+│   ├── pkg_plplot_thin.o
+│   ├── pkg_plplot_traditional.adb.stderr
+│   ├── pkg_plplot_traditional.adb.stdout
+│   ├── pkg_plplot_traditional.ali
+│   ├── pkg_plplot_traditional.cswi
+│   └── pkg_plplot_traditional.o
+├── README.md
+└── src
+    ├── main_ada_plplot.adb
+    ├── Pkg-ada-dtstamp
+    │   ├── pkg_ada_dtstamp.adb
+    │   └── pkg_ada_dtstamp.ads
+    ├── Pkg-plplot-auxiliary
+    │   ├── pkg_plplot_auxiliary.adb
+    │   └── pkg_plplot_auxiliary.ads
+    ├── Pkg-plplot-standard
+    │   ├── pkg_plplot_standard.adb
+    │   └── pkg_plplot_standard.ads
+    ├── Pkg-plplot-thin
+    │   ├── pkg_plplot_thin.adb
+    │   └── pkg_plplot_thin.ads
+    └── Pkg-plplot-traditional
+        ├── pkg_plplot_traditional.adb
+        └── pkg_plplot_traditional.ads
+
+10 directories, 78 files
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-plplot$ 
+
+===========================================================
+ ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+

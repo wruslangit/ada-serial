@@ -1,0 +1,2360 @@
+
+===========================================================
+COMPILER VERSIONS
+===========================================================
+Ub2004-rt38:~$ gcc --version
+gcc (GCC) 9.3.1 20200430 (for GNAT Community 2020 20200818)
+
+Ub2004-rt38:~$ g++ --version
+g++ (GCC) 9.3.1 20200430 (for GNAT Community 2020 20200818)
+
+Ub2004-rt38:~$ which gfortran
+/usr/local/bin/gfortran
+
+Ub2004-rt38:~$ gfortran --version
+GNU Fortran (GCC) 9.3.0
+
+Ub2004-rt38:~$ gnatmake --version
+GNATMAKE Community 2020 (20200818-93)
+
+Ub2004-rt38:~$ gnatbind --version
+GNATBIND Community 2020 (20200818-93)
+
+Ub2004-rt38:~$ gnatlink --version
+GNATLINK Community 2020 (20200818-93)
+
+Ub2004-rt38:~$ python --version
+Python 2.7.18
+
+Ub2004-rt38:~$ python3 --version
+Python 3.8.5
+
+Ub2004-rt38:~$ which cmake
+/usr/bin/cmake
+
+Ub2004-rt38:~$ cmake --version
+cmake version 3.16.3
+
+Ub2004-rt38:~$ which qmake
+/usr/bin/qmake
+
+Ub2004-rt38:~$ qmake --version
+QMake version 3.1
+Using Qt version 5.12.8 in /usr/lib/x86_64-linux-gnu
+
+===========================================================
+SOURCE FILES plplot FROM GIT CLONE
+===========================================================
+Ub2004-rt38:~/temp1$ cd plplot-source/
+Ub2004-rt38:~/temp1/plplot-source$ 
+Ub2004-rt38:~/temp1/plplot-source$ ls -al
+total 1600
+drwxrwxr-x 23 wruslan wruslan   4096 Nov 22 08:57 .
+drwxrwxr-x  3 wruslan wruslan   4096 Nov 22 10:57 ..
+-rw-rw-r--  1 wruslan wruslan    609 Nov 19 23:36 abi-compliance-checker.xml.template.in
+-rw-rw-r--  1 wruslan wruslan   7346 Nov 19 23:36 ABOUT
+-rw-rw-r--  1 wruslan wruslan    512 Nov 19 23:36 AUTHORS
+drwxrwxr-x 17 wruslan wruslan   4096 Nov 19 23:36 bindings
+-rw-rw-r--  1 wruslan wruslan 120203 Nov 19 23:36 ChangeLog.release
+drwxrwxr-x  9 wruslan wruslan   4096 Nov 19 23:36 cmake
+-rw-rw-r--  1 wruslan wruslan  18613 Nov 19 23:36 CMakeLists.txt
+-rw-rw-r--  1 wruslan wruslan  25284 Nov 19 23:36 COPYING.LIB
+-rw-rw-r--  1 wruslan wruslan  13737 Nov 19 23:36 Copyright
+-rw-rw-r--  1 wruslan wruslan    538 Nov 19 23:36 CTestConfig.cmake
+-rw-rw-r--  1 wruslan wruslan    289 Nov 19 23:36 CTestCustom.cmake.in
+drwxrwxr-x  3 wruslan wruslan   4096 Nov 19 23:36 data
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 19 23:36 debian_packaging
+drwxrwxr-x  4 wruslan wruslan   4096 Nov 19 23:36 doc
+drwxrwxr-x  3 wruslan wruslan   4096 Nov 19 23:36 drivers
+drwxrwxr-x 14 wruslan wruslan   4096 Nov 19 23:36 examples
+-rw-rw-r--  1 wruslan wruslan  80718 Nov 19 23:36 FAQ
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 19 23:36 fonts
+drwxrwxr-x  8 wruslan wruslan   4096 Nov 19 23:36 .git
+drwxrwxr-x  3 wruslan wruslan   4096 Nov 19 23:36 git
+-rw-rw-r--  1 wruslan wruslan    884 Nov 19 23:36 .gitattributes
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 19 23:36 git_hooks
+-rw-rw-r--  1 wruslan wruslan   1078 Nov 19 23:36 .gitignore
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 19 23:36 historical_repository_conversions
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 19 23:36 include
+-rw-rw-r--  1 wruslan wruslan   5783 Nov 22 08:57 INSTALL
+drwxrwxr-x  6 wruslan wruslan   4096 Nov 19 23:36 lib
+-rw-rw-r--  1 wruslan wruslan    815 Nov 19 23:36 NEWS
+-rw-rw-r--  1 wruslan wruslan  63600 Nov 19 23:36 OLDER-NEWS
+-rw-rw-r--  1 wruslan wruslan  29256 Nov 19 23:36 OLD-NEWS
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 19 23:36 pkgcfg
+-rw-rw-r--  1 wruslan wruslan   1946 Nov 19 23:36 plplotConfig.cmake.in
+-rw-rw-r--  1 wruslan wruslan  10665 Nov 19 23:36 plplot_config.h.in
+-rw-rw-r--  1 wruslan wruslan   4513 Nov 19 23:36 plplot-c-style.el
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 19 23:36 plplot_test
+-rw-rw-r--  1 wruslan wruslan   7680 Nov 19 23:36 PROBLEMS
+-rw-rw-r--  1 wruslan wruslan   5746 Nov 19 23:36 README
+-rw-rw-r--  1 wruslan wruslan 845903 Nov 19 23:36 README.cumulated_release
+-rw-rw-r--  1 wruslan wruslan   1992 Nov 19 23:36 README.dashboard_submissions
+-rw-rw-r--  1 wruslan wruslan  17100 Nov 19 23:36 README.developers
+-rw-rw-r--  1 wruslan wruslan   4505 Nov 19 23:36 README.emacs
+-rw-rw-r--  1 wruslan wruslan   7523 Nov 19 23:36 README.PLplot_Contract_Testing
+-rw-rw-r--  1 wruslan wruslan  15538 Nov 19 23:36 README.release
+-rw-rw-r--  1 wruslan wruslan  51632 Nov 19 23:36 README.Release_Manager_Cookbook
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 19 23:36 rpm
+drwxrwxr-x  4 wruslan wruslan   4096 Nov 19 23:36 scripts
+-rw-rw-r--  1 wruslan wruslan    359 Nov 19 23:36 SERVICE
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 19 23:36 src
+-rw-rw-r--  1 wruslan wruslan   8545 Nov 19 23:36 ToDo
+-rw-rw-r--  1 wruslan wruslan 110906 Nov 19 23:36 uncrustify.cfg
+drwxrwxr-x  3 wruslan wruslan   4096 Nov 19 23:36 utils
+drwxrwxr-x  6 wruslan wruslan   4096 Nov 19 23:36 www
+Ub2004-rt38:~/temp1/plplot-source$ 
+
+
+
+Note, you must use at least version 2.6.0 of CMake for your PLplot 
+configuration, but our build system works with the latest version (2.6.2) 
+of CMake as well.
+
+Ub2004-rt38:~$ cmake --version
+cmake version 3.16.3
+
+===========================================================
+CREATE BUILD LDIRECTORY
+===========================================================
+Ub2004-rt38:~/temp1/plplot-source$ mkdir build_dir
+Ub2004-rt38:~/temp1/plplot-source$ cd build_dir/
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ ls -al
+total 8
+drwxrwxr-x  2 wruslan wruslan 4096 Nov 22 11:01 .
+drwxrwxr-x 24 wruslan wruslan 4096 Nov 22 11:01 ..
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ 
+
+===========================================================
+SET COMPILERS (export means temporary. NOT in ~/.bashrc)
+===========================================================
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ export CC="gcc -O2"
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ export CXX="g++ -O2"
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ export FC="gfortran -O2"
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ 
+
+===========================================================    
+USE GENERIC COMPILERS NOT GNAT VERSIONS (missing -gnatc Ha ha ha)
+===========================================================
+Ub2004-rt38:~$ ls -al /usr/bin/gcc
+lrwxrwxrwx 1 root root 15 Oct 29 10:38 /usr/bin/gcc -> /usr/bin/gcc-10
+
+Ub2004-rt38:~$ ls -al /usr/bin/g++
+lrwxrwxrwx 1 root root 15 Oct 29 10:48 /usr/bin/g++ -> /usr/bin/g++-10
+
+Ub2004-rt38:~$ ls -al /usr/bin/gfortran
+lrwxrwxrwx 1 root root 10 Mar 20  2020 /usr/bin/gfortran -> gfortran-9
+
+===========================================================
+COMPILERS ==> SET TEMPORARILY ==> CHECK
+===========================================================
+BASED ON ABOVE FOUND IN /usr/bin
+
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ export PATH=/usr/bin:$PATH
+
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ which cc
+/usr/bin/cc
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ which gcc
+/usr/bin/gcc
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ which g++
+/usr/bin/g++
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ which gfortran
+/usr/bin/gfortran
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ cc --version
+cc (Ubuntu 10.2.0-5ubuntu1~20.04) 10.2.0
+
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ gcc --version
+gcc (Ubuntu 10.2.0-5ubuntu1~20.04) 10.2.0
+
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ g++ --version
+g++ (Ubuntu 10.2.0-5ubuntu1~20.04) 10.2.0
+
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ gfortran --version
+GNU Fortran (Ubuntu 9.3.0-17ubuntu1~20.04) 9.3.0
+
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ 
+
+===========================================================
+SUCCESS - CONFIGURE USING CMAKE (FOR /usr/local)
+===========================================================
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ cmake -DCMAKE_INSTALL_PREFIX=/usr/local ../
+-- The C compiler identification is GNU 10.2.0
+-- Check for working C compiler: /usr/bin/gcc
+-- Check for working C compiler: /usr/bin/gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- CMAKE_SYSTEM_NAME = Linux
+-- CMAKE_COMMAND = /usr/bin/cmake
+-- CMAKE_VERSION = 3.16.3
+-- CMAKE_GENERATOR = Unix Makefiles
+-- CMAKE_INCLUDE_PATH = 
+-- Environment variable CMAKE_INCLUDE_PATH = 
+-- CMAKE_LIBRARY_PATH = 
+-- Environment variable CMAKE_LIBRARY_PATH = 
+-- CMAKE_PLATFORM_INFO_DIR = /home/wruslan/temp1/plplot-source/build_dir/CMakeFiles/3.16.3
+-- SH_EXECUTABLE = /bin/bash
+-- Checking whether system has ANSI C header files
+-- Looking for 4 include files stdlib.h, ..., float.h
+-- Looking for 4 include files stdlib.h, ..., float.h - found
+-- Performing Test memchrExists
+-- Performing Test memchrExists - Success
+-- Performing Test freeExists
+-- Performing Test freeExists - Success
+-- Check for whether ctype.h macros work on characters with the
+   high bit set.
+-- High-bit characters - work
+-- ANSI C header files - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for include file termios.h
+-- Looking for include file termios.h - found
+-- Looking for include file stdint.h
+-- Looking for include file stdint.h - found
+-- Looking for crt_externs.h
+-- Looking for crt_externs.h - not found
+-- Performing Test HAVE_SYS_WAIT_H
+-- Performing Test HAVE_SYS_WAIT_H - Success
+-- Looking for DIR symbol in sys/types.h;dirent.h
+-- Looking for DIR symbol in sys/types.h;dirent.h - found
+-- Check for signal return type in <signal.h>
+-- Check for signal handler return type type void  - found
+-- Looking for popen
+-- Looking for popen - found
+-- Looking for usleep
+-- Looking for usleep - found
+-- Looking for nanosleep
+-- Looking for nanosleep - found
+-- Looking for mkstemp
+-- Looking for mkstemp - found
+-- Looking for mkdtemp
+-- Looking for mkdtemp - found
+-- Looking for mkfifo
+-- Looking for mkfifo - found
+-- Looking for unlink
+-- Looking for unlink - found
+-- Looking for _NSGetArgc
+-- Looking for _NSGetArgc - not found
+-- Looking for isfinite
+-- Looking for isfinite - found
+-- Looking for finite
+-- Looking for finite - found
+-- Looking for isnan
+-- Looking for isnan - found
+-- Looking for isinf
+-- Looking for isinf - found
+-- Looking for snprintf
+-- Looking for snprintf - found
+-- Found SWIG: /usr/bin/swig4.0 (found version "4.0.1") 
+-- SWIG_VERSION = 4.0.1
+-- Found Perl: /usr/bin/perl (found version "5.30.0") 
+-- The CXX compiler identification is GNU 10.2.0
+-- Check for working CXX compiler: /usr/bin/g++
+-- Check for working CXX compiler: /usr/bin/g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for using namespace support
+-- Check for using namespace - found
+-- Looking for C++ include cmath
+-- Looking for C++ include cmath - found
+-- Check for broken isnan support in <cmath>
+-- Check for isnan in <cmath> - found
+-- Check for using stdint.h with CXX compiler
+-- Check for using stdint.h with CXX compiler - ok
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+-- Looking for pkg-config - found
+-- cxx_compiler_library_pathname_list = /usr/lib/gcc/x86_64-linux-gnu/10/libstdc++.so; \
+/usr/lib/x86_64-linux-gnu/libm.so;/usr/lib/gcc/x86_64-linux-gnu/10/libgcc_s.so; \
+/usr/lib/gcc/x86_64-linux-gnu/10/libgcc.a;/usr/lib/x86_64-linux-gnu/libc.so; \
+/usr/lib/gcc/x86_64-linux-gnu/10/libgcc_s.so;/usr/lib/gcc/x86_64-linux-gnu/10/libgcc.a
+-- Found X11: /usr/include   
+-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- X11_FOUND = TRUE
+-- X11_INCLUDE_DIR = /usr/include
+-- X11_COMPILE_FLAGS = -I/usr/include
+-- X11_LIBRARIES = /usr/lib/x86_64-linux-gnu/libSM.so;/usr/lib/x86_64-linux-gnu/libICE.so; \
+/usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE  
+-- The Fortran compiler identification is GNU 9.3.0
+-- Check for working Fortran compiler: /usr/bin/gfortran
+-- Check for working Fortran compiler: /usr/bin/gfortran  -- works
+-- Detecting Fortran compiler ABI info
+-- Detecting Fortran compiler ABI info - done
+-- Checking whether /usr/bin/gfortran supports Fortran 90
+-- Checking whether /usr/bin/gfortran supports Fortran 90 -- yes
+-- Check if isnan function is available in fortran
+-- Check for isnan in fortran - not found
+-- NOTICE: Found: /usr/bin/gfortran
+-- Found JNI: /usr/lib/jvm/jdk-13.0.2/lib/libjawt.so  
+-- Found PythonInterp: /usr/bin/python3 (Required is at least version "3") 
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found version "3.8.5") 
+Fatal Python error: init_import_size: Failed to import the site module
+Python runtime state: initialized
+Error processing line 1 of /usr/local/lib/python3.8/dist-packages/google_auth-1.23.0-py3.8-nspkg.pth:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site.py", line 175, in addpackage
+    exec(line)
+  File "<string>", line 1, in <module>
+  File "/usr/lib/python3.8/importlib/util.py", line 14, in <module>
+    from contextlib import contextmanager
+  File "/usr/lib/python3.8/contextlib.py", line 5, in <module>
+    from collections import deque
+  File "/usr/lib/python3.8/collections/__init__.py", line 27, in <module>
+    from reprlib import recursive_repr as _recursive_repr
+  File "/usr/local/lib/python2.7/dist-packages/reprlib/__init__.py", line 7, in <module>
+    raise ImportError('This package should not be accessible on Python 3. '
+ImportError: This package should not be accessible on Python 3. Either you are \
+trying to run from the python-future src folder or your installation of python-future is corrupted.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/site.py", line 597, in <module>
+    main()
+  File "/usr/lib/python3.8/site.py", line 584, in main
+    known_paths = addsitepackages(known_paths)
+  File "/usr/lib/python3.8/site.py", line 367, in addsitepackages
+    addsitedir(sitedir, known_paths)
+  File "/usr/lib/python3.8/site.py", line 214, in addsitedir
+    addpackage(sitedir, name, known_paths)
+  File "/usr/lib/python3.8/site.py", line 185, in addpackage
+    import traceback
+  File "/usr/lib/python3.8/traceback.py", line 3, in <module>
+    import collections
+  File "/usr/lib/python3.8/collections/__init__.py", line 27, in <module>
+    from reprlib import recursive_repr as _recursive_repr
+  File "/usr/local/lib/python2.7/dist-packages/reprlib/__init__.py", line 7, in <module>
+    raise ImportError('This package should not be accessible on Python 3. '
+ImportError: This package should not be accessible on Python 3. Either you \
+are trying to run from the python-future src folder or your installation of python-future is corrupted.
+-- WARNING: NumPy header not found. Disabling Python binding
+-- OCTAVE = /usr/bin/octave
+-- MKOCTFILE = /usr/bin/mkoctfile
+-- OCTAVE_CONFIG = /usr/bin/octave-config
+-- OCTAVE_VERSION = 5.2.0
+-- OCTAVE_LIBRARIES = /usr/lib/x86_64-linux-gnu/liboctave.so
+-- OCTINTERP_LIBRARIES = /usr/lib/x86_64-linux-gnu/liboctinterp.so
+-- OCTAVE_INCLUDE_PATH = /usr/include/hdf5/serial;/usr/include/octave-5.2.0;/usr/include/octave-5.2.0/octave
+-- Start determining consistent system data for Tcl and friends
+-- Found Tclsh: /usr/bin/tclsh (found version "8.6") 
+-- Found TCL: /usr/lib/x86_64-linux-gnu/libtcl8.6.so  
+-- Found TCLTK: /usr/lib/x86_64-linux-gnu/libtcl8.6.so  
+-- Found TK: /usr/lib/x86_64-linux-gnu/libtk8.6.so  
+-- Looking for Tcl - found
+-- TCL_INCLUDE_PATH = /usr/include/tcl8.6
+-- TCL_LIBRARY = /usr/lib/x86_64-linux-gnu/libtcl8.6.so
+-- TCL_STUB_LIBRARY = /usr/lib/x86_64-linux-gnu/libtclstub8.6.a
+-- TCL_LIBRARY_PATH = /usr/lib/x86_64-linux-gnu
+-- Looking for tclsh - found
+-- TCL_TCLSH = /usr/bin/tclsh
+-- Looking for Tcl version with tclsh - found
+-- PLPLOT_TCL_VERSION = 8.6.10
+-- Looking for itcl.h
+-- PLPLOT_ITCL_VERSION = 3.4
+-- Looking for itcl.h - not found
+-- WARNING: Disabling Itcl interface code
+-- Looking for Tk - found
+-- TK_INCLUDE_PATH = /usr/include/tcl8.6;/usr/include
+-- TK_LIBRARY = /usr/lib/x86_64-linux-gnu/libtk8.6.so
+-- TK_STUB_LIBRARY = /usr/lib/x86_64-linux-gnu/libtkstub8.6.a
+-- TK_LIBRARY_PATH = /usr/lib/x86_64-linux-gnu
+-- Looking for wish - found
+-- TK_WISH = /usr/bin/wish
+-- Looking for Tk version with wish - found
+-- Tcl and Tk versions found by both tclsh and wish are identical
+-- Looking for itk.h
+-- PLPLOT_ITK_VERSION = 3.4
+-- Looking for itk.h - not found
+-- WARNING: Disabling Itk interface code
+-- Finished determining consistent system data for Tcl and friends
+-- CMAKE_Ada_COMPILER_ID = GNU
+-- Check for working /usr/bin/gnatmake compiler: 
+-- Check for working /usr/bin/gnatmake compiler:  -- works
+-- gnat version = 9.3
+-- FOUND gnat library /usr/lib/x86_64-linux-gnu/libgnat.so
+-- Attempting to find any Lua version
+-- LUA_INCLUDE_DIR = LUA_INCLUDE_DIR-NOTFOUND
+-- LUA_LIBRARIES = 
+-- WARNING: Lua header and/or library not found. Disabling Lua binding
+-- A test cmake run with language = D enabled failed.
+-- Specify -DENABLE_compiler_diagnostics=ON to see full CMake diagnostics concerning this failure.
+-- WARNING: no working D compiler so disabling D binding and examples.
+-- FindShapelib: Found shapelib header directory, /usr/include, and library, /usr/lib/x86_64-linux-gnu/libshp.so.
+-- Found Freetype: /usr/local/lib/libfreetype.so (found version "2.10.4") 
+-- FREETYPE_CFLAGS = -I/usr/local/include/freetype2
+-- FREETYPE_LIBRARIES = /usr/local/lib/libfreetype.so
+-- Check for NaN awareness in C compiler
+-- Check for NaN awareness in C compiler - found
+-- Found QHULL: /usr/include  
+-- QHULL_INCLUDE_DIRS = /usr/include
+-- HAS_LIBQHULL_INCLUDE = ON
+-- QHULL_LIBRARIES = /usr/lib/x86_64-linux-gnu/libqhull.so
+-- QHULL_RPATH = 
+-- Looking for qh_new_qhull
+-- Looking for qh_new_qhull - found
+-- qhull library compiled with correct (double) size for realT.
+-- Checking for module 'pango'
+--   Found pango, version 1.44.7
+-- Checking for module 'pangoft2'
+--   Found pangoft2, version 1.44.7
+-- Found LTDL: /usr/lib/x86_64-linux-gnu/libltdl.so
+-- LTDL_INCLUDE_DIR = /usr/include
+-- LTDL_LIBRARY_DIR = /usr/lib/x86_64-linux-gnu
+-- LTDL_LIBRARIES = /usr/lib/x86_64-linux-gnu/libltdl.so
+-- Checking for module 'pangocairo'
+--   Found pangocairo, version 1.44.7
+-- Not a Windows platform so setting wincairo driver to OFF.
+-- TKLIB_COMPILE_FLAGS = -I"/usr/include/tcl8.6" -I"/usr/include"
+-- tk_COMPILE_FLAGS = -I"/usr/include/tcl8.6" -I"/usr/include/tcl8.6" -I"/usr/include" \
+-I"/home/wruslan/temp1/plplot-source"/bindings/tcl -I"/home/wruslan/temp1/plplot-source/build_dir"/bindings/tcl \
+-I"/home/wruslan/temp1/plplot-source"/bindings/tk
+-- tk_LINK_FLAGS = PLPLOT::plplottcltk;/usr/lib/x86_64-linux-gnu/libtcl8.6.so;/usr/lib/x86_64-linux-gnu/libtk8.6.so
+-- tk_RPATH = 
+-- ntk_COMPILE_FLAGS = -I"/usr/include/tcl8.6" -I"/usr/include/tcl8.6" -I"/usr/include"
+-- ntk_LINK_FLAGS = /usr/lib/x86_64-linux-gnu/libtcl8.6.so;/usr/lib/x86_64-linux-gnu/libtk8.6.so
+-- ntk_RPATH = 
+-- tkwin_COMPILE_FLAGS = -I"/usr/include/tcl8.6" -I"/usr/include/tcl8.6" -I"/usr/include" \
+-I"/home/wruslan/temp1/plplot-source"/bindings/tcl -I"/home/wruslan/temp1/plplot-source/build_dir"/bindings/tcl \
+-I"/home/wruslan/temp1/plplot-source"/bindings/tk-x-plat -I"/home/wruslan/temp1/plplot-source"/bindings/tk
+-- tkwin_LINK_FLAGS = PLPLOT::plplottcltk;/usr/lib/x86_64-linux-gnu/libtcl8.6.so; \
+/usr/lib/x86_64-linux-gnu/libtk8.6.so;/usr/lib/x86_64-linux-gnu/libSM.so; \
+/usr/lib/x86_64-linux-gnu/libICE.so;/usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+-- tkwin_RPATH = 
+-- Checking for module 'lasi'
+--   No package 'lasi' found
+Package lasi was not found in the pkg-config search path.
+Perhaps you should add the directory containing `lasi.pc'
+to the PKG_CONFIG_PATH environment variable
+No package 'lasi' found
+-- PLATFORM ISSUE: Determination of LASI_PACKAGE_VERSION failed.
+   Therefore setting PLD_psttf and PLD_psttfc to OFF.  To address this issue install libLASi-1.1.4 or later
+   and the pango and pangoft2 packages and/or set the environment variable PKG_CONFIG_PATH appropriately.
+-- Setting PLD_epsqt to OFF since Qt5 does not support PostScript
+-- Qt5 pc_qt_COMPILE_FLAGS = -fPIC -DQT_CORE_LIB -I/usr/include/x86_64-linux-gnu/qt5 \
+-I/usr/include/x86_64-linux-gnu/qt5/QtCore -DQT_GUI_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtGui \
+-DQT_PRINTSUPPORT_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtPrintSupport -DQT_WIDGETS_LIB \
+-I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -DQT_SVG_LIB -I/usr/include/x86_64-linux-gnu/qt5/QtSvg
+-- Qt5 pc_qt_LIBRARIES_LIST = /usr/lib/x86_64-linux-gnu/libQt5Core.so;/usr/lib/x86_64-linux-gnu/libQt5Gui.so; \
+/usr/lib/x86_64-linux-gnu/libQt5PrintSupport.so;/usr/lib/x86_64-linux-gnu/libQt5Widgets.so; \
+/usr/lib/x86_64-linux-gnu/libQt5Svg.so
+-- WARNING: PLPLOT_USE_QT5 is ON so setting ENABLE_pyqt4 to OFF
+-- WARNING: ENABLE_python is OFF so setting ENABLE_pyqt5 to OFF
+-- Found wxWidgets: -L/usr/lib/x86_64-linux-gnu;-pthread;;;-lwx_baseu-3.0;-lwx_gtk3u_core-3.0 \
+(found suitable version "3.0.4", minimum required is "3.0.0") 
+-- wxWidgets_FOUND             : TRUE
+-- wxWidgets_INCLUDE_DIRS      : /usr/lib/x86_64-linux-gnu/wx/include/gtk3-unicode-3.0;/usr/include/wx-3.0
+-- wxWidgets_LIBRARIES         : -L/usr/lib/x86_64-linux-gnu;-pthread;;;-lwx_baseu-3.0;-lwx_gtk3u_core-3.0
+-- wxWidgets_LIBRARY_DIRS      : /usr/lib/x86_64-linux-gnu
+-- wxWidgets_DEFINITIONS       : _FILE_OFFSET_BITS=64;WXUSINGDLL;__WXGTK__
+-- wxWidgets_DEFINITIONS_DEBUG : 
+-- wxwidgets_COMPILE_FLAGS = -I/usr/lib/x86_64-linux-gnu/wx/include/gtk3-unicode-3.0 \
+-I/usr/include/wx-3.0 -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ 
+-- wxwidgets_LINK_FLAGS = -pthread;/usr/lib/x86_64-linux-gnu/libwx_baseu-3.0.so; \
+/usr/lib/x86_64-linux-gnu/libwx_gtk3u_core-3.0.so
+-- RT_LIB = /usr/lib/x86_64-linux-gnu/librt.so
+-- Looking for haru pdf header and library
+-- Looking for haru pdf header and library - not found
+-- WARNING: Setting PLD_pdf to OFF.
+-- PLPLOT_TEST_DEVICE = svg
+-- PLPLOT_TEST_TARGET = PLPLOT::svg
+-- FAMILIED_PLPLOT_TEST_DEVICE = yes
+-- OCAMLC = /usr/bin/ocamlc.opt
+-- WARNING: The camlidl application not found. Disabling OCaml binding
+-- WARNING: ENABLE_ocaml is OFF so disabling Plcairo module and lablgtk2 support
+-- validate target will be available to check for syntax issues in the PLplot DocBook documentation using /usr/bin/env SP_CHARSET_FIXED=yes SP_ENCODING=xml /usr/bin/onsgmls.
+-- For csa.c use gcc -fno-inline-functions option to avoid segfaults
+pc_libplplot_LINK_FLAGS = /usr/lib/x86_64-linux-gnu/libltdl.so;/usr/lib/x86_64-linux-gnu/libm.so; \
+/usr/lib/x86_64-linux-gnu/libshp.so;/usr/local/lib/libfreetype.so;-lcsirocsa;-lcsironn;-lqhull;-lqsastime
+-- WARNING concerning spurious warning messages generated by the gfortran compiler.
+   The new Fortran binding is known to generate some ~50 "marked
+   PRIVATE" warning messages when building the plplotfortran target with the
+   gfortran Fortran compiler.  A typical example of such a warning
+   message is
+
+   Warning: Symbol 'interface_plcont' at (1) is marked PRIVATE but has been given the binding label 'c_plcont'
+
+   It appears these warnings (which do not occur if using the ifort or
+   nagfor Fortran compilers) are due to a gfortran bug (see
+   <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=49111> and
+   <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=64861>), i.e., they
+   are spurious warnings concerning completely valid use of the
+   private attribute for interface blocks describing C routines.
+   There appear to be no known negative consequences of this gfortran
+   bug other than the spurious warnings themselves.  Until this gfortran
+   bug is fixed, these ~50 "marked PRIVATE" warnings should just be
+   ignored for those using gfortran.
+-- ENABLE_itcl: OFF
+-- Itcl libraries: PLPLOT::plplot;/usr/lib/x86_64-linux-gnu/libtcl8.6.so
+-- TEST_ENVIRONMENT = EXAMPLES_PREFIX=/home/wruslan/temp1/plplot-source/build_dir/examples \
+SRC_EXAMPLES_PREFIX=/home/wruslan/temp1/plplot-source/examples \
+OUTPUT_DIR=/home/wruslan/temp1/plplot-source/build_dir/ctest_examples_output_dir VC_CTEST_DIRECTORY=
+-- Determine compile and link flags for ext-cairo-test
+-- Checking for module 'cairo'
+--   Found cairo, version 1.16.0
+-- pc_qt_link_flags = -L"/usr/lib/x86_64-linux-gnu" -lQt5Core -L"/usr/lib/x86_64-linux-gnu" \
+-lQt5Gui -L"/usr/lib/x86_64-linux-gnu" -lQt5PrintSupport -L"/usr/lib/x86_64-linux-gnu" \
+-lQt5Widgets -L"/usr/lib/x86_64-linux-gnu" -lQt5Svg
+
+Summary of CMake build system results for PLplot
+
+Install location variables which can be set by the user.  N.B. These
+variables are ordered by decreasing degree of generality, with the
+_default_ values of the later ones in the list determined by the
+values of variables earlier in the list.  So, for example, it is
+usually sufficient in the vast majority of cases to just set
+CMAKE_INSTALL_PREFIX, and the rest of these variables are adjusted
+accordingly (at least for a fresh configuration), and it is rare
+indeed that is is necessary for a user to set any variable here whose
+name does not start with "CMAKE_INSTALL_".
+
+
+CMAKE_INSTALL_PREFIX: /usr/local
+CMAKE_INSTALL_EXEC_PREFIX: /usr/local
+CMAKE_INSTALL_BINDIR: /usr/local/bin
+CMAKE_INSTALL_DATADIR: /usr/local/share
+CMAKE_INSTALL_LIBDIR: /usr/local/lib
+CMAKE_INSTALL_INCLUDEDIR: /usr/local/include
+CMAKE_INSTALL_INFODIR: /usr/local/share/info
+CMAKE_INSTALL_MANDIR: /usr/local/share/man
+CMAKE_INSTALL_PKG_CONFIG_DIR: /usr/local/lib/pkgconfig
+DATA_DIR: /usr/local/share/plplot5.15.0
+LIB_DIR: /usr/local/lib
+INCLUDE_DIR: /usr/local/include/plplot
+BIN_DIR: /usr/local/bin
+DRV_DIR: /usr/local/lib/plplot5.15.0/drivers
+DOC_DIR: /usr/local/share/doc/plplot
+INFO_DIR: /usr/local/share/info
+MAN_DIR: /usr/local/share/man
+PKG_CONFIG_DIR: /usr/local/lib/pkgconfig
+FORTRAN_MOD_DIR: /usr/local/lib/fortran/modules/plplot
+JAR_DIR: /usr/local/share/java
+JAVAWRAPPER_DIR: /usr/local/lib/jni
+PLPLOT_OCTAVE_DIR: /usr/local/share/plplot_octave
+OCTAVE_M_DIR: /usr/local/share/octave/site/m/PLplot
+OCTAVE_OCT_DIR: /usr/local/lib/octave
+TCL_DIR: /usr/local/share/plplot5.15.0/tcl
+ADA_INCLUDE_DIR: /usr/local/share/ada/adainclude/plplotada
+ADA_LIB_DIR: /usr/local/lib/ada/adalib/plplotada
+
+
+Other important CMake variables:
+
+CMAKE_SYSTEM_NAME:	Linux
+UNIX:			1
+WIN32:			
+APPLE:			
+MSVC:				(MSVC_VERSION:	)
+MINGW:			
+MSYS:			
+CYGWIN:			
+BORLAND:		
+WATCOM:		  
+
+SWIG_FOUND:		TRUE
+PERL_FOUND:		TRUE
+X11_FOUND:		TRUE
+
+CMAKE_BUILD_TYPE:	
+CMAKE_C_COMPILER CMAKE_C_FLAGS:			/usr/bin/gcc 
+CMAKE_CXX_COMPILER CMAKE_CXX_FLAGS:		/usr/bin/g++ 
+CMAKE_Fortran_COMPILER CMAKE_Fortran_FLAGS:	/usr/bin/gfortran 
+Target Fortran:	
+
+ENABLE_DYNDRIVERS:	ON
+DRIVERS_LIST: cairo;qt;mem;ntk;null;ps;svg;tk;tkwin;wxwidgets;xfig;xwin
+DEVICES_LIST: memcairo;extcairo;pdfcairo;pngcairo;pscairo;epscairo;svgcairo;xcairo;pdfqt;\
+qtwidget;bmpqt;jpgqt;pngqt;ppmqt;tiffqt;extqt;memqt;svgqt;mem;ntk;null;\
+ps;psc;svg;tk;tkwin;wxwidgets;xfig;xwin
+
+Library options:
+BUILD_SHARED_LIBS:	ON		PL_DOUBLE:	ON
+
+Optional libraries:
+PL_HAVE_QHULL:		ON		WITH_CSA:	ON
+PL_HAVE_FREETYPE:	ON		PL_HAVE_PTHREADS:	ON
+HAVE_AGG:				HAVE_SHAPELIB:	ON
+
+WITH GCC-10.2.0
+=============================
+Language Bindings:
+ENABLE_ada:			ON
+ENABLE_cxx:			ON
+ENABLE_d:		OFF
+ENABLE_fortran:		ON
+ENABLE_java:		ON
+ENABLE_lua:		OFF
+ENABLE_ocaml:	OFF
+ENABLE_octave:		ON
+ENABLE_python:	OFF
+ENABLE_qt:			ON
+ENABLE_pyqt5:	OFF
+ENABLE_tcl:			ON
+ENABLE_itcl:	OFF
+ENABLE_tk:			ON
+ENABLE_itk:		OFF
+ENABLE_wxwidgets:	ON
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/wruslan/temp1/plplot-source/build_dir
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ 
+
+WITH GCC-9.3.1
+=======================================
+Language Bindings:
+ENABLE_ada:		OFF  <=====
+ENABLE_cxx:			ON
+ENABLE_d:		OFF
+ENABLE_fortran:	OFF  <====
+ENABLE_java:		ON
+ENABLE_lua:		OFF
+ENABLE_ocaml:	OFF
+ENABLE_octave:		ON
+ENABLE_python:	OFF
+ENABLE_qt:			ON
+ENABLE_pyqt5:	OFF
+ENABLE_tcl:			ON
+ENABLE_itcl:	OFF
+ENABLE_tk:			ON
+ENABLE_itk:		OFF
+ENABLE_wxwidgets:	ON
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/wruslan/plplot-source/build_dir
+Ub2004-rt38:~/plplot-source/build_dir$ 
+
+
+===========================================================
+SUCCESS COMPILE WITH MAKE
+===========================================================
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ 
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ make
+Scanning dependencies of target csirocsa
+[  1%] Building C object lib/csa/CMakeFiles/csirocsa.dir/csa.c.o
+[  1%] Linking C shared library libcsirocsa.so
+[  1%] Built target csirocsa
+Scanning dependencies of target csironn
+[  1%] Building C object lib/nn/CMakeFiles/csironn.dir/delaunay.c.o
+[  1%] Building C object lib/nn/CMakeFiles/csironn.dir/hash.c.o
+[  2%] Building C object lib/nn/CMakeFiles/csironn.dir/istack.c.o
+[  2%] Building C object lib/nn/CMakeFiles/csironn.dir/lpi.c.o
+[  2%] Building C object lib/nn/CMakeFiles/csironn.dir/nnai.c.o
+[  2%] Building C object lib/nn/CMakeFiles/csironn.dir/nnpi.c.o
+[  2%] Building C object lib/nn/CMakeFiles/csironn.dir/nncommon.c.o
+[  3%] Linking C shared library libcsironn.so
+[  3%] Built target csironn
+Scanning dependencies of target tai-utc-gen
+[  3%] Building C object lib/qsastime/CMakeFiles/tai-utc-gen.dir/tai-utc-gen.c.o
+[  4%] Linking C executable tai-utc-gen
+[  4%] Built target tai-utc-gen
+Scanning dependencies of target tai-utc.h_built
+[  4%] Generating tai-utc.h
+[  4%] Built target tai-utc.h_built
+Scanning dependencies of target deltaT-gen
+[  4%] Building C object lib/qsastime/CMakeFiles/deltaT-gen.dir/deltaT-gen.c.o
+[  4%] Building C object lib/qsastime/CMakeFiles/deltaT-gen.dir/dspline.c.o
+[  4%] Linking C executable deltaT-gen
+[  4%] Built target deltaT-gen
+Scanning dependencies of target deltaT.h_built
+[  5%] Generating deltaT.h
+[  5%] Built target deltaT.h_built
+Scanning dependencies of target qsastime
+[  5%] Building C object lib/qsastime/CMakeFiles/qsastime.dir/qsastime.c.o
+[  6%] Building C object lib/qsastime/CMakeFiles/qsastime.dir/dsplint.c.o
+[  6%] Linking C shared library libqsastime.so
+[  6%] Built target qsastime
+Scanning dependencies of target plhershey-unicode-gen
+[  6%] Building C object include/CMakeFiles/plhershey-unicode-gen.dir/__/fonts/plhershey-unicode-gen.c.o
+[  6%] Linking C executable plhershey-unicode-gen
+[  6%] Built target plhershey-unicode-gen
+Scanning dependencies of target plhershey-unicode.h_built
+[  7%] Generating plhershey-unicode.h
+[  7%] Built target plhershey-unicode.h_built
+Scanning dependencies of target plplot
+[  7%] Building C object src/CMakeFiles/plplot.dir/pdfutils.c.o
+[  7%] Building C object src/CMakeFiles/plplot.dir/plmem.c.o
+[  7%] Building C object src/CMakeFiles/plplot.dir/plaffine.c.o
+[  7%] Building C object src/CMakeFiles/plplot.dir/plarc.c.o
+[  8%] Building C object src/CMakeFiles/plplot.dir/plargs.c.o
+[  8%] Building C object src/CMakeFiles/plplot.dir/plbox.c.o
+[  8%] Building C object src/CMakeFiles/plplot.dir/plcont.c.o
+[  8%] Building C object src/CMakeFiles/plplot.dir/plcore.c.o
+[  8%] Building C object src/CMakeFiles/plplot.dir/plctrl.c.o
+[  9%] Building C object src/CMakeFiles/plplot.dir/plcvt.c.o
+[  9%] Building C object src/CMakeFiles/plplot.dir/pldtik.c.o
+[  9%] Building C object src/CMakeFiles/plplot.dir/plf2ops.c.o
+[  9%] Building C object src/CMakeFiles/plplot.dir/plfill.c.o
+[  9%] Building C object src/CMakeFiles/plplot.dir/plfreetype.c.o
+....
+....
+[ 10%] Building C object src/CMakeFiles/plplot.dir/plgradient.c.o
+[ 10%] Building C object src/CMakeFiles/plplot.dir/plhist.c.o
+[ 10%] Building C object src/CMakeFiles/plplot.dir/plimage.c.o
+[ 10%] Building C object src/CMakeFiles/plplot.dir/plline.c.o
+[ 10%] Building C object src/CMakeFiles/plplot.dir/plmap.c.o
+[ 11%] Building C object src/CMakeFiles/plplot.dir/plmetafile.c.o
+[ 11%] Building C object src/CMakeFiles/plplot.dir/plot3d.c.o
+[ 11%] Building C object src/CMakeFiles/plplot.dir/plpage.c.o
+[ 11%] Building C object src/CMakeFiles/plplot.dir/plsdef.c.o
+[ 11%] Building C object src/CMakeFiles/plplot.dir/plshade.c.o
+[ 13%] Building C object src/CMakeFiles/plplot.dir/plstdio.c.o
+[ 13%] Building C object src/CMakeFiles/plplot.dir/plstripc.c.o
+[ 13%] Building C object src/CMakeFiles/plplot.dir/plsym.c.o
+[ 13%] Building C object src/CMakeFiles/plplot.dir/pltick.c.o
+[ 13%] Building C object src/CMakeFiles/plplot.dir/plvpor.c.o
+[ 14%] Building C object src/CMakeFiles/plplot.dir/plwind.c.o
+[ 14%] Building C object src/CMakeFiles/plplot.dir/plbuf.c.o
+[ 14%] Building C object src/CMakeFiles/plplot.dir/plgridd.c.o
+[ 14%] Building C object src/CMakeFiles/plplot.dir/plvect.c.o
+[ 15%] Building C object src/CMakeFiles/plplot.dir/mt19937ar.c.o
+[ 15%] Building C object src/CMakeFiles/plplot.dir/pltime.c.o
+[ 15%] Building C object src/CMakeFiles/plplot.dir/pllegend.c.o
+[ 15%] Linking C shared library libplplot.so
+[ 15%] Built target plplot
+Scanning dependencies of target concatenate_pkgIndex.tcl
+[ 15%] Generating pkgIndex.tcl
+[ 15%] Built target concatenate_pkgIndex.tcl
+Scanning dependencies of target plplotcxx
+[ 15%] Building CXX object bindings/c++/CMakeFiles/plplotcxx.dir/plstream.cc.o
+[ 15%] Linking CXX shared library libplplotcxx.so
+[ 16%] Built target plplotcxx
+Scanning dependencies of target plplotfortran
+[ 16%] Building Fortran object bindings/fortran/CMakeFiles/plplotfortran.dir/plplot_small_modules.f90.o
+....
+....
+[ 17%] Linking Fortran shared library libplplotfortran.so
+[ 17%] Built target plplotfortran
+Scanning dependencies of target plplot.tcl_target
+[ 18%] Generating plplot.tcl
+[ 18%] Built target plplot.tcl_target
+Scanning dependencies of target tclIndex_tcl
+[ 18%] Generating tclIndex
+[ 18%] Built target tclIndex_tcl
+Scanning dependencies of target tclmatrix
+[ 18%] Building C object bindings/tcl/CMakeFiles/tclmatrix.dir/tclMatrix.c.o
+[ 19%] Building C object bindings/tcl/CMakeFiles/tclmatrix.dir/matrixInit.c.o
+[ 19%] Linking C shared library libtclmatrix.so
+[ 19%] Built target tclmatrix
+[ 19%] Generating tclgen.h, tclgen_s.h, tclgen.c
+Scanning dependencies of target plplottcltk
+[ 19%] Building C object bindings/tcl/CMakeFiles/plplottcltk.dir/tclAPI.c.o
+[ 19%] Building C object bindings/tcl/CMakeFiles/plplottcltk.dir/__/tk/Pltk_Init.c.o
+[ 20%] Building C object bindings/tcl/CMakeFiles/plplottcltk.dir/__/tk/plframe.c.o
+[ 20%] Building C object bindings/tcl/CMakeFiles/plplottcltk.dir/__/tk/plr.c.o
+[ 20%] Building C object bindings/tcl/CMakeFiles/plplottcltk.dir/__/tk/tcpip.c.o
+[ 20%] Linking C shared library libplplottcltk.so
+[ 20%] Built target plplottcltk
+Scanning dependencies of target plplottcltk_Main
+[ 21%] Building C object bindings/tcl/CMakeFiles/plplottcltk_Main.dir/tclMain.c.o
+[ 21%] Building C object bindings/tcl/CMakeFiles/plplottcltk_Main.dir/__/tk/tkMain.c.o
+[ 21%] Linking C shared library libplplottcltk_Main.so
+[ 21%] Built target plplottcltk_Main
+Scanning dependencies of target pltcl
+[ 22%] Building C object bindings/tcl/CMakeFiles/pltcl.dir/pltcl.c.o
+[ 22%] Linking C executable pltcl
+[ 22%] Built target pltcl
+Scanning dependencies of target tcl_files
+[ 22%] Generating FileSelector.tcl
+[ 22%] Generating Pltkwin.tcl
+[ 23%] Generating about.tcl
+[ 23%] Generating help_gui.tcl
+[ 23%] Generating help_keys.tcl
+[ 23%] Generating help_tcltk.tcl
+[ 23%] Generating plclient.tcl
+[ 25%] Generating plcolor.tcl
+[ 25%] Generating plconfig.tcl
+[ 25%] Generating pldefaults.tcl
+[ 25%] Generating plplot.tcl
+[ 25%] Generating plserver.tcl
+[ 26%] Generating pltools.tcl
+[ 26%] Generating plwidget.tcl
+[ 26%] Generating PLWin.itk
+[ 26%] Generating PLXWin.itk
+[ 26%] Built target tcl_files
+Scanning dependencies of target tclIndex_tk
+[ 27%] Generating tclIndex
+[ 30%] Built target tclIndex_tk
+Scanning dependencies of target plserver
+[ 30%] Building C object bindings/tk/CMakeFiles/plserver.dir/plserver.c.o
+[ 30%] Linking C executable plserver
+[ 30%] Built target plserver
+Scanning dependencies of target plplot_octave_swig_compilation
+[ 30%] Swig compile plplot_octave.i for octave
+[ 30%] Built target plplot_octave_swig_compilation
+Scanning dependencies of target plplot_octave
+[ 30%] Building CXX object bindings/octave/CMakeFiles/plplot_octave.dir/plplot_octaveOCTAVE_wrap.cxx.o
+[ 30%] Linking CXX shared module plplot_octave.oct
+[ 31%] Built target plplot_octave
+Scanning dependencies of target plplotjavac_wrap_swig_compilation
+[ 32%] Swig compile plplotjavac.i for java
+[ 32%] Built target plplotjavac_wrap_swig_compilation
+Scanning dependencies of target plplotjavac_wrap
+[ 32%] Building C object bindings/java/CMakeFiles/plplotjavac_wrap.dir/plplotjavacJAVA_wrap.c.o
+[ 32%] Linking C shared module libplplotjavac_wrap.so
+[ 32%] Built target plplotjavac_wrap
+Scanning dependencies of target plplot_core
+[ 32%] Generating plplot/core/config.class
+[ 32%] Generating plplot/core/PLCallbackCT.class
+[ 32%] Generating plplot/core/PLCallbackMapform.class
+[ 32%] Generating plplot/core/PLCallbackLabel.class
+[ 32%] Generating plplot/core/plplotjavacJNI.class
+[ 32%] Generating plplot/core/PLGraphicsIn.class
+[ 32%] Generating plplot/core/plplotjavacConstants.class
+[ 33%] Generating plplot/core/plplotjavac.class
+[ 33%] Generating plplot/core/PLStream.class
+[ 33%] Built target plplot_core
+Scanning dependencies of target plplotwxwidgets
+[ 33%] Building CXX object bindings/wxwidgets/CMakeFiles/plplotwxwidgets.dir/wxPLplotstream.cpp.o
+[ 34%] Linking CXX shared library libplplotwxwidgets.so
+[ 34%] Built target plplotwxwidgets
+Scanning dependencies of target plplotada
+[ 34%] Building Ada object bindings/ada/CMakeFiles/plplotada.dir/plplot_standard.o
+[ 34%] Building Ada object bindings/ada/CMakeFiles/plplotada.dir/plplot_thin.o
+[ 34%] Building Ada object bindings/ada/CMakeFiles/plplotada.dir/plplot_traditional.o
+[ 35%] Building Ada object bindings/ada/CMakeFiles/plplotada.dir/plplot_auxiliary.o
+[ 35%] Linking Ada shared library libplplotada.so
+[ 35%] Built target plplotada
+Scanning dependencies of target plplotqt_autogen
+[ 35%] Automatic MOC for target plplotqt
+[ 35%] Built target plplotqt_autogen
+Scanning dependencies of target plplotqt
+[ 35%] Building CXX object bindings/qt_gui/CMakeFiles/plplotqt.dir/plplotqt_autogen/mocs_compilation.cpp.o
+[ 35%] Building CXX object bindings/qt_gui/CMakeFiles/plplotqt.dir/plqt.cpp.o
+[ 35%] Linking CXX shared library libplplotqt.so
+[ 36%] Built target plplotqt
+Scanning dependencies of target null
+[ 36%] Building C object drivers/CMakeFiles/null.dir/null.c.o
+[ 36%] Linking C shared module null.so
+[ 36%] Built target null
+Scanning dependencies of target wxPLViewer
+[ 36%] Building CXX object drivers/CMakeFiles/wxPLViewer.dir/wxwidgets_viewer/wxplviewer.cpp.o
+[ 36%] Building CXX object drivers/CMakeFiles/wxPLViewer.dir/wxwidgets_viewer/wxplframe.cpp.o
+[ 36%] Building CXX object drivers/CMakeFiles/wxPLViewer.dir/wxwidgets_comms.cpp.o
+[ 36%] Linking CXX executable wxPLViewer
+[ 38%] Built target wxPLViewer
+Scanning dependencies of target ps
+[ 38%] Building C object drivers/CMakeFiles/ps.dir/ps.c.o
+[ 38%] Linking C shared module ps.so
+[ 38%] Built target ps
+Scanning dependencies of target mem
+Scanning dependencies of target mem
+[ 39%] Building C object drivers/CMakeFiles/mem.dir/mem.c.o
+[ 39%] Linking C shared module mem.so
+[ 39%] Built target mem
+Scanning dependencies of target wxwidgets
+[ 39%] Building CXX object drivers/CMakeFiles/wxwidgets.dir/wxwidgets.cpp.o
+[ 39%] Building CXX object drivers/CMakeFiles/wxwidgets.dir/wxwidgets_comms.cpp.o
+[ 39%] Building CXX object drivers/CMakeFiles/wxwidgets.dir/wxwidgets_dev.cpp.o
+[ 39%] Linking CXX shared module wxwidgets.so
+[ 40%] Built target wxwidgets
+Scanning dependencies of target qt
+[ 40%] Building CXX object drivers/CMakeFiles/qt.dir/qt.cpp.o
+[ 40%] Linking CXX shared module qt.so
+[ 41%] Built target qt
+Scanning dependencies of target cairo
+[ 41%] Building C object drivers/CMakeFiles/cairo.dir/cairo.c.o
+[ 41%] Linking C shared module cairo.so
+[ 41%] Built target cairo
+Scanning dependencies of target test-drv-info
+[ 41%] Building C object drivers/CMakeFiles/test-drv-info.dir/test-drv-info.c.o
+[ 41%] Linking C executable test-drv-info
+[ 41%] Built target test-drv-info
+Scanning dependencies of target svg
+[ 41%] Building C object drivers/CMakeFiles/svg.dir/svg.c.o
+[ 41%] Linking C shared module svg.so
+[ 41%] Built target svg
+Scanning dependencies of target xwin
+[ 41%] Building C object drivers/CMakeFiles/xwin.dir/xwin.c.o
+[ 41%] Linking C shared module xwin.so
+[ 42%] Built target xwin
+Scanning dependencies of target tk
+[ 42%] Building C object drivers/CMakeFiles/tk.dir/tk.c.o
+[ 42%] Linking C shared module tk.so
+[ 43%] Built target tk
+Scanning dependencies of target tkwin
+[ 43%] Building C object drivers/CMakeFiles/tkwin.dir/tkwin.c.o
+[ 43%] Building C object drivers/CMakeFiles/tkwin.dir/__/bindings/tk-x-plat/Plplotter_Init.c.o
+[ 43%] Building C object drivers/CMakeFiles/tkwin.dir/__/bindings/tk-x-plat/plplotter.c.o
+[ 43%] Linking C shared module tkwin.so
+[ 44%] Built target tkwin
+Scanning dependencies of target ntk
+[ 44%] Building C object drivers/CMakeFiles/ntk.dir/ntk.c.o
+[ 44%] Linking C shared module ntk.so
+[ 45%] Built target ntk
+Scanning dependencies of target xfig
+[ 45%] Building C object drivers/CMakeFiles/xfig.dir/xfig.c.o
+[ 46%] Linking C shared module xfig.so
+[ 46%] Built target xfig
+Scanning dependencies of target test_ps_dyndriver
+[ 46%] Generating test_dyndrivers_dir/ps.driver_info
+[ 46%] Built target test_ps_dyndriver
+Scanning dependencies of target test_svg_dyndriver
+[ 46%] Generating test_dyndrivers_dir/svg.driver_info
+[ 46%] Built target test_svg_dyndriver
+Scanning dependencies of target test_null_dyndriver
+[ 46%] Generating test_dyndrivers_dir/null.driver_info
+[ 46%] Built target test_null_dyndriver
+Scanning dependencies of target test_ntk_dyndriver
+[ 46%] Generating test_dyndrivers_dir/ntk.driver_info
+[ 46%] Built target test_ntk_dyndriver
+Scanning dependencies of target test_xwin_dyndriver
+[ 46%] Generating test_dyndrivers_dir/xwin.driver_info
+[ 46%] Built target test_xwin_dyndriver
+Scanning dependencies of target test_qt_dyndriver
+[ 47%] Generating test_dyndrivers_dir/qt.driver_info
+[ 47%] Built target test_qt_dyndriver
+Scanning dependencies of target test_mem_dyndriver
+[ 47%] Generating test_dyndrivers_dir/mem.driver_info
+[ 47%] Built target test_mem_dyndriver
+Scanning dependencies of target test_tk_dyndriver
+[ 47%] Generating test_dyndrivers_dir/tk.driver_info
+[ 47%] Built target test_tk_dyndriver
+Scanning dependencies of target test_xfig_dyndriver
+[ 48%] Generating test_dyndrivers_dir/xfig.driver_info
+[ 48%] Built target test_xfig_dyndriver
+Scanning dependencies of target test_cairo_dyndriver
+[ 50%] Generating test_dyndrivers_dir/cairo.driver_info
+[ 50%] Built target test_cairo_dyndriver
+Scanning dependencies of target test_tkwin_dyndriver
+[ 50%] Generating test_dyndrivers_dir/tkwin.driver_info
+[ 50%] Built target test_tkwin_dyndriver
+Scanning dependencies of target test_wxwidgets_dyndriver
+[ 50%] Generating test_dyndrivers_dir/wxwidgets.driver_info
+[ 50%] Built target test_wxwidgets_dyndriver
+Scanning dependencies of target test_dyndrivers
+[ 50%] Built target test_dyndrivers
+Scanning dependencies of target parity_bit_check
+[ 50%] Building C object utils/CMakeFiles/parity_bit_check.dir/parity_bit_check.c.o
+[ 51%] Linking C executable parity_bit_check
+[ 51%] Built target parity_bit_check
+Scanning dependencies of target pltek
+[ 51%] Building C object utils/CMakeFiles/pltek.dir/pltek.c.o
+[ 51%] Linking C executable pltek
+[ 52%] Built target pltek
+Scanning dependencies of target plfortrandemolib
+[ 52%] Building Fortran object examples/CMakeFiles/plfortrandemolib.dir/fortran/plfortrandemolib.f90.o
+[ 52%] Linking Fortran static library libplfortrandemolib.a
+[ 52%] Built target plfortrandemolib
+Scanning dependencies of target x25j
+[ 52%] Generating plplot/examples/x25.class
+[ 52%] Built target x25j
+Scanning dependencies of target x33j
+[ 52%] Generating plplot/examples/x33.class
+[ 52%] Built target x33j
+Scanning dependencies of target x30j
+[ 52%] Generating plplot/examples/x30.class
+[ 52%] Built target x30j
+Scanning dependencies of target x29j
+[ 53%] Generating plplot/examples/x29.class
+[ 53%] Built target x29j
+Scanning dependencies of target x12j
+[ 53%] Generating plplot/examples/x12.class
+[ 53%] Built target x12j
+Scanning dependencies of target x20j
+[ 53%] Generating plplot/examples/x20.class
+[ 53%] Built target x20j
+Scanning dependencies of target x10j
+[ 53%] Generating plplot/examples/x10.class
+[ 53%] Built target x10j
+Scanning dependencies of target x15j
+[ 53%] Generating plplot/examples/x15.class
+[ 53%] Built target x15j
+Scanning dependencies of target x27j
+[ 53%] Generating plplot/examples/x27.class
+[ 53%] Built target x27j
+Scanning dependencies of target x07j
+[ 53%] Generating plplot/examples/x07.class
+[ 53%] Built target x07j
+Scanning dependencies of target x09j
+[ 54%] Generating plplot/examples/x09.class
+[ 54%] Built target x09j
+Scanning dependencies of target x05j
+[ 54%] Generating plplot/examples/x05.class
+[ 54%] Built target x05j
+Scanning dependencies of target x11j
+[ 54%] Generating plplot/examples/x11.class
+[ 54%] Built target x11j
+Scanning dependencies of target x04j
+[ 55%] Generating plplot/examples/x04.class
+[ 55%] Built target x04j
+Scanning dependencies of target x08j
+[ 55%] Generating plplot/examples/x08.class
+[ 55%] Built target x08j
+Scanning dependencies of target x26j
+[ 55%] Generating plplot/examples/x26.class
+[ 55%] Built target x26j
+Scanning dependencies of target x03j
+[ 55%] Generating plplot/examples/x03.class
+[ 55%] Built target x03j
+Scanning dependencies of target x01j
+[ 55%] Generating plplot/examples/x01.class
+[ 55%] Built target x01j
+Scanning dependencies of target x00j
+[ 55%] Generating plplot/examples/x00.class
+[ 55%] Built target x00j
+Scanning dependencies of target x23j
+[ 55%] Generating plplot/examples/x23.class
+[ 55%] Built target x23j
+Scanning dependencies of target x14j
+[ 56%] Generating plplot/examples/x14.class
+[ 56%] Built target x14j
+Scanning dependencies of target x28j
+[ 56%] Generating plplot/examples/x28.class
+[ 56%] Built target x28j
+Scanning dependencies of target x16j
+[ 56%] Generating plplot/examples/x16.class
+[ 56%] Built target x16j
+Scanning dependencies of target x19j
+[ 57%] Generating plplot/examples/x19.class
+[ 57%] Built target x19j
+Scanning dependencies of target x13j
+[ 57%] Generating plplot/examples/x13.class
+[ 57%] Built target x13j
+Scanning dependencies of target x21j
+[ 57%] Generating plplot/examples/x21.class
+[ 57%] Built target x21j
+Scanning dependencies of target x02j
+[ 57%] Generating plplot/examples/x02.class
+[ 57%] Built target x02j
+Scanning dependencies of target x17j
+[ 57%] Generating plplot/examples/x17.class
+[ 57%] Built target x17j
+Scanning dependencies of target x22j
+[ 57%] Generating plplot/examples/x22.class
+[ 57%] Built target x22j
+Scanning dependencies of target x31j
+[ 57%] Generating plplot/examples/x31.class
+[ 57%] Built target x31j
+Scanning dependencies of target x24j
+[ 58%] Generating plplot/examples/x24.class
+[ 58%] Built target x24j
+Scanning dependencies of target x06j
+[ 58%] Generating plplot/examples/x06.class
+[ 58%] Built target x06j
+Scanning dependencies of target x18j
+[ 58%] Generating plplot/examples/x18.class
+[ 58%] Built target x18j
+Scanning dependencies of target plplot_examples
+[ 66%] Built target plplot_examples
+Scanning dependencies of target plplot_jar
+[ 66%] Generating plplot.jar
+[ 73%] Built target plplot_jar
+Scanning dependencies of target tcl_examples
+[ 73%] Generating README.tcldemos
+[ 73%] Generating plgrid.tcl
+[ 73%] Generating plot.dat
+[ 75%] Generating plot.tcl
+[ 75%] Generating r.dat
+[ 75%] Generating stats.log
+[ 75%] Generating tcldemos.tcl
+[ 75%] Generating x00.tcl
+[ 76%] Generating x01.tcl
+[ 76%] Generating x02.tcl
+[ 76%] Generating x03.tcl
+[ 76%] Generating x04.tcl
+[ 76%] Generating x05.tcl
+[ 77%] Generating x06.tcl
+[ 77%] Generating x07.tcl
+[ 77%] Generating x08.tcl
+[ 77%] Generating x09.tcl
+[ 77%] Generating x10.tcl
+[ 78%] Generating x11.tcl
+[ 78%] Generating x12.tcl
+[ 78%] Generating x13.tcl
+[ 78%] Generating x14.tcl
+[ 79%] Generating x15.tcl
+[ 79%] Generating x16.tcl
+[ 79%] Generating x17.tcl
+[ 79%] Generating x18.tcl
+[ 79%] Generating x19.tcl
+[ 80%] Generating x20.tcl
+[ 80%] Generating x21.tcl
+[ 80%] Generating x22.tcl
+[ 80%] Generating x23.tcl
+[ 80%] Generating x24.tcl
+[ 81%] Generating x25.tcl
+[ 81%] Generating x26.tcl
+[ 81%] Generating x27.tcl
+[ 81%] Generating x28.tcl
+[ 81%] Generating x29.tcl
+[ 82%] Generating x30.tcl
+[ 82%] Generating x31.tcl
+[ 82%] Generating x33.tcl
+[ 82%] Built target tcl_examples
+Scanning dependencies of target tclIndex_examples_tcl
+[ 82%] Generating tclIndex
+[ 91%] Built target tclIndex_examples_tcl
+canning dependencies of target tclIndex_examples_tk
+[ 91%] Generating README.tkdemos
+[ 92%] Generating runAllDemos.tcl
+[ 92%] Generating runExtendedDemos.tcl
+[ 92%] Generating tkdemos.tcl
+[ 92%] Generating x00.tcl
+[ 92%] Generating x01.tcl
+[ 93%] Generating x02.tcl
+[ 93%] Generating x03.tcl
+[ 93%] Generating x04.tcl
+[ 93%] Generating x05.tcl
+[ 93%] Generating x06.tcl
+[ 94%] Generating x07.tcl
+[ 94%] Generating x08.tcl
+[ 94%] Generating x09.tcl
+[ 94%] Generating x10.tcl
+[ 94%] Generating x11.tcl
+[ 95%] Generating x12.tcl
+[ 95%] Generating x13.tcl
+[ 95%] Generating x14.tcl
+[ 95%] Generating x15.tcl
+[ 95%] Generating x16.tcl
+[ 96%] Generating x17.tcl
+[ 96%] Generating x18.tcl
+[ 96%] Generating x19.tcl
+[ 96%] Generating x20.tcl
+[ 97%] Generating x21.tcl
+[ 97%] Generating x22.tcl
+[ 97%] Generating x23.tcl
+[ 97%] Generating x24.tcl
+[ 97%] Generating x25.tcl
+[ 98%] Generating x26.tcl
+[ 98%] Generating x27.tcl
+[ 98%] Generating x28.tcl
+[ 98%] Generating x29.tcl
+[ 98%] Generating x30.tcl
+[100%] Generating x31.tcl
+[100%] Generating x33.tcl
+[100%] Generating plgrid.tcl
+[100%] Generating tclIndex
+[100%] Built target tclIndex_examples_tk
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ 
+
+===========================================================
+SUCCESS - SUDO MAKE INSTALL
+===========================================================
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ sudo make install
+[sudo] password for wruslan: 
+[  0%] Built target csirocsa
+[  2%] Built target csironn
+[  2%] Built target tai-utc-gen
+[  2%] Built target tai-utc.h_built
+[  3%] Built target deltaT-gen
+[  3%] Built target deltaT.h_built
+[  4%] Built target qsastime
+[  4%] Built target plhershey-unicode-gen
+[  4%] Built target plhershey-unicode.h_built
+[ 13%] Built target plplot
+[ 13%] Built target concatenate_pkgIndex.tcl
+[ 13%] Built target plplotcxx
+[ 14%] Built target plplotfortran
+[ 15%] Built target plplot.tcl_target
+[ 15%] Built target tclIndex_tcl
+[ 15%] Built target tclmatrix
+[ 16%] Built target plplottcltk
+[ 17%] Built target plplottcltk_Main
+[ 17%] Built target pltcl
+[ 22%] Built target tcl_files
+[ 26%] Built target tclIndex_tk
+[ 27%] Built target plserver
+[ 28%] Built target plplot_octave_swig_compilation
+[ 28%] Built target plplot_octave
+[ 28%] Built target plplotjavac_wrap_swig_compilation
+[ 30%] Built target plplotjavac_wrap
+[ 32%] Built target plplot_core
+[ 32%] Built target plplotwxwidgets
+[ 33%] Built target plplotada
+[ 33%] Automatic MOC for target plplotqt
+[ 33%] Built target plplotqt_autogen
+[ 34%] Built target plplotqt
+[ 35%] Built target null
+[ 36%] Built target wxPLViewer
+[ 36%] Built target ps
+[ 36%] Built target mem
+[ 36%] Built target wxwidgets
+[ 36%] Built target qt
+[ 36%] Built target cairo
+[ 37%] Built target test-drv-info
+[ 38%] Built target svg
+[ 40%] Built target xwin
+[ 41%] Built target tk
+[ 42%] Built target tkwin
+[ 42%] Built target ntk
+[ 42%] Built target xfig
+[ 42%] Built target test_ps_dyndriver
+[ 42%] Built target test_svg_dyndriver
+[ 43%] Built target test_null_dyndriver
+[ 43%] Built target test_ntk_dyndriver
+[ 43%] Built target test_xwin_dyndriver
+[ 43%] Built target test_qt_dyndriver
+[ 43%] Built target test_mem_dyndriver
+[ 44%] Built target test_tk_dyndriver
+[ 44%] Built target test_xfig_dyndriver
+[ 44%] Built target test_cairo_dyndriver
+[ 44%] Built target test_tkwin_dyndriver
+[ 44%] Built target test_wxwidgets_dyndriver
+[ 44%] Built target test_dyndrivers
+[ 44%] Built target parity_bit_check
+[ 45%] Built target pltek
+[ 46%] Built target plfortrandemolib
+[ 46%] Built target x25j
+[ 47%] Built target x33j
+[ 47%] Built target x30j
+[ 47%] Built target x29j
+[ 47%] Built target x12j
+[ 47%] Built target x20j
+[ 47%] Built target x10j
+[ 47%] Built target x15j
+[ 48%] Built target x27j
+[ 48%] Built target x07j
+[ 50%] Built target x09j
+[ 50%] Built target x05j
+[ 50%] Built target x11j
+[ 51%] Built target x04j
+[ 51%] Built target x08j
+[ 51%] Built target x26j
+[ 51%] Built target x03j
+[ 51%] Built target x01j
+[ 52%] Built target x00j
+[ 53%] Built target x23j
+[ 53%] Built target x14j
+[ 53%] Built target x28j
+[ 53%] Built target x16j
+[ 53%] Built target x19j
+[ 54%] Built target x13j
+[ 54%] Built target x21j
+[ 54%] Built target x02j
+[ 54%] Built target x17j
+[ 54%] Built target x22j
+[ 54%] Built target x31j
+[ 54%] Built target x24j
+[ 54%] Built target x06j
+[ 55%] Built target x18j
+[ 63%] Built target plplot_examples
+[ 71%] Built target plplot_jar
+[ 80%] Built target tcl_examples
+[ 90%] Built target tclIndex_examples_tcl
+[100%] Built target tclIndex_examples_tk
+Install the project...
+-- Install configuration: ""
+-- Installing: /usr/local/share/doc/plplot/ABOUT
+-- Installing: /usr/local/share/doc/plplot/AUTHORS
+-- Installing: /usr/local/share/doc/plplot/COPYING.LIB
+-- Installing: /usr/local/share/doc/plplot/ChangeLog.release
+-- Installing: /usr/local/share/doc/plplot/Copyright
+-- Installing: /usr/local/share/doc/plplot/FAQ
+-- Installing: /usr/local/share/doc/plplot/NEWS
+-- Installing: /usr/local/share/doc/plplot/PROBLEMS
+-- Installing: /usr/local/share/doc/plplot/README
+-- Installing: /usr/local/share/doc/plplot/README.release
+-- Installing: /usr/local/share/doc/plplot/README.cumulated_release
+-- Installing: /usr/local/lib/cmake/plplot/plplotConfig.cmake
+-- Installing: /usr/local/lib/cmake/plplot/plplotConfigVersion.cmake
+-- Installing: /usr/local/lib/cmake/plplot/plplot_exports.cmake
+-- Installing: /usr/local/lib/libcsirocsa.so.0.0.1
+-- Installing: /usr/local/lib/libcsirocsa.so.0
+-- Installing: /usr/local/lib/libcsirocsa.so
+-- Installing: /usr/local/lib/cmake/plplot/export_csirocsa.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_csirocsa-noconfig.cmake
+-- Installing: /usr/local/share/doc/plplot/README.csa
+-- Installing: /usr/local/include/plplot/csa.h
+-- Installing: /usr/local/include/plplot/csadll.h
+-- Installing: /usr/local/lib/libcsironn.so.0.0.2
+-- Installing: /usr/local/lib/libcsironn.so.0
+-- Installing: /usr/local/lib/libcsironn.so
+-- Installing: /usr/local/lib/cmake/plplot/export_csironn.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_csironn-noconfig.cmake
+-- Installing: /usr/local/share/doc/plplot/README.nn
+-- Installing: /usr/local/include/plplot/nn.h
+-- Installing: /usr/local/include/plplot/nndll.h
+-- Installing: /usr/local/lib/libqsastime.so.0.0.1
+-- Installing: /usr/local/lib/libqsastime.so.0
+-- Installing: /usr/local/lib/libqsastime.so
+-- Installing: /usr/local/lib/cmake/plplot/export_qsastime.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_qsastime-noconfig.cmake
+-- Installing: /usr/local/include/plplot/qsastime.h
+-- Installing: /usr/local/include/plplot/qsastimedll.h
+-- Installing: /usr/local/include/plplot/disptab.h
+-- Installing: /usr/local/include/plplot/drivers.h
+-- Installing: /usr/local/include/plplot/pdf.h
+-- Installing: /usr/local/include/plplot/pldebug.h
+-- Installing: /usr/local/include/plplot/pldll.h
+-- Installing: /usr/local/include/plplot/plevent.h
+-- Installing: /usr/local/include/plplot/plplot.h
+-- Installing: /usr/local/include/plplot/plplotP.h
+-- Installing: /usr/local/include/plplot/plstrm.h
+-- Installing: /usr/local/include/plplot/plxwd.h
+-- Installing: /usr/local/include/plplot/plConfig.h
+-- Installing: /usr/local/include/plplot/plDevs.h
+-- Installing: /usr/local/include/plplot/qt.h
+-- Installing: /usr/local/lib/libplplot.so.17.0.0
+-- Installing: /usr/local/lib/libplplot.so.17
+-- Set runtime path of "/usr/local/lib/libplplot.so.17.0.0" to "/usr/local/lib"
+-- Installing: /usr/local/lib/libplplot.so
+-- Installing: /usr/local/lib/cmake/plplot/export_plplot.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplot-noconfig.cmake
+-- Installing: /usr/local/lib/pkgconfig/plplot.pc
+-- Installing: /usr/local/share/plplot5.15.0/plstnd5.fnt
+-- Installing: /usr/local/share/plplot5.15.0/plxtnd5.fnt
+-- Installing: /usr/local/share/plplot5.15.0/cmap0_default.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap0_alternate.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap0_white_bg.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap0_black_on_white.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap1_default.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap1_blue_yellow.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap1_blue_red.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap1_gray.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap1_radar.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap1_highfreq.pal
+-- Installing: /usr/local/share/plplot5.15.0/cmap1_lowfreq.pal
+-- Installing: /usr/local/share/plplot5.15.0/cglobe.shx
+-- Installing: /usr/local/share/plplot5.15.0/cglobe.shp
+-- Installing: /usr/local/share/plplot5.15.0/globe.shx
+-- Installing: /usr/local/share/plplot5.15.0/globe.shp
+-- Installing: /usr/local/share/plplot5.15.0/usa.shx
+-- Installing: /usr/local/share/plplot5.15.0/usa.shp
+-- Installing: /usr/local/share/plplot5.15.0/usaglobe.shx
+-- Installing: /usr/local/share/plplot5.15.0/usaglobe.shp
+-- Installing: /usr/local/share/doc/plplot/README.shapefiles
+-- Installing: /usr/local/share/plplot5.15.0/ss/os_open_conditions.txt
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Building_Area.dbf
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Building_Area.prj
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Building_Area.shp
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Building_Area.shx
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_General_Text.dbf
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_General_Text.prj
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_General_Text.shp
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_General_Text.shx
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Height_Contours.dbf
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Height_Contours.prj
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Height_Contours.shp
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Height_Contours.shx
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Landform_Area.dbf
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Landform_Area.prj
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Landform_Area.shp
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Landform_Area.shx
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Landform_Line.dbf
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Landform_Line.prj
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Landform_Line.shp
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Landform_Line.shx
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Road_Centreline.dbf
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Road_Centreline.prj
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Road_Centreline.shp
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Road_Centreline.shx
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Water_Area.dbf
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Water_Area.prj
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Water_Area.shp
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Water_Area.shx
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Water_Line.dbf
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Water_Line.prj
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Water_Line.shp
+-- Installing: /usr/local/share/plplot5.15.0/ss/ss64ne_Water_Line.shx
+-- Installing: /usr/local/share/plplot5.15.0/pkgIndex.tcl
+-- Installing: /usr/local/lib/libplplotcxx.so.15.0.0
+-- Installing: /usr/local/lib/libplplotcxx.so.15
+-- Set runtime path of "/usr/local/lib/libplplotcxx.so.15.0.0" to "/usr/local/lib"
+-- Installing: /usr/local/lib/libplplotcxx.so
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotcxx.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotcxx-noconfig.cmake
+-- Installing: /usr/local/include/plplot/plstream.h
+-- Installing: /usr/local/lib/pkgconfig/plplot-c++.pc
+-- Installing: /usr/local/lib/libplplotfortran.so.0.2.0
+-- Installing: /usr/local/lib/libplplotfortran.so.0
+-- Set runtime path of "/usr/local/lib/libplplotfortran.so.0.2.0" to "/usr/local/lib"
+-- Installing: /usr/local/lib/libplplotfortran.so
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotfortran.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotfortran-noconfig.cmake
+-- Installing: /usr/local/lib/fortran/modules/plplot/plplot.mod
+-- Installing: /usr/local/lib/fortran/modules/plplot/plplot_double.mod
+-- Installing: /usr/local/lib/fortran/modules/plplot/plplot_single.mod
+-- Installing: /usr/local/lib/fortran/modules/plplot/plplot_private_utilities.mod
+-- Installing: /usr/local/lib/fortran/modules/plplot/plplot_graphics.mod
+-- Installing: /usr/local/lib/fortran/modules/plplot/plplot_private_exposed.mod
+-- Installing: /usr/local/lib/fortran/modules/plplot/plplot_types.mod
+-- Installing: /usr/local/lib/pkgconfig/plplot-fortran.pc
+-- Installing: /usr/local/include/plplot/tclMatrix.h
+-- Installing: /usr/local/include/plplot/pltcl.h
+-- Installing: /usr/local/lib/libtclmatrix.so.10.3.0
+-- Installing: /usr/local/lib/libtclmatrix.so.10
+-- Installing: /usr/local/lib/libtclmatrix.so
+-- Installing: /usr/local/lib/cmake/plplot/export_tclmatrix.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_tclmatrix-noconfig.cmake
+-- Installing: /usr/local/lib/libplplottcltk.so.14.1.0
+-- Installing: /usr/local/lib/libplplottcltk.so.14
+-- Set runtime path of "/usr/local/lib/libplplottcltk.so.14.1.0" to "/usr/local/lib"
+-- Installing: /usr/local/lib/libplplottcltk.so
+-- Installing: /usr/local/lib/cmake/plplot/export_plplottcltk.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplottcltk-noconfig.cmake
+-- Installing: /usr/local/lib/pkgconfig/plplot-tcl.pc
+-- Installing: /usr/local/lib/libplplottcltk_Main.so.1.0.1
+-- Installing: /usr/local/lib/libplplottcltk_Main.so.1
+-- Set runtime path of "/usr/local/lib/libplplottcltk_Main.so.1.0.1" to "/usr/local/lib"
+-- Installing: /usr/local/lib/libplplottcltk_Main.so
+-- Installing: /usr/local/lib/cmake/plplot/export_plplottcltk_Main.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplottcltk_Main-noconfig.cmake
+-- Installing: /usr/local/lib/pkgconfig/plplot-tcl_Main.pc
+-- Installing: /usr/local/bin/pltcl
+-- Set runtime path of "/usr/local/bin/pltcl" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_pltcl.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_pltcl-noconfig.cmake
+-- Installing: /usr/local/bin/plserver
+-- Set runtime path of "/usr/local/bin/plserver" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_plserver.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plserver-noconfig.cmake
+-- Installing: /usr/local/include/plplot/pltk.h
+-- Installing: /usr/local/share/plplot5.15.0/tcl/FileSelector.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/Pltkwin.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/about.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/help_gui.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/help_keys.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/help_tcltk.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/plclient.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/plcolor.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/plconfig.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/pldefaults.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/plplot.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/plserver.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/pltools.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/plwidget.tcl
+-- Installing: /usr/local/share/plplot5.15.0/tcl/PLWin.itk
+-- Installing: /usr/local/share/plplot5.15.0/tcl/PLXWin.itk
+-- Installing: /usr/local/share/plplot5.15.0/tcl/cmap0a.pal
+-- Installing: /usr/local/share/plplot5.15.0/tcl/cmap1a.pal
+-- Installing: /usr/local/share/plplot5.15.0/tcl/cmap1a1.pal
+-- Installing: /usr/local/share/plplot5.15.0/tcl/cmap1b.pal
+-- Installing: /usr/local/share/plplot5.15.0/tcl/cmap1c.pal
+-- Installing: /usr/local/share/plplot5.15.0/tcl/cmap1d.pal
+-- Installing: /usr/local/share/plplot5.15.0/tcl/tclIndex
+-- Installing: /usr/local/share/doc/plplot/BUGS.octave
+-- Installing: /usr/local/share/doc/plplot/FGA.octave
+-- Installing: /usr/local/share/doc/plplot/INSTALL.octave
+-- Installing: /usr/local/share/doc/plplot/README.octave
+-- Installing: /usr/local/share/doc/plplot/ToDo.octave
+-- Installing: /usr/local/share/doc/plplot/USAGE.octave
+-- Installing: /usr/local/lib/octave/plplot_octave.oct
+-- Set runtime path of "/usr/local/lib/octave/plplot_octave.oct" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_plplot_octave.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplot_octave-noconfig.cmake
+-- Installing: /usr/local/share/plplot_octave/plplot_stub.m
+-- Installing: /usr/local/share/plplot_octave/arrow.m
+-- Installing: /usr/local/share/plplot_octave/arrows.m
+-- Installing: /usr/local/share/plplot_octave/autostyle.m
+-- Installing: /usr/local/share/plplot_octave/axis.m
+-- Installing: /usr/local/share/plplot_octave/axis_set.m
+-- Installing: /usr/local/share/plplot_octave/bgr.m
+-- Installing: /usr/local/share/plplot_octave/blue.m
+-- Installing: /usr/local/share/plplot_octave/bone.m
+-- Installing: /usr/local/share/plplot_octave/bottom_title.m
+-- Installing: /usr/local/share/plplot_octave/clip.m
+-- Installing: /usr/local/share/plplot_octave/closeallfig.m
+-- Installing: /usr/local/share/plplot_octave/closefig.m
+-- Installing: /usr/local/share/plplot_octave/colormap.m
+-- Installing: /usr/local/share/plplot_octave/comet.m
+-- Installing: /usr/local/share/plplot_octave/contour.m
+-- Installing: /usr/local/share/plplot_octave/cool.m
+-- Installing: /usr/local/share/plplot_octave/copper.m
+-- Installing: /usr/local/share/plplot_octave/drawnow.m
+-- Installing: /usr/local/share/plplot_octave/fig.m
+-- Installing: /usr/local/share/plplot_octave/fig_raise.m
+-- Installing: /usr/local/share/plplot_octave/fig_state.m
+-- Installing: /usr/local/share/plplot_octave/figure.m
+-- Installing: /usr/local/share/plplot_octave/fill.m
+-- Installing: /usr/local/share/plplot_octave/free_fig.m
+-- Installing: /usr/local/share/plplot_octave/ginput.m
+-- Installing: /usr/local/share/plplot_octave/green.m
+-- Installing: /usr/local/share/plplot_octave/grid.m
+-- Installing: /usr/local/share/plplot_octave/griddata.m
+-- Installing: /usr/local/share/plplot_octave/gtext.m
+-- Installing: /usr/local/share/plplot_octave/hls2rgb.m
+-- Installing: /usr/local/share/plplot_octave/hold.m
+-- Installing: /usr/local/share/plplot_octave/hot.m
+-- Installing: /usr/local/share/plplot_octave/hsv.m
+-- Installing: /usr/local/share/plplot_octave/ishold.m
+-- Installing: /usr/local/share/plplot_octave/label_plot.m
+-- Installing: /usr/local/share/plplot_octave/legend.m
+-- Installing: /usr/local/share/plplot_octave/loglog.m
+-- Installing: /usr/local/share/plplot_octave/lp_setup.m
+-- Installing: /usr/local/share/plplot_octave/mesh.m
+-- Installing: /usr/local/share/plplot_octave/meshc.m
+-- Installing: /usr/local/share/plplot_octave/meshz.m
+-- Installing: /usr/local/share/plplot_octave/mplot.m
+-- Installing: /usr/local/share/plplot_octave/multiplot.m
+-- Installing: /usr/local/share/plplot_octave/oneplot.m
+-- Installing: /usr/local/share/plplot_octave/peaks.m
+-- Installing: /usr/local/share/plplot_octave/pink.m
+-- Installing: /usr/local/share/plplot_octave/plclearplot.m
+-- Installing: /usr/local/share/plplot_octave/plclg.m
+-- Installing: /usr/local/share/plplot_octave/plcolormap.m
+-- Installing: /usr/local/share/plplot_octave/pldef.m
+-- Installing: /usr/local/share/plplot_octave/plimage.m
+-- Installing: /usr/local/share/plplot_octave/plot.m
+-- Installing: /usr/local/share/plplot_octave/plot3.m
+-- Installing: /usr/local/share/plplot_octave/plot_border.m
+-- Installing: /usr/local/share/plplot_octave/plot_margin.m
+-- Installing: /usr/local/share/plplot_octave/plrb.m
+-- Installing: /usr/local/share/plplot_octave/plsetopt.m
+-- Installing: /usr/local/share/plplot_octave/polar.m
+-- Installing: /usr/local/share/plplot_octave/prism.m
+-- Installing: /usr/local/share/plplot_octave/red.m
+-- Installing: /usr/local/share/plplot_octave/rgb2hls.m
+-- Installing: /usr/local/share/plplot_octave/rgbplot.m
+-- Installing: /usr/local/share/plplot_octave/save_fig.m
+-- Installing: /usr/local/share/plplot_octave/semilogx.m
+-- Installing: /usr/local/share/plplot_octave/semilogy.m
+-- Installing: /usr/local/share/plplot_octave/set_view.m
+-- Installing: /usr/local/share/plplot_octave/shade.m
+-- Installing: /usr/local/share/plplot_octave/shading.m
+-- Installing: /usr/local/share/plplot_octave/shg.m
+-- Installing: /usr/local/share/plplot_octave/stopdraw.m
+-- Installing: /usr/local/share/plplot_octave/stripc.m
+-- Installing: /usr/local/share/plplot_octave/stripc_add.m
+-- Installing: /usr/local/share/plplot_octave/stripc_del.m
+-- Installing: /usr/local/share/plplot_octave/struct_contains.m
+-- Installing: /usr/local/share/plplot_octave/subplot.m
+-- Installing: /usr/local/share/plplot_octave/subwindow.m
+-- Installing: /usr/local/share/plplot_octave/surf.m
+-- Installing: /usr/local/share/plplot_octave/surfc.m
+-- Installing: /usr/local/share/plplot_octave/surfl.m
+-- Installing: /usr/local/share/plplot_octave/tdeblank.m
+-- Installing: /usr/local/share/plplot_octave/text.m
+-- Installing: /usr/local/share/plplot_octave/title.m
+-- Installing: /usr/local/share/plplot_octave/top_title.m
+-- Installing: /usr/local/share/plplot_octave/xlabel.m
+-- Installing: /usr/local/share/plplot_octave/xticks.m
+-- Installing: /usr/local/share/plplot_octave/ylabel.m
+-- Installing: /usr/local/share/plplot_octave/yticks.m
+-- Installing: /usr/local/share/plplot_octave/zlabel.m
+-- Installing: /usr/local/share/plplot_octave/zoom.m
+-- Installing: /usr/local/share/octave/site/m/PLplot/use_plplot.m
+-- Installing: /usr/local/share/octave/site/m/PLplot/plplot_octave_path.m
+-- Installing: /usr/local/share/octave/site/m/PLplot/toggle_plplot_use.m
+-- Installing: /usr/local/share/plplot_octave/support/__comet.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_contour.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_draw_legend.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_fill.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_init.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_logplotit.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_matstr.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_mesh.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_meshplotit.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_opt.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_plenv.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_plot3.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_plotit.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_polargrid.m
+-- Installing: /usr/local/share/plplot_octave/support/__pl_store.m
+-- Installing: /usr/local/share/plplot_octave/support/__plr1__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plr2__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plr__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plt1__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plt2__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plt2mm__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plt2mv__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plt2ss__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plt2vm__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plt2vv__.m
+-- Installing: /usr/local/share/plplot_octave/support/__plt__.m
+-- Installing: /usr/local/share/plplot_octave/support/is_strmatrix.m
+-- Installing: /usr/local/share/plplot_octave/support/is_strvector.m
+-- Installing: /usr/local/share/plplot_octave/support/__makeinfo__.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/diffn.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/gradn.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/rosenbrock.m
+-- Installing: /usr/local/lib/jni/libplplotjavac_wrap.so
+-- Set runtime path of "/usr/local/lib/jni/libplplotjavac_wrap.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotjavac_wrap.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotjavac_wrap-noconfig.cmake
+-- Installing: /usr/local/lib/libplplotwxwidgets.so.1.2.2
+-- Installing: /usr/local/lib/libplplotwxwidgets.so.1
+-- Set runtime path of "/usr/local/lib/libplplotwxwidgets.so.1.2.2" to "/usr/local/lib"
+-- Installing: /usr/local/lib/libplplotwxwidgets.so
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotwxwidgets.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotwxwidgets-noconfig.cmake
+-- Installing: /usr/local/include/plplot/wxPLplotstream.h
+-- Installing: /usr/local/include/plplot/wxPLplotwindow.h
+-- Installing: /usr/local/include/plplot/wxPLplot_nanosec.h
+-- Installing: /usr/local/lib/pkgconfig/plplot-wxwidgets.pc
+-- Installing: /usr/local/lib/libplplotada.so.4.0.0
+-- Installing: /usr/local/lib/libplplotada.so.4
+-- Set runtime path of "/usr/local/lib/libplplotada.so.4.0.0" to "/usr/local/lib"
+-- Installing: /usr/local/lib/libplplotada.so
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotada.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotada-noconfig.cmake
+-- Installing: /usr/local/share/ada/adainclude/plplotada/plplot.ads
+-- Installing: /usr/local/share/ada/adainclude/plplotada/plplot_standard.ads
+-- Installing: /usr/local/share/ada/adainclude/plplotada/plplot_thin.ads
+-- Installing: /usr/local/share/ada/adainclude/plplotada/plplot_traditional.ads
+-- Installing: /usr/local/share/ada/adainclude/plplotada/plplot_auxiliary.ads
+-- Installing: /usr/local/share/ada/adainclude/plplotada/plplot_standard.adb
+-- Installing: /usr/local/share/ada/adainclude/plplotada/plplot_thin.adb
+-- Installing: /usr/local/share/ada/adainclude/plplotada/plplot_traditional.adb
+-- Installing: /usr/local/share/ada/adainclude/plplotada/plplot_auxiliary.adb
+-- Installing: /usr/local/lib/ada/adalib/plplotada/plplot_standard.ali
+-- Installing: /usr/local/lib/ada/adalib/plplotada/plplot_thin.ali
+-- Installing: /usr/local/lib/ada/adalib/plplotada/plplot_traditional.ali
+-- Installing: /usr/local/lib/ada/adalib/plplotada/plplot_auxiliary.ali
+-- Installing: /usr/local/lib/pkgconfig/plplot-ada.pc
+-- Installing: /usr/local/lib/libplplotqt.so.2.0.3
+-- Installing: /usr/local/lib/libplplotqt.so.2
+-- Set runtime path of "/usr/local/lib/libplplotqt.so.2.0.3" to "/usr/local/lib"
+-- Installing: /usr/local/lib/libplplotqt.so
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotqt.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plplotqt-noconfig.cmake
+-- Installing: /usr/local/lib/pkgconfig/plplot-qt.pc
+-- Installing: /usr/local/share/doc/plplot/README.drivers
+-- Installing: /usr/local/share/doc/plplot/README.wxwidgets
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/cairo.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/cairo.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_cairo.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_cairo-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/cairo.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/qt.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/qt.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_qt.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_qt-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/qt.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/mem.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/mem.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_mem.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_mem-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/mem.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/ntk.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/ntk.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_ntk.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_ntk-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/ntk.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/null.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/null.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_null.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_null-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/null.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/ps.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/ps.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_ps.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_ps-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/ps.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/svg.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/svg.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_svg.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_svg-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/svg.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/tk.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/tk.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_tk.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_tk-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/tk.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/tkwin.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/tkwin.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_tkwin.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_tkwin-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/tkwin.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/wxwidgets.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/wxwidgets.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_wxwidgets.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_wxwidgets-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/wxwidgets.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/xfig.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/xfig.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_xfig.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_xfig-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/xfig.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/xwin.so
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/xwin.so" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_xwin.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_xwin-noconfig.cmake
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/xwin.driver_info
+-- Installing: /usr/local/lib/plplot5.15.0/drivers/wxPLViewer
+-- Set runtime path of "/usr/local/lib/plplot5.15.0/drivers/wxPLViewer" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_wxPLViewer.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_wxPLViewer-noconfig.cmake
+-- Installing: /usr/local/bin/pltek
+-- Set runtime path of "/usr/local/bin/pltek" to "/usr/local/lib"
+-- Installing: /usr/local/lib/cmake/plplot/export_pltek.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_pltek-noconfig.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/plplot_test/CMakeLists.txt
+-- Installing: /usr/local/share/plplot5.15.0/examples/plplot-test.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/plplot-test-interactive.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_tcl.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_c.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_c_interactive.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_cxx.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_fortran.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_java.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_octave_interactive.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_octave.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_ada.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/test_diff.sh
+-- Installing: /usr/local/share/plplot5.15.0/examples/Makefile
+-- Installing: /usr/local/lib/libplfortrandemolib.a
+-- Installing: /usr/local/lib/cmake/plplot/export_plfortrandemolib.cmake
+-- Installing: /usr/local/lib/cmake/plplot/export_plfortrandemolib-noconfig.cmake
+-- Installing: /usr/local/lib/fortran/modules/plplot/plfortrandemolib.mod
+-- Installing: /usr/local/share/plplot5.15.0/examples/Chloe.pgm
+-- Installing: /usr/local/share/plplot5.15.0/examples/README.Chloe
+-- Installing: /usr/local/share/plplot5.15.0/examples/CMakeLists.txt
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/plplot_configure.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/plplot_functions.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/pkg-config.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/ndp_UseQt4.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support/cmake/CMakeAdaCompiler.cmake.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support/cmake/CMakeAdaInformation.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support/cmake/CMakeDetermineAdaCompiler.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support/cmake/CMakeTestAdaCompiler.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support/cmake/Platform/CYGWIN-GNU-Ada.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support/cmake/Platform/Darwin-GNU-Ada.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support/cmake/Platform/Linux-GNU-Ada.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support/cmake/Platform/Windows-GNU-Ada.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/cmake/modules/language_support/cmake/Compiler/GNU-Ada.cmake
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional00a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard00a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional01a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard01a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional02a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard02a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional03a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard03a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional04a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard04a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional05a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard05a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional06a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard06a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional07a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard07a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional08a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard08a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional09a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard09a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional10a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard10a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional11a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard11a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional12a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard12a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional13a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard13a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional14a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard14a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional15a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard15a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional16a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard16a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional17a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard17a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional18a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard18a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional19a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard19a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional20a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard20a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional21a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard21a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional22a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard22a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional23a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard23a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional24a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard24a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional25a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard25a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional26a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard26a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional27a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard27a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional28a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard28a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional29a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard29a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional30a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard30a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional31a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard31a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xtraditional33a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/xstandard33a.adb
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/Makefile
+-- Installing: /usr/local/share/plplot5.15.0/examples/ada/CMakeLists.txt
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/plcdemos.h
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/tutor.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/test_plend.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/test_plbuf.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x00c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x01c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x02c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x03c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x04c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x05c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x06c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x07c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x08c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x09c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x10c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x11c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x12c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x13c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x14c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x15c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x16c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x17c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x18c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x19c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x20c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x21c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x22c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x23c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x24c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x25c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x26c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x27c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x28c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x29c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x30c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x31c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x32c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x33c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/x34c.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/extXdrawable_demo.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/ext-cairo-test.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/README.cairo
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/CMakeLists.txt
+-- Installing: /usr/local/share/plplot5.15.0/examples/c/Makefile
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/qt_PlotWindow.cpp
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/qt_PlotWindow.h
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/qt_example.cpp
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/README.qt_example
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/memqtTest/main.cpp
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/memqtTest/mainwindow.cpp
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/memqtTest/mainwindow.h
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/memqtTest/mainwindow.ui
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/memqtTest/README.aurora
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/memqtTest/aurora.png
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/plc++demos.h
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x01cc.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x00.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x01.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x02.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x03.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x04.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x05.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x06.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x07.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x08.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x09.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x10.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x11.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x12.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x13.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x14.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x15.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x16.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x17.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x18.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x19.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x20.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x21.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x22.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x23.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x24.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x25.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x26.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x27.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x28.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x29.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x30.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x31.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/x33.cc
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/wxPLplotDemo.cpp
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/CMakeLists.txt
+-- Installing: /usr/local/share/plplot5.15.0/examples/c++/Makefile
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x00f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x01f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x02f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x03f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x04f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x05f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x06f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x07f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x08f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x09f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x10f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x11f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x12f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x13f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x14f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x15f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x16f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x16af.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x17f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x18f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x19f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x20f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x21f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x22f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x23f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x24f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x25f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x26f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x27f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x28f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x29f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x30f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x31f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/x33f.f90
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/README_precision
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/Makefile
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/plfortrandemos.inc
+-- Installing: /usr/local/share/plplot5.15.0/examples/fortran/CMakeLists.txt
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x00.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x01.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x02.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x03.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x04.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x05.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x06.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x07.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x08.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x09.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x10.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x11.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x12.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x13.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x14.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x15.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x16.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x17.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x18.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x19.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x20.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x21.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x22.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x23.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x24.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x25.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x26.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x27.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x28.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x29.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x30.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x31.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/x33.java
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/README.javademos
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/Makefile
+-- Installing: /usr/local/share/plplot5.15.0/examples/java/CMakeLists.txt
+-- Installing: /usr/local/share/java/plplot.jar
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p1.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p2.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p3.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p4.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p5.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p6.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p7.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p8.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p9.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p10.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p11.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p12.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p13.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p14.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p15.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p16.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p17.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p18.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p19.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p20.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/p21.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x00c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x01c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x02c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x03c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x04c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x05c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x06c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x07c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x08c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x09c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x10c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x11c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x12c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x13c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x14c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x15c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x16c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x17c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x18c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x19c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x20c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x21c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x22c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x23c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x24c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x25c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x26c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x27c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x28c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x29c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x30c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x31c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/x33c.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/plplot_octave_demo.m
+-- Installing: /usr/local/share/plplot5.15.0/examples/octave/CMakeLists.txt
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/CMakeLists.txt
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/tclIndex
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/README.tcldemos
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/plgrid.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/plot.dat
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/plot.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/r.dat
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/stats.log
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/tcldemos.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x00.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x01.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x02.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x03.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x04.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x05.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x06.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x07.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x08.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x09.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x10.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x11.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x12.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x13.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x14.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x15.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x16.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x17.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x18.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x19.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x20.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x21.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x22.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x23.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x24.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x25.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x26.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x27.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x28.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x29.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x30.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x31.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x33.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/pltcl_standard_examples.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/tclsh_standard_examples.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x00.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x01.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x02.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x03.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x04.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x05.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x06.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x07.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x08.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x09.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x10.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x11.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x12.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x13.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x14.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x15.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x16.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x17.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x18.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x19.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x20.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x21.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x22.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x23.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x24.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x25.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x26.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x27.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x28.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x29.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x30.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x31.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x33.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/pltcl_standard_examples
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/tclsh_standard_examples
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x00
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x01
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x02
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x03
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x04
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x05
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x06
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x07
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x08
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x09
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x10
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x11
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x12
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x13
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x14
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x15
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x16
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x17
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x18
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x19
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x20
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x21
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x22
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x23
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x24
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x25
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x26
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x27
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x28
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x29
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x30
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x31
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/x33
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/tk01
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/tk01.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/tk03
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/tk03.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/plgrid
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/plgrid.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/plserver_standard_examples
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/plserver_standard_examples.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/plserver_runAllDemos
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/plserver_runAllDemos.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/wish_standard_examples
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/wish_standard_examples.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/wish_runAllDemos
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/wish_runAllDemos.in
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/README.tkdemos
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/runAllDemos.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/runExtendedDemos.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/tkdemos.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x00.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x01.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x02.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x03.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x04.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x05.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x06.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x07.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x08.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x09.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x10.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x11.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x12.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x13.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x14.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x15.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x16.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x17.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x18.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x19.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x20.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x21.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x22.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x23.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x24.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x25.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x26.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x27.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x28.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x29.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x30.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x31.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/x33.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/plgrid.tcl
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/tclIndex
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/xtk01.c
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/Makefile
+-- Installing: /usr/local/share/plplot5.15.0/examples/tk/CMakeLists.txt
+-- Installing: /usr/local/share/plplot5.15.0/examples/tcl/mktclIndex
+-- Installing: /usr/local/share/man/man1/pltek.1
+-- Installing: /usr/local/share/man/man1/plserver.1
+-- Installing: /usr/local/share/man/man1/pltcl.1
+-- Installing: /usr/local/share/doc/plplot/README.pkg-config
+Ub2004-rt38:~/temp1/plplot-source/build_dir$ 
+
+===========================================================
+CHECK INSTALLED LIBRARIES
+===========================================================
+Ub2004-rt38:~$ tree /usr/local/lib/plplot5.15.0
+/usr/local/lib/plplot5.15.0
+└── drivers
+    ├── cairo.driver_info
+    ├── cairo.so
+    ├── mem.driver_info
+    ├── mem.so
+    ├── ntk.driver_info
+    ├── ntk.so
+    ├── null.driver_info
+    ├── null.so
+    ├── ps.driver_info
+    ├── ps.so
+    ├── qt.driver_info
+    ├── qt.so
+    ├── svg.driver_info
+    ├── svg.so
+    ├── tk.driver_info
+    ├── tk.so
+    ├── tkwin.driver_info
+    ├── tkwin.so
+    ├── wxPLViewer
+    ├── wxwidgets.driver_info
+    ├── wxwidgets.so
+    ├── xfig.driver_info
+    ├── xfig.so
+    ├── xwin.driver_info
+    └── xwin.so
+
+1 directory, 25 files
+Ub2004-rt38:~$ 
+
+===========================================================
+LIBRARIES INSTALLED FROM SOURCE (Nov 22 2020) NEWER
+===========================================================
+Ub2004-rt38:~$ ls -al /usr/local/lib | grep libplplot
+lrwxrwxrwx  1 root    root          17 Nov 22 11:16 libplplotada.so -> libplplotada.so.4
+lrwxrwxrwx  1 root    root          21 Nov 22 11:16 libplplotada.so.4 -> libplplotada.so.4.0.0
+-rw-r--r--  1 root    root      548272 Nov 22 11:10 libplplotada.so.4.0.0
+lrwxrwxrwx  1 root    root          18 Nov 22 11:16 libplplotcxx.so -> libplplotcxx.so.15
+lrwxrwxrwx  1 root    root          22 Nov 22 11:16 libplplotcxx.so.15 -> libplplotcxx.so.15.0.0
+-rw-r--r--  1 root    root      112768 Nov 22 11:09 libplplotcxx.so.15.0.0
+lrwxrwxrwx  1 root    root          21 Nov 22 11:16 libplplotfortran.so -> libplplotfortran.so.0
+lrwxrwxrwx  1 root    root          25 Nov 22 11:16 libplplotfortran.so.0 -> libplplotfortran.so.0.2.0
+-rw-r--r--  1 root    root      342144 Nov 22 11:09 libplplotfortran.so.0.2.0
+lrwxrwxrwx  1 root    root          16 Nov 22 11:16 libplplotqt.so -> libplplotqt.so.2
+lrwxrwxrwx  1 root    root          20 Nov 22 11:16 libplplotqt.so.2 -> libplplotqt.so.2.0.3
+-rw-r--r--  1 root    root      133320 Nov 22 11:10 libplplotqt.so.2.0.3
+lrwxrwxrwx  1 root    root          15 Nov 22 11:16 libplplot.so -> libplplot.so.17
+lrwxrwxrwx  1 root    root          19 Nov 22 11:16 libplplot.so.17 -> libplplot.so.17.0.0
+-rw-r--r--  1 root    root      465864 Nov 22 11:09 libplplot.so.17.0.0
+lrwxrwxrwx  1 root    root          24 Nov 22 11:16 libplplottcltk_Main.so -> libplplottcltk_Main.so.1
+lrwxrwxrwx  1 root    root          28 Nov 22 11:16 libplplottcltk_Main.so.1 -> libplplottcltk_Main.so.1.0.1
+-rw-r--r--  1 root    root       28896 Nov 22 11:09 libplplottcltk_Main.so.1.0.1
+lrwxrwxrwx  1 root    root          20 Nov 22 11:16 libplplottcltk.so -> libplplottcltk.so.14
+lrwxrwxrwx  1 root    root          24 Nov 22 11:16 libplplottcltk.so.14 -> libplplottcltk.so.14.1.0
+-rw-r--r--  1 root    root      243976 Nov 22 11:09 libplplottcltk.so.14.1.0
+lrwxrwxrwx  1 root    root          23 Nov 22 11:16 libplplotwxwidgets.so -> libplplotwxwidgets.so.1
+lrwxrwxrwx  1 root    root          27 Nov 22 11:16 libplplotwxwidgets.so.1 -> libplplotwxwidgets.so.1.2.2
+-rw-r--r--  1 root    root       76680 Nov 22 11:10 libplplotwxwidgets.so.1.2.2
+Ub2004-rt38:~$ 
+
+===========================================================
+LIBRARIES INSTALLED FROM REPO (FEB 29 2020) SMALLER FILES
+===========================================================
+Ub2004-rt38:~$ ls -al /usr/lib/x86_64-linux-gnu/ | grep plplot
+lrwxrwxrwx   1 root root        17 Feb 29  2020 libplplotada.so -> libplplotada.so.4
+lrwxrwxrwx   1 root root        21 Feb 29  2020 libplplotada.so.4 -> libplplotada.so.4.0.0
+-rw-r--r--   1 root root    326000 Feb 29  2020 libplplotada.so.4.0.0
+lrwxrwxrwx   1 root root        18 Feb 29  2020 libplplotcxx.so -> libplplotcxx.so.15
+lrwxrwxrwx   1 root root        22 Feb 29  2020 libplplotcxx.so.15 -> libplplotcxx.so.15.0.0
+-rw-r--r--   1 root root     88224 Feb 29  2020 libplplotcxx.so.15.0.0
+lrwxrwxrwx   1 root root        21 Feb 29  2020 libplplotfortran.so -> libplplotfortran.so.0
+lrwxrwxrwx   1 root root        25 Feb 29  2020 libplplotfortran.so.0 -> libplplotfortran.so.0.2.0
+-rw-r--r--   1 root root    325544 Feb 29  2020 libplplotfortran.so.0.2.0
+lrwxrwxrwx   1 root root        16 Feb 29  2020 libplplotqt.so -> libplplotqt.so.2
+lrwxrwxrwx   1 root root        20 Feb 29  2020 libplplotqt.so.2 -> libplplotqt.so.2.0.3
+-rw-r--r--   1 root root    100592 Feb 29  2020 libplplotqt.so.2.0.3
+lrwxrwxrwx   1 root root        15 Feb 29  2020 libplplot.so -> libplplot.so.17
+lrwxrwxrwx   1 root root        19 Feb 29  2020 libplplot.so.17 -> libplplot.so.17.0.0
+-rw-r--r--   1 root root    404224 Feb 29  2020 libplplot.so.17.0.0
+lrwxrwxrwx   1 root root        24 Feb 29  2020 libplplottcltk_Main.so -> libplplottcltk_Main.so.1
+lrwxrwxrwx   1 root root        28 Feb 29  2020 libplplottcltk_Main.so.1 -> libplplottcltk_Main.so.1.0.1
+-rw-r--r--   1 root root     23272 Feb 29  2020 libplplottcltk_Main.so.1.0.1
+lrwxrwxrwx   1 root root        20 Feb 29  2020 libplplottcltk.so -> libplplottcltk.so.14
+lrwxrwxrwx   1 root root        24 Feb 29  2020 libplplottcltk.so.14 -> libplplottcltk.so.14.1.0
+-rw-r--r--   1 root root    215072 Feb 29  2020 libplplottcltk.so.14.1.0
+lrwxrwxrwx   1 root root        23 Feb 29  2020 libplplotwxwidgets.so -> libplplotwxwidgets.so.1
+lrwxrwxrwx   1 root root        27 Feb 29  2020 libplplotwxwidgets.so.1 -> libplplotwxwidgets.so.1.2.2
+-rw-r--r--   1 root root     51360 Feb 29  2020 libplplotwxwidgets.so.1.2.2
+drwxr-xr-x   3 root root      4096 Nov 19 10:41 plplot5.15.0
+Ub2004-rt38:~$ 
+
+===========================================================
+Ub2004-rt38:~$ ls -al /usr/local/lib/plplot5.15.0/drivers/
+total 880
+drwxr-xr-x 2 root root   4096 Nov 22 11:16 .
+drwxr-xr-x 3 root root   4096 Nov 22 11:16 ..
+-rw-r--r-- 1 root root    391 Nov 22 11:07 cairo.driver_info
+-rw-r--r-- 1 root root  62392 Nov 22 11:10 cairo.so
+-rw-r--r-- 1 root root     46 Nov 22 11:07 mem.driver_info
+-rw-r--r-- 1 root root  16728 Nov 22 11:10 mem.so
+-rw-r--r-- 1 root root     31 Nov 22 11:07 ntk.driver_info
+-rw-r--r-- 1 root root  26336 Nov 22 11:10 ntk.so
+-rw-r--r-- 1 root root     33 Nov 22 11:07 null.driver_info
+-rw-r--r-- 1 root root  16488 Nov 22 11:10 null.so
+-rw-r--r-- 1 root root     83 Nov 22 11:07 ps.driver_info
+-rw-r--r-- 1 root root  43600 Nov 22 11:10 ps.so
+-rw-r--r-- 1 root root    364 Nov 22 11:07 qt.driver_info
+-rw-r--r-- 1 root root  58128 Nov 22 11:10 qt.so
+-rw-r--r-- 1 root root     52 Nov 22 11:07 svg.driver_info
+-rw-r--r-- 1 root root  30520 Nov 22 11:10 svg.so
+-rw-r--r-- 1 root root     27 Nov 22 11:07 tk.driver_info
+-rw-r--r-- 1 root root  45736 Nov 22 11:10 tk.so
+-rw-r--r-- 1 root root     37 Nov 22 11:07 tkwin.driver_info
+-rw-r--r-- 1 root root  67152 Nov 22 11:10 tkwin.so
+-rwxr-xr-x 1 root root 182544 Nov 22 11:10 wxPLViewer
+-rw-r--r-- 1 root root     52 Nov 22 11:07 wxwidgets.driver_info
+-rw-r--r-- 1 root root 182256 Nov 22 11:10 wxwidgets.so
+-rw-r--r-- 1 root root     29 Nov 22 11:07 xfig.driver_info
+-rw-r--r-- 1 root root  22080 Nov 22 11:10 xfig.so
+-rw-r--r-- 1 root root     33 Nov 22 11:07 xwin.driver_info
+-rw-r--r-- 1 root root  55888 Nov 22 11:10 xwin.so
+Ub2004-rt38:~$ 
+
+===========================================================
+CHECK INCLUDE FILES
+===========================================================
+Ub2004-rt38:~$ tree /usr/local/include/plplot
+/usr/local/include/plplot
+├── csadll.h
+├── csa.h
+├── disptab.h
+├── drivers.h
+├── nndll.h
+├── nn.h
+├── pdf.h
+├── plConfig.h
+├── pldebug.h
+├── plDevs.h
+├── pldll.h
+├── plevent.h
+├── plplot.h
+├── plplotP.h
+├── plstream.h
+├── plstrm.h
+├── pltcl.h
+├── pltk.h
+├── plxwd.h
+├── qsastimedll.h
+├── qsastime.h
+├── qt.h
+├── tclMatrix.h
+├── wxPLplot_nanosec.h
+├── wxPLplotstream.h
+└── wxPLplotwindow.h
+
+0 directories, 26 files
+Ub2004-rt38:~$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+

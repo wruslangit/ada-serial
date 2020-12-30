@@ -1,0 +1,8 @@
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-plplot/exec$ ls -al
+total 520
+drwxrwxr-x 2 wruslan wruslan   4096 Dec 30 14:08 .
+drwxrwxr-x 8 wruslan wruslan   4096 Dec 30 13:57 ..
+-rw-rw-r-- 1 wruslan wruslan    317 Dec 30 14:08 list-of-files-in-exec-directory.txt
+-rwxrwxr-x 1 wruslan wruslan 517936 Dec 30 13:57 main_ada_plplot.xxx
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/github/ada-plplot/exec$ 
+

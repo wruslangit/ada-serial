@@ -1,0 +1,233 @@
+File: compile-and-run-session-commandline.txt
+Date: 2020 Nov 22
+
+LIBRARIES FOR PLPLOT
+===========================================================
+/usr/local/lib/libplplot.so
+/usr/local/lib/libplplot.so.17
+/usr/local/lib/libplplot.so.17.0.0
+/usr/local/lib/libplplotada.so
+/usr/local/lib/libplplotada.so.4
+/usr/local/lib/libplplotada.so.4.0.0
+/usr/local/lib/libplplotcxx.so
+/usr/local/lib/libplplotcxx.so.15
+/usr/local/lib/libplplotcxx.so.15.0.0
+/usr/local/lib/libplplotfortran.so
+/usr/local/lib/libplplotfortran.so.0
+/usr/local/lib/libplplotfortran.so.0.2.0
+/usr/local/lib/libplplotqt.so
+/usr/local/lib/libplplotqt.so.2
+/usr/local/lib/libplplotqt.so.2.0.3
+/usr/local/lib/libplplottcltk.so
+/usr/local/lib/libplplottcltk.so.14
+/usr/local/lib/libplplottcltk.so.14.1.0
+/usr/local/lib/libplplottcltk_Main.so
+/usr/local/lib/libplplottcltk_Main.so.1
+/usr/local/lib/libplplottcltk_Main.so.1.0.1
+/usr/local/lib/libplplotwxwidgets.so
+/usr/local/lib/libplplotwxwidgets.so.1
+/usr/local/lib/libplplotwxwidgets.so.1.2.2
+/usr/local/lib/jni/libplplotjavac_wrap.so
+
+===========================================================
+-- File: simple_example.adb
+
+with Ada.Numerics.Elementary_Functions;
+use Ada.Numerics.Elementary_Functions;
+
+with PLplot_Auxiliary; use  PLplot_Auxiliary;
+with PLplot; use PLplot;
+    
+procedure simple_example is
+    x, y : Real_Vector(-10 .. 10);
+
+begin
+
+    for i in x'range loop
+       x(i) := Long_Float(i);
+       y(i) := x(i)**2 + sin(x(i))/x(i); -- Not square brackets
+       -- y(i) := x(i)**2 - 3.0;
+    end loop;
+    
+    Initialize_PLplot; -- Call this only once.
+    Simple_Plot(x, y); -- Make the plot.
+    End_PLplot;        -- Call this only once.
+
+end simple_example;
+
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~$ cd Downloads/temp3/
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ ls -al
+total 592
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 22 22:43 .
+drwxr-xr-x 10 wruslan wruslan   4096 Nov 22 22:42 ..
+-rw-rw-r--  1 wruslan wruslan   1397 Nov 19 23:36 plplot.ads
+-rw-rw-r--  1 wruslan wruslan   4461 Nov 19 23:36 plplot_auxiliary.adb
+-rw-rw-r--  1 wruslan wruslan   4549 Nov 19 23:36 plplot_auxiliary.ads
+-rw-rw-r--  1 wruslan wruslan 144072 Nov 19 23:36 plplot_standard.adb
+-rw-rw-r--  1 wruslan wruslan  94941 Nov 19 23:36 plplot_standard.ads
+-rw-rw-r--  1 wruslan wruslan  14304 Nov 19 23:36 plplot_thin.adb
+-rw-rw-r--  1 wruslan wruslan  75814 Nov 19 23:36 plplot_thin.ads
+-rw-rw-r--  1 wruslan wruslan 138236 Nov 19 23:36 plplot_traditional.adb
+-rw-rw-r--  1 wruslan wruslan  90896 Nov 19 23:36 plplot_traditional.ads
+-rw-rw-r--  1 wruslan wruslan    402 Nov 22 13:22 simple_example.adb
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ 
+
+EXECUTE gnatmake, gnatbind AND gnatlink.
+==========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ gnatmake -c simple_example.adb 
+x86_64-linux-gnu-gcc-9 -c simple_example.adb
+x86_64-linux-gnu-gcc-9 -c plplot.ads
+x86_64-linux-gnu-gcc-9 -c plplot_auxiliary.adb
+x86_64-linux-gnu-gcc-9 -c plplot_standard.adb
+x86_64-linux-gnu-gcc-9 -c plplot_thin.adb
+
+MUST LINK TO PLPLOT LIBRARY
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ gnatbind simple_example
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ gnatlink simple_example -lplplot
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ ls -al
+total 1384
+drwxrwxr-x  2 wruslan wruslan   4096 Nov 22 22:44 .
+drwxr-xr-x 10 wruslan wruslan   4096 Nov 22 22:42 ..
+-rw-rw-r--  1 wruslan wruslan   1397 Nov 19 23:36 plplot.ads
+-rw-rw-r--  1 wruslan wruslan   2832 Nov 22 22:44 plplot.ali
+-rw-rw-r--  1 wruslan wruslan   4461 Nov 19 23:36 plplot_auxiliary.adb
+-rw-rw-r--  1 wruslan wruslan   4549 Nov 19 23:36 plplot_auxiliary.ads
+-rw-rw-r--  1 wruslan wruslan   4239 Nov 22 22:44 plplot_auxiliary.ali
+-rw-rw-r--  1 wruslan wruslan   7264 Nov 22 22:44 plplot_auxiliary.o
+-rw-rw-r--  1 wruslan wruslan    944 Nov 22 22:44 plplot.o
+-rw-rw-r--  1 wruslan wruslan 144072 Nov 19 23:36 plplot_standard.adb
+-rw-rw-r--  1 wruslan wruslan  94941 Nov 19 23:36 plplot_standard.ads
+-rw-rw-r--  1 wruslan wruslan 106937 Nov 22 22:44 plplot_standard.ali
+-rw-rw-r--  1 wruslan wruslan 284696 Nov 22 22:44 plplot_standard.o
+-rw-rw-r--  1 wruslan wruslan  14304 Nov 19 23:36 plplot_thin.adb
+-rw-rw-r--  1 wruslan wruslan  75814 Nov 19 23:36 plplot_thin.ads
+-rw-rw-r--  1 wruslan wruslan  53896 Nov 22 22:44 plplot_thin.ali
+-rw-rw-r--  1 wruslan wruslan  31720 Nov 22 22:44 plplot_thin.o
+-rw-rw-r--  1 wruslan wruslan 138236 Nov 19 23:36 plplot_traditional.adb
+-rw-rw-r--  1 wruslan wruslan  90896 Nov 19 23:36 plplot_traditional.ads
+-rwxrwxr-x  1 wruslan wruslan 287416 Nov 22 22:44 simple_example
+-rw-rw-r--  1 wruslan wruslan    402 Nov 22 13:22 simple_example.adb
+-rw-rw-r--  1 wruslan wruslan   3395 Nov 22 22:44 simple_example.ali
+-rw-rw-r--  1 wruslan wruslan   3696 Nov 22 22:44 simple_example.o
+
+EXECUTE COMPILED ADA-PLPLOT CODE.
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ ./simple_example 
+
+Plotting Options:
+ < 1> xwin       X-Window (Xlib)
+ < 2> tk         Tcl/TK Window
+ < 3> ps         PostScript File (monochrome)
+ < 4> psc        PostScript File (color)
+ < 5> xfig       Fig file
+ < 6> null       Null device
+ < 7> ntk        New tk driver
+ < 8> tkwin      New tk driver
+ < 9> mem        User-supplied memory device
+ <10> wxwidgets  wxWidgets Driver
+ <11> svg        Scalable Vector Graphics (SVG 1.1)
+ <12> bmpqt      Qt Windows bitmap driver
+ <13> jpgqt      Qt jpg driver
+ <14> pngqt      Qt png driver
+ <15> ppmqt      Qt ppm driver
+ <16> tiffqt     Qt tiff driver
+ <17> svgqt      Qt SVG driver
+ <18> qtwidget   Qt Widget
+ <19> pdfqt      Qt PDF driver
+ <20> extqt      External Qt driver
+ <21> memqt      Memory Qt driver
+ <22> xcairo     Cairo X Windows Driver
+ <23> pdfcairo   Cairo PDF Driver
+ <24> pscairo    Cairo PS Driver
+ <25> epscairo   Cairo EPS Driver
+ <26> svgcairo   Cairo SVG Driver
+ <27> pngcairo   Cairo PNG Driver
+ <28> memcairo   Cairo Memory Driver
+ <29> extcairo   Cairo External Context Driver
+
+Enter device number or keyword: 1
+
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ ./simple_example 
+
+Plotting Options:
+ < 1> xwin       X-Window (Xlib)
+ < 2> tk         Tcl/TK Window
+ < 3> ps         PostScript File (monochrome)
+ < 4> psc        PostScript File (color)
+ < 5> xfig       Fig file
+ < 6> null       Null device
+ < 7> ntk        New tk driver
+ < 8> tkwin      New tk driver
+ < 9> mem        User-supplied memory device
+ <10> wxwidgets  wxWidgets Driver
+ <11> svg        Scalable Vector Graphics (SVG 1.1)
+ <12> bmpqt      Qt Windows bitmap driver
+ <13> jpgqt      Qt jpg driver
+ <14> pngqt      Qt png driver
+ <15> ppmqt      Qt ppm driver
+ <16> tiffqt     Qt tiff driver
+ <17> svgqt      Qt SVG driver
+ <18> qtwidget   Qt Widget
+ <19> pdfqt      Qt PDF driver
+ <20> extqt      External Qt driver
+ <21> memqt      Memory Qt driver
+ <22> xcairo     Cairo X Windows Driver
+ <23> pdfcairo   Cairo PDF Driver
+ <24> pscairo    Cairo PS Driver
+ <25> epscairo   Cairo EPS Driver
+ <26> svgcairo   Cairo SVG Driver
+ <27> pngcairo   Cairo PNG Driver
+ <28> memcairo   Cairo Memory Driver
+ <29> extcairo   Cairo External Context Driver
+
+Enter device number or keyword: 2
+^Z  
+
+[1]+  Stopped                 ./simple_example
+
+===========================================================
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ ./simple_example 
+
+Plotting Options:
+ < 1> xwin       X-Window (Xlib)
+ < 2> tk         Tcl/TK Window
+ < 3> ps         PostScript File (monochrome)
+ < 4> psc        PostScript File (color)
+ < 5> xfig       Fig file
+ < 6> null       Null device
+ < 7> ntk        New tk driver
+ < 8> tkwin      New tk driver
+ < 9> mem        User-supplied memory device
+ <10> wxwidgets  wxWidgets Driver
+ <11> svg        Scalable Vector Graphics (SVG 1.1)
+ <12> bmpqt      Qt Windows bitmap driver
+ <13> jpgqt      Qt jpg driver
+ <14> pngqt      Qt png driver
+ <15> ppmqt      Qt ppm driver
+ <16> tiffqt     Qt tiff driver
+ <17> svgqt      Qt SVG driver
+ <18> qtwidget   Qt Widget
+ <19> pdfqt      Qt PDF driver
+ <20> extqt      External Qt driver
+ <21> memqt      Memory Qt driver
+ <22> xcairo     Cairo X Windows Driver
+ <23> pdfcairo   Cairo PDF Driver
+ <24> pscairo    Cairo PS Driver
+ <25> epscairo   Cairo EPS Driver
+ <26> svgcairo   Cairo SVG Driver
+ <27> pngcairo   Cairo PNG Driver
+ <28> memcairo   Cairo Memory Driver
+ <29> extcairo   Cairo External Context Driver
+
+Enter device number or keyword: 18
+
+wruslan@HPEliteBook8470p-Ub2004-rt38:~/Downloads/temp3$ 
+
+===========================================================
+ALHAMDULILLAH 3 TIMES WRY.
+===========================================================
+
+
